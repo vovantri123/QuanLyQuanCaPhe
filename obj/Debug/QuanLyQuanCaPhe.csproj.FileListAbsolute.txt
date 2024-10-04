@@ -1,0 +1,14 @@
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.AssemblyReference.cache
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.fDangNhap.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Properties.Resources.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.GenerateResource.cache
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe.config
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.pdb
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\Guna.UI2.dll
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.fTrangChu.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.SanPhamUC.resources
