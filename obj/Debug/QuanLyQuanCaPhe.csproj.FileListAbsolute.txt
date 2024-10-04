@@ -10,5 +10,8 @@ D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\Guna.UI2.dll
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.fTrangChu.resources
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.SanPhamUC.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fHoaDon.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fTrangChu.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.ucSanPham.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDangKy.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQuenMatKhau.resources
