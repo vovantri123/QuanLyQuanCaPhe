@@ -72,11 +72,47 @@
     <Compile Include="Views\fHoaDon.Designer.cs">
       <DependentUpon>fHoaDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\fKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fKhachHang.Designer.cs">
+      <DependentUpon>fKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fKhoHang.Designer.cs">
+      <DependentUpon>fKhoHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fNhanVien.Designer.cs">
+      <DependentUpon>fNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fPhanCa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fPhanCa.Designer.cs">
+      <DependentUpon>fPhanCa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fQuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\fQuenMatKhau.Designer.cs">
       <DependentUpon>fQuenMatKhau.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fSanPham.Designer.cs">
+      <DependentUpon>fSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\fThongKe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fThongKe.Designer.cs">
+      <DependentUpon>fThongKe.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fTrangChu.cs">
       <SubType>Form</SubType>
@@ -108,8 +144,17 @@
     <EmbeddedResource Include="Views\fHoaDon.resx">
       <DependentUpon>fHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fKhachHang.resx">
+      <DependentUpon>fKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fKhoHang.resx">
+      <DependentUpon>fKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fQuenMatKhau.resx">
       <DependentUpon>fQuenMatKhau.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fSanPham.resx">
+      <DependentUpon>fSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
