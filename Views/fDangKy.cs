@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,8 +20,9 @@ namespace QuanLyQuanCaPhe.Views
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Đăng ký thành công!","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
+        { 
+            //Dung funct hoặc proc trả về số lượng dòng, rồi dùng nó làm id (hoặc dùng cách khác tự tạo ID)
+             
         }
     }
 }

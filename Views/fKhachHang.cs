@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Utilities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +19,24 @@ namespace QuanLyQuanCaPhe.Views
             InitializeComponent();
         }
 
+        private void LoadDGVHienThi()
+        {
+            dgvHienThi.DataSource = DBConnection.LoadTableVaView("KhachHang");
+        }
+         
         private void fKhachHang_Load(object sender, EventArgs e)
+        {
+            LoadDGVHienThi();
+        }
+
+        private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
 
-        
+        private void dgvHienThi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DGV.ChinhSizeCotTuDong(dgvHienThi);
+        }
     }
 }

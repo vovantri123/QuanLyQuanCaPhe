@@ -52,6 +52,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\CaLamViecDAO.cs" />
+    <Compile Include="Database\ChiTietHoaDonDAO.cs" />
+    <Compile Include="Database\CongViecDAO.cs" />
+    <Compile Include="Database\DonHangDAO.cs" />
+    <Compile Include="Database\KhachHangDAO.cs" />
+    <Compile Include="Database\LoaiSanPhamDAO.cs" />
+    <Compile Include="Database\NguyenLieuDAO.cs" />
+    <Compile Include="Database\NhanVienBanThoiGianDAO.cs" />
+    <Compile Include="Database\NhanVienDAO.cs" />
+    <Compile Include="Database\NhanVienToanThoiGianDAO.cs" />
+    <Compile Include="Database\PhaCheDAO.cs" />
+    <Compile Include="Database\SanPhamDAO.cs" />
+    <Compile Include="Database\ThucHienDAO.cs" />
+    <Compile Include="Models\CaLamViec.cs" />
+    <Compile Include="Models\ChiTietHoaDon.cs" />
+    <Compile Include="Models\CongViec.cs" />
+    <Compile Include="Database\DBConnection.cs" />
+    <Compile Include="Models\DonHang.cs" />
+    <Compile Include="Models\KhachHang.cs" />
+    <Compile Include="Models\LoaiSanPham.cs" />
+    <Compile Include="Models\NguyenLieu.cs" />
+    <Compile Include="Models\NhanVien.cs" />
+    <Compile Include="Models\NhanVienBanThoiGian.cs" />
+    <Compile Include="Models\NhanVienToanThoiGian.cs" />
+    <Compile Include="Models\PhaChe.cs" />
+    <Compile Include="Models\SanPham.cs" />
+    <Compile Include="Models\ThucHien.cs" />
+    <Compile Include="Utilities\DGV.cs" />
+    <Compile Include="Utilities\XyLyAnh.cs" />
+    <Compile Include="Utilities\Tien.cs" />
+    <Compile Include="Views\fHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fHoaDon.Designer.cs">
+      <DependentUpon>fHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fDangKy.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,11 +102,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\fHoaDon.cs">
+    <Compile Include="Views\fDonHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fHoaDon.Designer.cs">
-      <DependentUpon>fHoaDon.cs</DependentUpon>
+    <Compile Include="Views\fDonHang.Designer.cs">
+      <DependentUpon>fDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fKhachHang.cs">
       <SubType>Form</SubType>
@@ -84,11 +120,11 @@
     <Compile Include="Views\fKhoHang.Designer.cs">
       <DependentUpon>fKhoHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\fNhanVien.cs">
+    <Compile Include="Views\fQLNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fNhanVien.Designer.cs">
-      <DependentUpon>fNhanVien.cs</DependentUpon>
+    <Compile Include="Views\fQLNhanVien.Designer.cs">
+      <DependentUpon>fQLNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fPhanCa.cs">
       <SubType>Form</SubType>
@@ -96,17 +132,23 @@
     <Compile Include="Views\fPhanCa.Designer.cs">
       <DependentUpon>fPhanCa.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\fQLLoaiSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\fQLLoaiSanPham.Designer.cs">
+      <DependentUpon>fQLLoaiSanPham.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\fQuenMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\fQuenMatKhau.Designer.cs">
       <DependentUpon>fQuenMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\fSanPham.cs">
+    <Compile Include="Views\fQLSanPham.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fSanPham.Designer.cs">
-      <DependentUpon>fSanPham.cs</DependentUpon>
+    <Compile Include="Views\fQLSanPham.Designer.cs">
+      <DependentUpon>fQLSanPham.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fThongKe.cs">
       <SubType>Form</SubType>
@@ -144,17 +186,29 @@
     <EmbeddedResource Include="Views\fHoaDon.resx">
       <DependentUpon>fHoaDon.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fDonHang.resx">
+      <DependentUpon>fDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fKhachHang.resx">
       <DependentUpon>fKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fKhoHang.resx">
       <DependentUpon>fKhoHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\fQLNhanVien.resx">
+      <DependentUpon>fQLNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fPhanCa.resx">
+      <DependentUpon>fPhanCa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\fQLLoaiSanPham.resx">
+      <DependentUpon>fQLLoaiSanPham.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\fQuenMatKhau.resx">
       <DependentUpon>fQuenMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\fSanPham.resx">
-      <DependentUpon>fSanPham.cs</DependentUpon>
+    <EmbeddedResource Include="Views\fQLSanPham.resx">
+      <DependentUpon>fQLSanPham.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
@@ -176,8 +230,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Assets\Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

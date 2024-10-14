@@ -34,3 +34,10 @@ C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fSanPham.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fPhanCa.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDonHang.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLNhanVien.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLLoaiSanPham.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLSanPham.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhachHang.resources
