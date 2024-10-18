@@ -13,9 +13,16 @@ namespace QuanLyQuanCaPhe.Utilities
         
         }
 
-        public static string dinhDangTien(string tien)
+        public static string DinhDangTien(string tien)
         {
             return Convert.ToDouble(tien).ToString("#,##0");
         }
+
+        public static double HuyDinhDangTien(string tien)
+        { 
+            string tienKhongDauPhay = tien.Replace(",", "");
+            return Double.Parse(tienKhongDauPhay);
+        }
+
     }
 }

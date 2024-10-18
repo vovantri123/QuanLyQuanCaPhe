@@ -54,6 +54,43 @@ namespace QuanLyQuanCaPhe.Database
             }
         }
 
+        public static object ThucThiFunction_Scalar(string tenFunction, List<KeyValuePair<string, object>> parameters)
+        { 
+            try
+            {
+                moKetNoi();
+
+                string truyVan = $@"SELECT dbo.{tenFunction}(";
+                for (int i = 0; i < parameters.Count; i++)
+                {
+                    truyVan += parameters[i].Key;
+                    if (i < parameters.Count - 1)
+                    {
+                        truyVan += ", ";
+                    }
+                }
+                truyVan += ")";
+
+                SqlCommand cmd = new SqlCommand(truyVan, conn);
+
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                }
+
+                return cmd.ExecuteScalar();  
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thất bại\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                dongKetNoi();
+            }
+        }
+
         public static DataTable ThucThiFunction_InlineVaMultiStatement(string tenFunction, List<KeyValuePair<string, object>> parameters)
         {
             try
@@ -76,7 +113,7 @@ namespace QuanLyQuanCaPhe.Database
                 //MessageBox.Show(truyVan);
 
                 SqlCommand cmd = new SqlCommand(truyVan, conn);
-                 
+
                 foreach (var param in parameters)
                 {
                     cmd.Parameters.AddWithValue(param.Key, param.Value);
@@ -98,7 +135,54 @@ namespace QuanLyQuanCaPhe.Database
             }
         }
 
-        public static void ThucThiProc_CoThamSoVaKhongCoThamSo(string tenProc, List<KeyValuePair<string, object>> parameters)
+
+        public static Dictionary<string, object> ThucThiProc_CoThamSoOutput(string tenProc, List<KeyValuePair<string, object>> parameters, List<SqlParameter> outputParams)
+        {
+            try
+            {
+                moKetNoi();
+                SqlCommand cmd = new SqlCommand(tenProc, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm các tham số đầu vào
+                if (parameters != null)
+                {
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
+                }
+
+                // Thêm các tham số OUTPUT
+                foreach (var outputParam in outputParams)
+                {
+                    cmd.Parameters.Add(outputParam);
+                }
+
+                // Thực thi stored procedure
+                cmd.ExecuteNonQuery();
+
+                // Lấy giá trị của tất cả các tham số OUTPUT
+                Dictionary<string, object> result = new Dictionary<string, object>();
+                foreach (var outputParam in outputParams)
+                {
+                    result.Add(outputParam.ParameterName, cmd.Parameters[outputParam.ParameterName].Value);
+                }
+
+                return result;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thất bại\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                dongKetNoi();
+            }
+        }
+
+        public static void ThucThiProc_CoThamSoVaKhongCoThamSo(string tenProc, List<KeyValuePair<string, object>> parameters)  
         {
             try
             {
@@ -116,8 +200,9 @@ namespace QuanLyQuanCaPhe.Database
                     }
                 }
 
-                if (cmd.ExecuteNonQuery() > 0)
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cmd.ExecuteNonQuery();
+                //if (cmd.ExecuteNonQuery() > 0)
+                //MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {

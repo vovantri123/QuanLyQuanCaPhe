@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.lblMaHoaDon = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,20 +41,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblTongTien = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblGiam = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblThanhTien = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.dgvHienThi = new System.Windows.Forms.DataGridView();
-            this.btnThem = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
-            this.btnXuatDonHang = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.lblNgayMua = new System.Windows.Forms.Label();
+            this.btnXacNhanThanhToan = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblNgayMua = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).BeginInit();
             this.SuspendLayout();
@@ -65,27 +63,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(596, 106);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 20);
+            this.label1.Size = new System.Drawing.Size(110, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Mã hóa đơn: ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(19, 106);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(77, 20);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Thời gian:";
+            this.label1.Text = "Mã đơn hàng: ";
             // 
             // lblMaHoaDon
             // 
             this.lblMaHoaDon.AutoSize = true;
             this.lblMaHoaDon.Location = new System.Drawing.Point(703, 106);
             this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(42, 20);
+            this.lblMaHoaDon.Size = new System.Drawing.Size(51, 20);
             this.lblMaHoaDon.TabIndex = 0;
-            this.lblMaHoaDon.Text = "HD1";
+            this.lblMaHoaDon.Text = "DH00";
             // 
             // label4
             // 
@@ -200,6 +189,7 @@
             this.tsDungDiemTichLuy.UncheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.tsDungDiemTichLuy.UncheckedState.InnerBorderColor = System.Drawing.Color.White;
             this.tsDungDiemTichLuy.UncheckedState.InnerColor = System.Drawing.Color.White;
+            this.tsDungDiemTichLuy.CheckedChanged += new System.EventHandler(this.tsDungDiemTichLuy_CheckedChanged);
             // 
             // panel1
             // 
@@ -234,14 +224,14 @@
             this.label12.TabIndex = 5;
             this.label12.Text = "Giảm";
             // 
-            // label8
+            // lblTongTien
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(936, 518);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 20);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "160.000";
+            this.lblTongTien.AutoSize = true;
+            this.lblTongTien.Location = new System.Drawing.Point(936, 518);
+            this.lblTongTien.Name = "lblTongTien";
+            this.lblTongTien.Size = new System.Drawing.Size(67, 20);
+            this.lblTongTien.TabIndex = 4;
+            this.lblTongTien.Text = "160.000";
             // 
             // label15
             // 
@@ -253,14 +243,14 @@
             this.label15.TabIndex = 5;
             this.label15.Text = "Thành tiền";
             // 
-            // label13
+            // lblGiam
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(945, 551);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(49, 20);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "1.000";
+            this.lblGiam.AutoSize = true;
+            this.lblGiam.Location = new System.Drawing.Point(945, 551);
+            this.lblGiam.Name = "lblGiam";
+            this.lblGiam.Size = new System.Drawing.Size(49, 20);
+            this.lblGiam.TabIndex = 4;
+            this.lblGiam.Text = "1.000";
             // 
             // label7
             // 
@@ -271,15 +261,15 @@
             this.label7.TabIndex = 3;
             this.label7.Text = "VND";
             // 
-            // label16
+            // lblThanhTien
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label16.Location = new System.Drawing.Point(897, 586);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 29);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "159.000";
+            this.lblThanhTien.AutoSize = true;
+            this.lblThanhTien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblThanhTien.Location = new System.Drawing.Point(897, 586);
+            this.lblThanhTien.Name = "lblThanhTien";
+            this.lblThanhTien.Size = new System.Drawing.Size(97, 29);
+            this.lblThanhTien.TabIndex = 4;
+            this.lblThanhTien.Text = "159.000";
             // 
             // label14
             // 
@@ -313,36 +303,6 @@
             this.dgvHienThi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienThi_CellContentClick);
             this.dgvHienThi.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvHienThi_DataBindingComplete);
             // 
-            // btnThem
-            // 
-            this.btnThem.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnThem.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(50, 422);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(111, 45);
-            this.btnThem.TabIndex = 7;
-            this.btnThem.Text = "Thêm";
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXoa.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXoa.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXoa.ForeColor = System.Drawing.Color.White;
-            this.btnXoa.Location = new System.Drawing.Point(321, 422);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(111, 45);
-            this.btnXoa.TabIndex = 7;
-            this.btnXoa.Text = "Xóa";
-            // 
             // btnSua
             // 
             this.btnSua.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -351,38 +311,29 @@
             this.btnSua.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnSua.ForeColor = System.Drawing.Color.White;
-            this.btnSua.Location = new System.Drawing.Point(187, 422);
+            this.btnSua.Location = new System.Drawing.Point(14, 416);
             this.btnSua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(111, 45);
             this.btnSua.TabIndex = 7;
             this.btnSua.Text = "Sửa";
             // 
-            // btnXuatDonHang
+            // btnXacNhanThanhToan
             // 
-            this.btnXuatDonHang.BorderRadius = 5;
-            this.btnXuatDonHang.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatDonHang.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnXuatDonHang.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuatDonHang.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnXuatDonHang.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnXuatDonHang.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnXuatDonHang.ForeColor = System.Drawing.Color.White;
-            this.btnXuatDonHang.Location = new System.Drawing.Point(1353, 68);
-            this.btnXuatDonHang.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnXuatDonHang.Name = "btnXuatDonHang";
-            this.btnXuatDonHang.Size = new System.Drawing.Size(165, 45);
-            this.btnXuatDonHang.TabIndex = 8;
-            this.btnXuatDonHang.Text = "Xuất đơn hàng";
-            // 
-            // lblNgayMua
-            // 
-            this.lblNgayMua.AutoSize = true;
-            this.lblNgayMua.Location = new System.Drawing.Point(102, 106);
-            this.lblNgayMua.Name = "lblNgayMua";
-            this.lblNgayMua.Size = new System.Drawing.Size(161, 20);
-            this.lblNgayMua.TabIndex = 9;
-            this.lblNgayMua.Text = "Saturday, 04/10/2024";
+            this.btnXacNhanThanhToan.BorderRadius = 5;
+            this.btnXacNhanThanhToan.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhanThanhToan.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnXacNhanThanhToan.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXacNhanThanhToan.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnXacNhanThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(1315, 68);
+            this.btnXacNhanThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
+            this.btnXacNhanThanhToan.Size = new System.Drawing.Size(203, 45);
+            this.btnXacNhanThanhToan.TabIndex = 8;
+            this.btnXacNhanThanhToan.Text = "Xác nhận thanh toán";
             // 
             // guna2Separator1
             // 
@@ -392,31 +343,47 @@
             this.guna2Separator1.Size = new System.Drawing.Size(467, 10);
             this.guna2Separator1.TabIndex = 10;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(28, 105);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(45, 20);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Ngày";
+            // 
+            // lblNgayMua
+            // 
+            this.lblNgayMua.AutoSize = true;
+            this.lblNgayMua.Location = new System.Drawing.Point(70, 106);
+            this.lblNgayMua.Name = "lblNgayMua";
+            this.lblNgayMua.Size = new System.Drawing.Size(89, 20);
+            this.lblNgayMua.TabIndex = 12;
+            this.lblNgayMua.Text = "04/10/2024";
+            // 
             // fDonHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1566, 677);
-            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblNgayMua);
-            this.Controls.Add(this.btnXuatDonHang);
+            this.Controls.Add(this.guna2Separator1);
+            this.Controls.Add(this.btnXacNhanThanhToan);
             this.Controls.Add(this.btnSua);
-            this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.dgvHienThi);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.label16);
+            this.Controls.Add(this.lblThanhTien);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblGiam);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.lblTongTien);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblMaHoaDon);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDonHang";
@@ -433,7 +400,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblMaHoaDon;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
@@ -446,19 +412,18 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblTongTien;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblGiam;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblThanhTien;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.DataGridView dgvHienThi;
-        private Guna.UI2.WinForms.Guna2Button btnThem;
-        private Guna.UI2.WinForms.Guna2Button btnXoa;
         private Guna.UI2.WinForms.Guna2Button btnSua;
-        private Guna.UI2.WinForms.Guna2GradientButton btnXuatDonHang;
-        private System.Windows.Forms.Label lblNgayMua;
+        private Guna.UI2.WinForms.Guna2GradientButton btnXacNhanThanhToan;
         private Guna.UI2.WinForms.Guna2Separator guna2Separator1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblNgayMua;
     }
 }

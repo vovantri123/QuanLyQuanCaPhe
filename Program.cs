@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new fPhanCa());
+            Application.Run(new fTrangChu());
         }
     }
 }

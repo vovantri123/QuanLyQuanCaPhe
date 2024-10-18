@@ -75,6 +75,7 @@
             this.txtSoDienThoai.SelectedText = "";
             this.txtSoDienThoai.Size = new System.Drawing.Size(286, 51);
             this.txtSoDienThoai.TabIndex = 26;
+            this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtSoDienThoai_TextChanged);
             // 
             // fHoaDon
             // 
@@ -85,6 +86,7 @@
             this.Controls.Add(this.dgvHienThi);
             this.Controls.Add(this.label4);
             this.Name = "fHoaDon";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hóa đơn";
             this.Load += new System.EventHandler(this.fHoaDon_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).EndInit();
