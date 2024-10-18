@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyQuanCaPhe.Database
 {
-    internal class ThucHienDAO
+    public class ThucHienDAO
     {
     }
 }

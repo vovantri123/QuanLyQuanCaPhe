@@ -19,38 +19,31 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.AddParameters("@MaLoaiSP", lsp.MaLoaiSP);
             DBConnection.AddParameters("@TenLoaiSP", lsp.TenLoaiSP);
             
-            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("ThemLoaiSanPham", DBConnection.parameters);
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_LoaiSanPham", DBConnection.parameters);
         }
 
         public static void Xoa(string id)
-        { 
-            DBConnection.parameters = new List<KeyValuePair<string, object>>
-            {
-                new KeyValuePair<string, object>("@MaLoaiSP", id), 
-            };
+        {  
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@MaLoaiSP", id); 
 
-            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("XoaLoaiSanPham", DBConnection.parameters);
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Xoa_LoaiSanPham", DBConnection.parameters);
         }
 
         public static void Sua(LoaiSanPham lsp)
-        {
-            DBConnection.parameters = new List<KeyValuePair<string, object>>
-            {
-                new KeyValuePair<string, object>("@TenLoai", lsp.MaLoaiSP),
-                new KeyValuePair<string, object>("@TenLoaiSP", lsp.TenLoaiSP)
-            };
+        { 
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@MaLoaiSP", lsp.MaLoaiSP);
+            DBConnection.AddParameters("@TenLoaiSP", lsp.TenLoaiSP);
 
-            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("SuaLoaiSanPham", DBConnection.parameters);
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Sua_LoaiSanPham", DBConnection.parameters);
         }
 
         public static DataTable TimKiem(string ten)
-        { 
-
-            DBConnection.parameters = new List<KeyValuePair<string, object>>
-            { 
-                new KeyValuePair<string, object>("@TenLoaiSP", ten)
-            };
-            return DBConnection.ThucThiFunction_InlineVaMultiStatement("TimKiemTheoTenLoaiSanPham_Inline", DBConnection.parameters); 
+        {   
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@TenLoaiSP", ten);
+            return DBConnection.ThucThiFunction_InlineVaMultiStatement("func_TimKiemTheoTen_LoaiSanPham", DBConnection.parameters); 
         }
     }
 }

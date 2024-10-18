@@ -31,14 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fQLSanPham));
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDSSanPham = new System.Windows.Forms.DataGridView();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.txtTimKiemTheoTenSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtMaSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTenSP = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtGia = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnThemSP = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoaSP = new Guna.UI2.WinForms.Guna2Button();
             this.btnSuaSP = new Guna.UI2.WinForms.Guna2Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbAnhSP = new System.Windows.Forms.PictureBox();
             this.btnChonAnh = new Guna.UI2.WinForms.Guna2GradientButton();
             this.cboTenNL = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,12 +47,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.nudSoLuong = new Guna.UI2.WinForms.Guna2NumericUpDown();
             this.btnThemNL = new Guna.UI2.WinForms.Guna2Button();
-            this.txtLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cboLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtDonVi = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDonVi = new System.Windows.Forms.Label();
+            this.lblTenFileAnh = new System.Windows.Forms.Label();
+            this.lblDuongDanAnh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieuCuaSanPham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label1.Location = new System.Drawing.Point(482, 11);
+            this.label1.Location = new System.Drawing.Point(999, -4);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(220, 52);
             this.label1.TabIndex = 1;
@@ -75,30 +76,32 @@
             this.dgvDSSanPham.Name = "dgvDSSanPham";
             this.dgvDSSanPham.RowHeadersWidth = 51;
             this.dgvDSSanPham.RowTemplate.Height = 24;
+            this.dgvDSSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSSanPham.Size = new System.Drawing.Size(799, 645);
             this.dgvDSSanPham.TabIndex = 2;
             this.dgvDSSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSSanPham_CellContentClick);
             this.dgvDSSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDSSanPham_DataBindingComplete);
             // 
-            // guna2TextBox1
+            // txtTimKiemTheoTenSP
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(1331, 87);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "Tìm kiếm theo tên sản phẩm";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(259, 41);
-            this.guna2TextBox1.TabIndex = 3;
+            this.txtTimKiemTheoTenSP.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTimKiemTheoTenSP.DefaultText = "";
+            this.txtTimKiemTheoTenSP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTimKiemTheoTenSP.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTimKiemTheoTenSP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiemTheoTenSP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTimKiemTheoTenSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiemTheoTenSP.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTimKiemTheoTenSP.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTimKiemTheoTenSP.Location = new System.Drawing.Point(1331, 87);
+            this.txtTimKiemTheoTenSP.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.txtTimKiemTheoTenSP.Name = "txtTimKiemTheoTenSP";
+            this.txtTimKiemTheoTenSP.PasswordChar = '\0';
+            this.txtTimKiemTheoTenSP.PlaceholderText = "Tìm kiếm theo tên sản phẩm";
+            this.txtTimKiemTheoTenSP.SelectedText = "";
+            this.txtTimKiemTheoTenSP.Size = new System.Drawing.Size(259, 41);
+            this.txtTimKiemTheoTenSP.TabIndex = 3;
+            this.txtTimKiemTheoTenSP.TextChanged += new System.EventHandler(this.txtTimKiemTheoTenSP_TextChanged);
             // 
             // txtMaSP
             // 
@@ -117,7 +120,7 @@
             this.txtMaSP.PasswordChar = '\0';
             this.txtMaSP.PlaceholderText = "Mã sản phẩm";
             this.txtMaSP.SelectedText = "";
-            this.txtMaSP.Size = new System.Drawing.Size(303, 55);
+            this.txtMaSP.Size = new System.Drawing.Size(383, 55);
             this.txtMaSP.TabIndex = 6;
             // 
             // txtTenSP
@@ -137,7 +140,7 @@
             this.txtTenSP.PasswordChar = '\0';
             this.txtTenSP.PlaceholderText = "Tên sản phẩm";
             this.txtTenSP.SelectedText = "";
-            this.txtTenSP.Size = new System.Drawing.Size(303, 61);
+            this.txtTenSP.Size = new System.Drawing.Size(383, 61);
             this.txtTenSP.TabIndex = 6;
             // 
             // txtGia
@@ -157,7 +160,7 @@
             this.txtGia.PasswordChar = '\0';
             this.txtGia.PlaceholderText = "Giá";
             this.txtGia.SelectedText = "";
-            this.txtGia.Size = new System.Drawing.Size(303, 56);
+            this.txtGia.Size = new System.Drawing.Size(383, 56);
             this.txtGia.TabIndex = 6;
             // 
             // btnThemSP
@@ -174,6 +177,7 @@
             this.btnThemSP.Size = new System.Drawing.Size(107, 49);
             this.btnThemSP.TabIndex = 7;
             this.btnThemSP.Text = "Thêm";
+            this.btnThemSP.Click += new System.EventHandler(this.btnThemSP_Click);
             // 
             // btnXoaSP
             // 
@@ -189,6 +193,7 @@
             this.btnXoaSP.Size = new System.Drawing.Size(97, 49);
             this.btnXoaSP.TabIndex = 7;
             this.btnXoaSP.Text = "Xóa";
+            this.btnXoaSP.Click += new System.EventHandler(this.btnXoaSP_Click);
             // 
             // btnSuaSP
             // 
@@ -204,16 +209,17 @@
             this.btnSuaSP.Size = new System.Drawing.Size(101, 49);
             this.btnSuaSP.TabIndex = 7;
             this.btnSuaSP.Text = "Sửa";
+            this.btnSuaSP.Click += new System.EventHandler(this.btnSuaSP_Click);
             // 
-            // pictureBox1
+            // pbAnhSP
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 79);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 232);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
+            this.pbAnhSP.Image = ((System.Drawing.Image)(resources.GetObject("pbAnhSP.Image")));
+            this.pbAnhSP.Location = new System.Drawing.Point(32, 79);
+            this.pbAnhSP.Name = "pbAnhSP";
+            this.pbAnhSP.Size = new System.Drawing.Size(241, 232);
+            this.pbAnhSP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAnhSP.TabIndex = 9;
+            this.pbAnhSP.TabStop = false;
             // 
             // btnChonAnh
             // 
@@ -229,13 +235,15 @@
             this.btnChonAnh.Size = new System.Drawing.Size(128, 45);
             this.btnChonAnh.TabIndex = 10;
             this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // cboTenNL
             // 
+            this.cboTenNL.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTenNL.FormattingEnabled = true;
             this.cboTenNL.Location = new System.Drawing.Point(158, 477);
             this.cboTenNL.Name = "cboTenNL";
-            this.cboTenNL.Size = new System.Drawing.Size(121, 28);
+            this.cboTenNL.Size = new System.Drawing.Size(128, 28);
             this.cboTenNL.TabIndex = 16;
             // 
             // label3
@@ -255,8 +263,11 @@
             this.dgvDSNguyenLieuCuaSanPham.Name = "dgvDSNguyenLieuCuaSanPham";
             this.dgvDSNguyenLieuCuaSanPham.RowHeadersWidth = 51;
             this.dgvDSNguyenLieuCuaSanPham.RowTemplate.Height = 24;
+            this.dgvDSNguyenLieuCuaSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDSNguyenLieuCuaSanPham.Size = new System.Drawing.Size(742, 308);
             this.dgvDSNguyenLieuCuaSanPham.TabIndex = 15;
+            this.dgvDSNguyenLieuCuaSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSNguyenLieuCuaSanPham_CellClick);
+            this.dgvDSNguyenLieuCuaSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDSNguyenLieuCuaSanPham_CellContentClick);
             this.dgvDSNguyenLieuCuaSanPham.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dgvDSNguyenLieuCuaSanPham_DataBindingComplete);
             // 
             // label2
@@ -303,54 +314,58 @@
             this.btnThemNL.Size = new System.Drawing.Size(83, 49);
             this.btnThemNL.TabIndex = 7;
             this.btnThemNL.Text = "+";
+            this.btnThemNL.Click += new System.EventHandler(this.btnThemNL_Click);
             // 
-            // txtLoaiSP
+            // cboLoaiSP
             // 
-            this.txtLoaiSP.BackColor = System.Drawing.Color.Transparent;
-            this.txtLoaiSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtLoaiSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLoaiSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtLoaiSP.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtLoaiSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtLoaiSP.ItemHeight = 30;
-            this.txtLoaiSP.Location = new System.Drawing.Point(450, 279);
-            this.txtLoaiSP.Name = "txtLoaiSP";
-            this.txtLoaiSP.Size = new System.Drawing.Size(157, 36);
-            this.txtLoaiSP.TabIndex = 23;
+            this.cboLoaiSP.BackColor = System.Drawing.Color.Transparent;
+            this.cboLoaiSP.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboLoaiSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboLoaiSP.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboLoaiSP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboLoaiSP.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cboLoaiSP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cboLoaiSP.ItemHeight = 30;
+            this.cboLoaiSP.Location = new System.Drawing.Point(450, 279);
+            this.cboLoaiSP.Name = "cboLoaiSP";
+            this.cboLoaiSP.Size = new System.Drawing.Size(237, 36);
+            this.cboLoaiSP.TabIndex = 23;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(304, 290);
+            this.label6.Location = new System.Drawing.Point(300, 291);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(113, 20);
             this.label6.TabIndex = 24;
             this.label6.Text = "Loại sản phẩm";
             // 
-            // txtDonVi
+            // lblDonVi
             // 
-            this.txtDonVi.BackColor = System.Drawing.Color.Transparent;
-            this.txtDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.txtDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtDonVi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDonVi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtDonVi.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtDonVi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.txtDonVi.ItemHeight = 30;
-            this.txtDonVi.Location = new System.Drawing.Point(450, 321);
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(157, 36);
-            this.txtDonVi.TabIndex = 23;
+            this.lblDonVi.AutoSize = true;
+            this.lblDonVi.Location = new System.Drawing.Point(507, 477);
+            this.lblDonVi.Name = "lblDonVi";
+            this.lblDonVi.Size = new System.Drawing.Size(53, 20);
+            this.lblDonVi.TabIndex = 24;
+            this.lblDonVi.Text = "Đơn vị";
             // 
-            // label7
+            // lblTenFileAnh
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(304, 332);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 20);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Đơn vị";
+            this.lblTenFileAnh.AutoSize = true;
+            this.lblTenFileAnh.Location = new System.Drawing.Point(28, 22);
+            this.lblTenFileAnh.Name = "lblTenFileAnh";
+            this.lblTenFileAnh.Size = new System.Drawing.Size(91, 20);
+            this.lblTenFileAnh.TabIndex = 24;
+            this.lblTenFileAnh.Text = "Tên file ảnh";
+            // 
+            // lblDuongDanAnh
+            // 
+            this.lblDuongDanAnh.AutoSize = true;
+            this.lblDuongDanAnh.Location = new System.Drawing.Point(304, 22);
+            this.lblDuongDanAnh.Name = "lblDuongDanAnh";
+            this.lblDuongDanAnh.Size = new System.Drawing.Size(119, 20);
+            this.lblDuongDanAnh.TabIndex = 24;
+            this.lblDuongDanAnh.Text = "Đường dẫn ảnh";
             // 
             // fQLSanPham
             // 
@@ -358,10 +373,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1629, 844);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDonVi);
+            this.Controls.Add(this.lblDuongDanAnh);
+            this.Controls.Add(this.lblTenFileAnh);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtDonVi);
-            this.Controls.Add(this.txtLoaiSP);
+            this.Controls.Add(this.cboLoaiSP);
             this.Controls.Add(this.nudSoLuong);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboTenNL);
@@ -369,7 +385,6 @@
             this.Controls.Add(this.dgvDSNguyenLieuCuaSanPham);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnChonAnh);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnXoaSP);
             this.Controls.Add(this.btnSuaSP);
             this.Controls.Add(this.btnThemNL);
@@ -377,16 +392,17 @@
             this.Controls.Add(this.txtGia);
             this.Controls.Add(this.txtTenSP);
             this.Controls.Add(this.txtMaSP);
-            this.Controls.Add(this.guna2TextBox1);
+            this.Controls.Add(this.txtTimKiemTheoTenSP);
             this.Controls.Add(this.dgvDSSanPham);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pbAnhSP);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "fQLSanPham";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "fQLSanPham";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.fQLSanPham_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAnhSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSNguyenLieuCuaSanPham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).EndInit();
             this.ResumeLayout(false);
@@ -397,14 +413,14 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvDSSanPham;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2TextBox txtTimKiemTheoTenSP;
         private Guna.UI2.WinForms.Guna2TextBox txtMaSP;
         private Guna.UI2.WinForms.Guna2TextBox txtTenSP;
         private Guna.UI2.WinForms.Guna2TextBox txtGia;
         private Guna.UI2.WinForms.Guna2Button btnThemSP;
         private Guna.UI2.WinForms.Guna2Button btnXoaSP;
         private Guna.UI2.WinForms.Guna2Button btnSuaSP;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbAnhSP;
         private Guna.UI2.WinForms.Guna2GradientButton btnChonAnh;
         private System.Windows.Forms.ComboBox cboTenNL;
         private System.Windows.Forms.Label label3;
@@ -413,9 +429,10 @@
         private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2NumericUpDown nudSoLuong;
         private Guna.UI2.WinForms.Guna2Button btnThemNL;
-        private Guna.UI2.WinForms.Guna2ComboBox txtLoaiSP;
+        private Guna.UI2.WinForms.Guna2ComboBox cboLoaiSP;
         private System.Windows.Forms.Label label6;
-        private Guna.UI2.WinForms.Guna2ComboBox txtDonVi;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDonVi;
+        private System.Windows.Forms.Label lblTenFileAnh;
+        private System.Windows.Forms.Label lblDuongDanAnh;
     }
 }

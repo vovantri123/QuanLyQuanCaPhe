@@ -1,7 +1,9 @@
 ﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Models;
 using QuanLyQuanCaPhe.Utilities;
 using QuanLyQuanCaPhe.Views.UserControls;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,41 +18,89 @@ namespace QuanLyQuanCaPhe.Views
 {
     public partial class fTrangChu : Form
     {
-        ucSanPham[] danhSachSanPham = new ucSanPham[150];
-
+        List<ucSanPham> listUCSanPham  = new List<ucSanPham>(); //Tạo List dùng cho việc sắp xếp
         public fTrangChu()
         {
             InitializeComponent();
         }
-
-        private void LoadDGVHienThi()
-        {
-            dgvHienThi.DataSource = DBConnection.LoadTableVaView("V_DanhSachSanPhamDaChon");
-        }
-        
-        private void LoadFlowPnlSanPham()
-        { 
-            DataTable dataTable = DBConnection.LoadTableVaView("V_DanhSachSanPham");
-            int i = 0;
-            foreach (DataRow row in dataTable.Rows)
-            { 
-                danhSachSanPham[i] = new ucSanPham();
-                danhSachSanPham[i].lblTenSP.Text = row["TenSP"].ToString(); // Lấy giá trị của cột TenSP
-                danhSachSanPham[i].lblGia.Text = Tien.dinhDangTien(row["Gia"].ToString()); // Lấy giá trị của cột Gia
-                flowPnlSanPham.Controls.Add(danhSachSanPham[i]);
-                danhSachSanPham[i].pbSanPham.Image =  XyLyAnh.GetImage("img.jpg");
-                i++;
-            } 
-        }
-         
         private void fTrangChu_Load(object sender, EventArgs e)
         {
             LoadDGVHienThi();
             LoadFlowPnlSanPham();
 
+            LoadTongTien();
 
+            btnXoaChonTatCa_Click(sender, e); //Để clear dữ liệu chưa thanh toán hoặc khi form bị tắt đột ngột
+
+            lblNgayMua.Text = Ngay.NgayHienTai();
+            cboSapXep.SelectedItem = "Tên: A -> Z";
+            
+        }
+        
+        private void ThemListUCVaoFlowPnlSanPham()
+        {
+            flowPnlSanPham.Controls.Clear();
+            foreach (ucSanPham uc in listUCSanPham)
+            {
+                flowPnlSanPham.Controls.Add(uc);
+            }    
         }
 
+        private void LoadTongTien()
+        {
+            lblTongTien.Text = ChiTietHoaDonDAO.TinhTongTien().ToString();
+        }
+
+        private void LoadDGVHienThi()  
+        {
+            dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachSanPhamDaChon");
+        }
+
+        
+
+
+        private void LoadFlowPnlSanPham() //Mặc định, dùng để tạo listUCSanPham và thêm vào flowPnlSanPham
+        { 
+            flowPnlSanPham.Controls.Clear();
+            DataTable dataTable = DBConnection.LoadTableVaView("SanPham");
+            ucSanPham sanPham;
+             
+            foreach (DataRow row in dataTable.Rows)
+            {
+                sanPham = new ucSanPham();
+                sanPham.lblTenSP.Text = row["TenSP"].ToString(); // Lấy giá trị của cột TenSP
+                sanPham.lblGia.Text = Tien.DinhDangTien(row["Gia"].ToString());  
+                sanPham.pbSanPham.Image =  XyLyAnh.GetImage(row["AnhSP"].ToString());
+                sanPham.lblMaSP.Text = row["MaSP"].ToString();
+                sanPham.SuKienGoiFormChaTuFormCon += UCSanPhamGoiFTrangChu;
+
+                listUCSanPham.Add(sanPham); 
+            }
+
+            ThemListUCVaoFlowPnlSanPham();
+        }
+
+        private void UCSanPhamGoiFTrangChu(object sender, ucSanPham.ThamSoThayDoi e)
+        {
+            LoadDGVHienThi();
+            LoadTongTien();
+        }
+
+        private void cboSapXep_SelectedIndexChanged(object sender, EventArgs e) //Sắp xếp ListUC rồi thêm vào flowPnlSanPham
+        {  
+            string dieuKienSapXep = cboSapXep.SelectedItem.ToString();
+            if(dieuKienSapXep == "Giá: Thấp -> Cao")
+                listUCSanPham.Sort((x, y) => Double.Parse(x.lblGia.Text).CompareTo(Double.Parse(y.lblGia.Text)));
+            else if (dieuKienSapXep == "Giá: Cao -> Thấp")
+                listUCSanPham.Sort((x, y) => Double.Parse(y.lblGia.Text).CompareTo(Double.Parse(x.lblGia.Text)));
+            else if (dieuKienSapXep == "Tên: A -> Z")
+                listUCSanPham.Sort((x, y) => x.lblTenSP.Text.CompareTo(y.lblTenSP.Text)); 
+            else
+                listUCSanPham.Sort((x, y) => x.lblTenSP.Text.CompareTo(y.lblTenSP.Text));
+
+            ThemListUCVaoFlowPnlSanPham();
+        }
+         
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             fQLSanPham f = new fQLSanPham();
@@ -65,7 +115,8 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
-            fDonHang f = new fDonHang();
+            DonHangDAO.CapNhatGiaTriDonHangChuaThanhToan();
+            fDonHang f = new fDonHang("NV01", txtSoDienThoai.Text); 
             f.ShowDialog();
         }
 
@@ -109,6 +160,57 @@ namespace QuanLyQuanCaPhe.Views
         private void dgvHienThi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             DGV.ChinhSizeCotTuDong(dgvHienThi);
+        }
+
+        private void txtTimKiemTheoTenSP_TextChanged(object sender, EventArgs e) //K có thao tác gì trên ListUCSanPham, mà gán thẳng vô flowPnlSanPham
+        {
+            if (txtTimKiemTheoTenSP.Text.Length > 0)
+            {
+
+                flowPnlSanPham.Controls.Clear();
+                DataTable dataTable = SanPhamDAO.TimKiem(txtTimKiemTheoTenSP.Text.Trim());
+                ucSanPham sanPham;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    sanPham = new ucSanPham();
+                    sanPham.lblTenSP.Text = row["TenSP"].ToString();
+                    sanPham.lblGia.Text = Tien.DinhDangTien(row["Gia"].ToString());
+                    sanPham.pbSanPham.Image = XyLyAnh.GetImage(row["AnhSP"].ToString());
+                    sanPham.lblMaSP.Text = row["MaSP"].ToString();
+
+                    flowPnlSanPham.Controls.Add(sanPham);
+                }
+            }
+            else
+            {
+                cboSapXep_SelectedIndexChanged(sender, e);
+            }    
+                
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {   
+                KhachHangDAO.Them(txtSoDienThoai.Text);
+                DonHangDAO.Them(txtSoDienThoai.Text, "NV01");
+
+                btnXoaChonTatCa.Enabled = true;
+                dgvHienThi.Visible = true;
+                btnNewOrder.Enabled = false;
+                btnThanhToan.Enabled = true;
+
+                LoadDGVHienThi(); 
+        }
+
+        private void btnXoaChonTatCa_Click(object sender, EventArgs e)
+        { 
+            DonHangDAO.XoaDonChuaThanhToan(txtSoDienThoai.Text, "NV01");
+
+            btnXoaChonTatCa.Enabled = false;
+            dgvHienThi.Visible = false;
+            btnNewOrder.Enabled = true;
+            btnThanhToan.Enabled = false;
+
+            LoadTongTien();
         }
     }
 }

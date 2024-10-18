@@ -31,8 +31,9 @@
             this.pbSanPham = new Guna.UI2.WinForms.Guna2PictureBox();
             this.lblTenSP = new System.Windows.Forms.Label();
             this.lblGia = new System.Windows.Forms.Label();
-            this.btnGia = new Guna.UI2.WinForms.Guna2Button();
+            this.btnDat = new Guna.UI2.WinForms.Guna2Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblMaSP = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbSanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,19 +67,20 @@
             this.lblGia.TabIndex = 2;
             this.lblGia.Text = "20.000";
             // 
-            // btnGia
+            // btnDat
             // 
-            this.btnGia.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnGia.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnGia.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnGia.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnGia.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnGia.ForeColor = System.Drawing.Color.White;
-            this.btnGia.Location = new System.Drawing.Point(80, 314);
-            this.btnGia.Name = "btnGia";
-            this.btnGia.Size = new System.Drawing.Size(112, 44);
-            this.btnGia.TabIndex = 3;
-            this.btnGia.Text = "Đặt";
+            this.btnDat.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnDat.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnDat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnDat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnDat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnDat.ForeColor = System.Drawing.Color.White;
+            this.btnDat.Location = new System.Drawing.Point(80, 314);
+            this.btnDat.Name = "btnDat";
+            this.btnDat.Size = new System.Drawing.Size(112, 44);
+            this.btnDat.TabIndex = 3;
+            this.btnDat.Text = "Đặt";
+            this.btnDat.Click += new System.EventHandler(this.btnDat_Click);
             // 
             // label3
             // 
@@ -90,6 +92,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "VND";
             // 
+            // lblMaSP
+            // 
+            this.lblMaSP.AutoSize = true;
+            this.lblMaSP.BackColor = System.Drawing.Color.Transparent;
+            this.lblMaSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lblMaSP.ForeColor = System.Drawing.Color.Black;
+            this.lblMaSP.Location = new System.Drawing.Point(47, 0);
+            this.lblMaSP.Name = "lblMaSP";
+            this.lblMaSP.Size = new System.Drawing.Size(195, 32);
+            this.lblMaSP.TabIndex = 1;
+            this.lblMaSP.Text = "Mã sản phẩm";
+            this.lblMaSP.Visible = false;
+            // 
             // ucSanPham
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -97,7 +112,8 @@
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.lblGia);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnGia);
+            this.Controls.Add(this.btnDat);
+            this.Controls.Add(this.lblMaSP);
             this.Controls.Add(this.lblTenSP);
             this.Controls.Add(this.pbSanPham);
             this.Name = "ucSanPham";
@@ -113,7 +129,8 @@
         public Guna.UI2.WinForms.Guna2PictureBox pbSanPham;
         public System.Windows.Forms.Label lblTenSP;
         public System.Windows.Forms.Label lblGia;
-        public Guna.UI2.WinForms.Guna2Button btnGia;
+        public Guna.UI2.WinForms.Guna2Button btnDat;
         public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label lblMaSP;
     }
 }

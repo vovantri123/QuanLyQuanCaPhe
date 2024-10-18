@@ -10,14 +10,14 @@ namespace QuanLyQuanCaPhe.Models
     {
         private string maSP;
         private string maNL;
-        private string soLuong;
+        private int soLuong;
 
         public PhaChe()
         {
 
         }
 
-        public PhaChe(string maSP, string maNL, string soLuong)
+        public PhaChe(string maSP, string maNL, int soLuong)
         {
             this.maSP = maSP;
             this.maNL = maNL;
@@ -26,6 +26,6 @@ namespace QuanLyQuanCaPhe.Models
 
         public string MaSP { get => maSP; set => maSP = value; }
         public string MaNL { get => maNL; set => maNL = value; }
-        public string SoLuong { get => soLuong; set => soLuong = value; }
+        public int SoLuong { get => soLuong; set => soLuong = value; }
     }
 }

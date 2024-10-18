@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Models;
 using QuanLyQuanCaPhe.Utilities;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace QuanLyQuanCaPhe.Views
          
         private void LoadDGVHienThi()
         {
-            dgvHienThi.DataSource = DBConnection.LoadTableVaView("V_DanhSachHoaDon");
+            dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachHoaDon");
         }
 
 
@@ -33,6 +34,11 @@ namespace QuanLyQuanCaPhe.Views
         private void dgvHienThi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             DGV.ChinhSizeCotTuDong(dgvHienThi);
+        }
+
+        private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+            dgvHienThi.DataSource = DonHangDAO.TimKiemTheoSDT(txtSoDienThoai.Text.Trim());
         }
     }
 }

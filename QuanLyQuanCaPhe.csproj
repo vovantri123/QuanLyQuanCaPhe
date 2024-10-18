@@ -80,6 +80,7 @@
     <Compile Include="Models\SanPham.cs" />
     <Compile Include="Models\ThucHien.cs" />
     <Compile Include="Utilities\DGV.cs" />
+    <Compile Include="Utilities\Ngay.cs" />
     <Compile Include="Utilities\XyLyAnh.cs" />
     <Compile Include="Utilities\Tien.cs" />
     <Compile Include="Views\fHoaDon.cs">

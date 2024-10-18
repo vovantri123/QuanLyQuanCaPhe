@@ -21,7 +21,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void LoadDGVHienThi()
         {
-            dgvHienThi.DataSource = DBConnection.LoadTableVaView("V_DanhSachNhanVien");
+            dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachNhanVien");
         }
 
         private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
