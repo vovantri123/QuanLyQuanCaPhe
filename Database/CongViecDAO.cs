@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyQuanCaPhe.Database
 {
-    internal class CongViecDAO
+    public  class CongViecDAO
     {
     }
 }

@@ -41,3 +41,27 @@ D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.f
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLLoaiSanPham.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLSanPham.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhachHang.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe.config
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.pdb
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\Guna.UI2.dll
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.AssemblyReference.cache
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDangKy.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.fDangNhap.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Properties.Resources.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fHoaDon.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDonHang.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhachHang.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLNhanVien.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fPhanCa.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLLoaiSanPham.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQuenMatKhau.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLSanPham.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fTrangChu.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.ucSanPham.resources
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.GenerateResource.cache
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
+E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb

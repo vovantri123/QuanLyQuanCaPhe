@@ -18,6 +18,11 @@ namespace QuanLyQuanCaPhe.Models
 
         }
 
+        public KhachHang(string maKH)
+        {
+            this.maKH = maKH;
+        }
+
         public KhachHang(string maKH, string tenKH, string soDienThoai, double soDiemTichLuy)
         {
             this.maKH = maKH;

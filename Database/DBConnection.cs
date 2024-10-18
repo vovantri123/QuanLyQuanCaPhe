@@ -12,7 +12,7 @@ namespace QuanLyQuanCaPhe.Database
     public class DBConnection
     {   
         // Tạo một đối tượng kết nối Database
-        public static SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;Integrated Security=True");
+        public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KN9ENH3A\SQLEXPRESS01;Initial Catalog=QuanCaPhe;Persist Security Info=True;User ID=sa;Integrated Security=True");
 
         // List tham số truyền vào proc và function
         public static List<KeyValuePair<string, object>> parameters = new List<KeyValuePair<string, object>>();
@@ -98,18 +98,22 @@ namespace QuanLyQuanCaPhe.Database
             }
         }
 
-        public static void ThucThiProc_CoThamSoVaKhongCoThamSo(string tenProc, List<KeyValuePair<string, object>> parameters)  
+        public static void ThucThiProc_CoThamSoVaKhongCoThamSo(string tenProc, List<KeyValuePair<string, object>> parameters)
         {
             try
             {
                 moKetNoi();
                 SqlCommand cmd = new SqlCommand(tenProc, conn);
-                
+
                 cmd.CommandType = CommandType.StoredProcedure;
-                 
-                foreach (var param in parameters)
+
+                // Kiểm tra nếu có tham số
+                if (parameters != null && parameters.Count > 0)
                 {
-                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    foreach (var param in parameters)
+                    {
+                        cmd.Parameters.AddWithValue(param.Key, param.Value);
+                    }
                 }
 
                 if (cmd.ExecuteNonQuery() > 0)
@@ -124,6 +128,44 @@ namespace QuanLyQuanCaPhe.Database
                 dongKetNoi();
             }
         }
+
+        public static SqlDataReader ThucThiProc_CoReader(string tenProc, List<KeyValuePair<string, object>> parameters, bool traVeReader = false)
+        {
+            SqlDataReader reader = null;
+            try
+            {
+                moKetNoi();
+                SqlCommand cmd = new SqlCommand(tenProc, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                // Thêm tham số vào cmd
+                foreach (var param in parameters)
+                {
+                    cmd.Parameters.AddWithValue(param.Key, param.Value);
+                }
+
+                if (traVeReader)
+                {
+                    // Trả về SqlDataReader nếu yêu cầu
+                    reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                }
+                else
+                {
+                    // Thực thi không trả về dữ liệu
+                    if (cmd.ExecuteNonQuery() > 0)
+                    {
+                        MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Thất bại\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return reader;
+        }
+
 
         public static void thucThi(string truyVan) //Thực thi câu truy vấn trong c# (cách cũ - không xài trong môn này nữa)
         {
