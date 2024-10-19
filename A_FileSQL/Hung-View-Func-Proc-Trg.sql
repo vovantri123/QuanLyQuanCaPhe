@@ -11,9 +11,8 @@ JOIN
     ThucHien TH ON CLV.MaCa = TH.MaCa
 JOIN 
     NhanVien NV ON TH.MaNV = NV.MaNV;
-
--- Truy vấn dữ liệu từ VIEW
-SELECT * FROM vNguoiThucHienCa;
+	
+GO	
 
 -- Thủ tục tìm người thực hiện ca
 CREATE PROCEDURE Proc_TimNguoiThucHienCa_vNguoiThucHienCa
@@ -26,6 +25,8 @@ BEGIN
     WHERE TenCa = @shiftCa 
       AND CONVERT(NVARCHAR, Ngay, 23) = @currentDate; -- So sánh bằng cách ép DATE sang NVARCHAR
 END
+
+GO
 
 -- Thủ tục thêm ca làm việc
 CREATE PROCEDURE Proc_ThemCaLamViec_CaLamViec
@@ -40,6 +41,8 @@ BEGIN
     VALUES (@MaCa, @TenCa, @Ngay, @GioBatDau, @GioKetThuc);
 END
 
+GO
+
 -- Thủ tục thêm thông tin thực hiện
 CREATE PROCEDURE Proc_ThemKhoaChinhThucHien_ThucHien
     @MaCa NVARCHAR(50),
@@ -50,6 +53,8 @@ BEGIN
     INSERT INTO ThucHien (MaCa, MaNV, MaCV)
     VALUES (@MaCa, @MaNV, @MaCV);
 END
+
+GO
 
 -- Thủ tục thêm khách hàng
 CREATE PROCEDURE Proc_ThemKhachHang_KhachHang
@@ -63,6 +68,8 @@ BEGIN
     VALUES (@MaKH, @TenKH, @SoDienThoai, @SoDiemTichLuy);
 END
 
+GO
+
 -- Thủ tục xóa khách hàng
 CREATE PROCEDURE Proc_XoaKhachHang_KhachHang
     @MaKH NVARCHAR(50)
@@ -71,6 +78,8 @@ BEGIN
     DELETE FROM KhachHang  
     WHERE MaKH = @MaKH;
 END
+
+GO
 
 -- Thủ tục sửa thông tin khách hàng
 CREATE PROCEDURE Proc_SuaThongTinKhachhang_KhachHang
@@ -88,6 +97,8 @@ BEGIN
     WHERE 
         MaKH = @MaKH;
 END
+
+GO
 
 -- Hàm tìm kiếm khách hàng theo số điện thoại
 CREATE FUNCTION Func_TimKiemTheoSoDienThoai_KhachHang(@SoDienThoai NVARCHAR(10))
