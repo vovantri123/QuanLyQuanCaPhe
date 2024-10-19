@@ -1,4 +1,8 @@
-﻿-- Tạo VIEW để lấy thông tin người thực hiện ca
+﻿USE QuanLyQuanCaPhe
+
+GO
+
+-- Tạo VIEW để lấy thông tin người thực hiện ca
 CREATE VIEW vNguoiThucHienCa AS
 SELECT 
     CLV.MaCa,

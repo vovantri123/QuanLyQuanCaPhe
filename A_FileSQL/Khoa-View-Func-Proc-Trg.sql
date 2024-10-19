@@ -1,4 +1,8 @@
-﻿-- Thêm nhân viên
+﻿USE QuanLyQuanCaPhe
+
+GO
+
+-- Thêm nhân viên
 CREATE TRIGGER trg_TuDongTaoMaNV_NhanVien
 ON NhanVien
 INSTEAD OF INSERT

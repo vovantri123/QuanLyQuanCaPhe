@@ -21,8 +21,25 @@ namespace QuanLyQuanCaPhe.Database
             object tongTien = DBConnection.ThucThiFunction_Scalar("func_TongTien_ChiTietHoaDon", DBConnection.parameters);
             if (tongTien is DBNull || tongTien == null) 
                 return 0;  
-            return Convert.ToDouble(tongTien);
+            return Convert.ToDouble(tongTien); 
+        }
 
+        public static double TongDoanhThuTatCaDonHang()
+        {
+            DBConnection.ClearParameters();
+            object tongDoanhThu = DBConnection.ThucThiFunction_Scalar("func_TongDoanhThu_ChiTietHoaDon", DBConnection.parameters);
+            if (tongDoanhThu is DBNull || tongDoanhThu == null)
+                return 0;
+            return Convert.ToDouble(tongDoanhThu);
+        }
+        
+        public static double TongSoLuongSPDaBan()
+        {
+            DBConnection.ClearParameters();
+            object tongSLSPDaBan = DBConnection.ThucThiFunction_Scalar("func_TongSoLuongSanPham_ChiTietHoaDon", DBConnection.parameters);
+            if (tongSLSPDaBan is DBNull || tongSLSPDaBan == null)
+                return 0;
+            return Convert.ToDouble(tongSLSPDaBan);
         }
 
     }

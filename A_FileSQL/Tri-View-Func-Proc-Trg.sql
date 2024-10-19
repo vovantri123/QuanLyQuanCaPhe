@@ -45,6 +45,14 @@ INNER JOIN NhanVien nv ON dh.MaNV = nv.MaNV
 INNER JOIN KhachHang kh ON dh.MaKH = kh.MaKH
 WHERE dh.TrangThai = N'Đã thanh toán'
 
+GO 
+
+CREATE VIEW v_SoLuongSanPhamDaBanTheoTungSanPham AS
+SELECT sp.MaSP, sp.TenSP, SUM(cthd.SoLuong) SoLuong, SUM(cthd.TongTien) AS TongTien
+FROM ChiTietHoaDon cthd
+INNER JOIN SanPham sp ON cthd.MaSP = sp.MaSP
+GROUP BY sp.MaSP, sp.TenSP
+
 GO
 
 --Proc và Func
@@ -396,6 +404,57 @@ BEGIN
     RETURN @MaDH
 END
 
+GO 
+
+CREATE FUNCTION func_TongDoanhThu_ChiTietHoaDon 
+(
+
+)
+RETURNS FLOAT  
+AS
+BEGIN 
+    DECLARE @TongDoanhThu FLOAT = 0
+
+	SELECT @TongDoanhThu = SUM(TongTien)
+	FROM ChiTietHoaDon
+
+    RETURN @TongDoanhThu 
+END;
+
+GO
+
+CREATE FUNCTION func_TongSoLuongSanPham_ChiTietHoaDon 
+(
+
+)
+RETURNS INT  
+AS
+BEGIN 
+    DECLARE @TongSoLuong INT = 0
+
+	SELECT @TongSoLuong = SUM(SoLuong)
+	FROM ChiTietHoaDon
+
+    RETURN @TongSoLuong 
+END;
+
+GO
+ 
+CREATE FUNCTION func_TongSoLuongKhachHang_KhachHang
+(
+
+)
+RETURNS INT  
+AS
+BEGIN 
+    DECLARE @SoLuongKH INT = 0
+
+	SELECT @SoLuongKH = COUNT(MaKH)
+	FROM KhachHang
+
+    RETURN @SoLuongKH 
+END;
+
 GO
 
 
@@ -408,33 +467,7 @@ GO
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 -- Trigger
 CREATE TRIGGER trg_TuDongTaoMaDH_DonHang
 ON DonHang

@@ -1,14 +1,13 @@
 ﻿using QuanLyQuanCaPhe.Models;
 using System;
-using System.Collections.Generic;
-
+using System.Collections.Generic; 
 using System.Data.SqlClient;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using QuanLyQuanCaPhe.Models;
+
 
 namespace QuanLyQuanCaPhe.Database
 {
@@ -89,8 +88,16 @@ namespace QuanLyQuanCaPhe.Database
             else
             {
                 return null;
-            }    
-             
+            }     
+        }
+
+        public static double TongSoLuongKH()
+        {
+            DBConnection.ClearParameters();
+            object tongSLKH = DBConnection.ThucThiFunction_Scalar("func_TongSoLuongKhachHang_KhachHang", DBConnection.parameters);
+            if (tongSLKH is DBNull || tongSLKH == null)
+                return 0;
+            return Convert.ToDouble(tongSLKH);
         }
     }
 }

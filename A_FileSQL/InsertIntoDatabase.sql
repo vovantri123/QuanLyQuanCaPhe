@@ -1,4 +1,8 @@
-﻿--BEGIN TRANSACTION --Insert có lỗi thì chạy lệnh rollback bên dưới, chèn được hết thì nhớ commit
+﻿USE QuanLyQuanCaPhe
+
+GO
+
+--BEGIN TRANSACTION --Insert có lỗi thì chạy lệnh rollback bên dưới, chèn được hết thì nhớ commit
 
 -- Bảng Công Việc
 INSERT INTO CongViec (MaCV, TenCV) VALUES 
