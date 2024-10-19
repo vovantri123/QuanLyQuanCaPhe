@@ -1,0 +1,40 @@
+USE QuanLyQuanCaPhe; 
+
+GO
+
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql += 'DROP VIEW [' + SCHEMA_NAME(schema_id) + '].[' + name + ']; '
+FROM sys.views;
+
+EXEC sp_executesql @sql;
+
+GO
+
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql += 'DROP FUNCTION [' + SCHEMA_NAME(schema_id) + '].[' + name + ']; '
+FROM sys.objects
+WHERE type IN ('FN', 'IF', 'TF');
+
+EXEC sp_executesql @sql;
+
+GO
+
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql += 'DROP PROCEDURE [' + SCHEMA_NAME(schema_id) + '].[' + name + ']; '
+FROM sys.procedures;
+
+EXEC sp_executesql @sql;
+
+GO
+
+DECLARE @sql NVARCHAR(MAX) = '';
+
+SELECT @sql += 'DROP TRIGGER [' + SCHEMA_NAME(schema_id) + '].[' + name + ']; '
+FROM sys.triggers;
+
+EXEC sp_executesql @sql;
+
+GO
