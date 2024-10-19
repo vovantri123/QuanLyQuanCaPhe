@@ -20,9 +20,19 @@ namespace QuanLyQuanCaPhe.Views
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
-        { 
+        {
             //Dung funct hoặc proc trả về số lượng dòng, rồi dùng nó làm id (hoặc dùng cách khác tự tạo ID)
-             
+            string hoTenNv = txtHoTen.Text;
+            string sdt = txtSoDienThoai.Text;
+            string namSinh = txtNamSinh.Text;
+            int yearBirth = Convert.ToInt32(namSinh);
+            string gioiTinh = cboGioiTinh.Text;
+            string diaChi = txtDiaChi.Text;
+            string tenDangNhap = txtTenDangNhap.Text;
+            string matKhau = txtMatKhau.Text;
+            string loaiNV = cboLoaiNV.Text;
+            NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, tenDangNhap, matKhau);
+            NhanVienDAO.Them(nv, loaiNV);
         }
     }
 }

@@ -65,3 +65,27 @@ E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCa
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
+C:\DBMS\QuanLyCaPhe\bin\Debug\QuanLyQuanCaPhe.exe.config
+C:\DBMS\QuanLyCaPhe\bin\Debug\QuanLyQuanCaPhe.exe
+C:\DBMS\QuanLyCaPhe\bin\Debug\QuanLyQuanCaPhe.pdb
+C:\DBMS\QuanLyCaPhe\bin\Debug\Guna.UI2.dll
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.AssemblyReference.cache
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDangKy.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.fDangNhap.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Properties.Resources.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fHoaDon.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDonHang.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhachHang.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLNhanVien.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fPhanCa.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLLoaiSanPham.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQuenMatKhau.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLSanPham.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fTrangChu.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.ucSanPham.resources
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.GenerateResource.cache
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
+C:\DBMS\QuanLyCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
