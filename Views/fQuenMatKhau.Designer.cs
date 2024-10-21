@@ -32,6 +32,8 @@
             this.txtSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLayMatKhau = new Guna.UI2.WinForms.Guna2Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -55,7 +57,7 @@
             this.txtSoDienThoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDienThoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(338, 128);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(448, 199);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PasswordChar = '\0';
@@ -68,7 +70,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(121, 139);
+            this.label2.Location = new System.Drawing.Point(231, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(181, 32);
             this.label2.TabIndex = 2;
@@ -82,24 +84,58 @@
             this.btnLayMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLayMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLayMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnLayMatKhau.Location = new System.Drawing.Point(690, 139);
+            this.btnLayMatKhau.Location = new System.Drawing.Point(554, 285);
             this.btnLayMatKhau.Name = "btnLayMatKhau";
             this.btnLayMatKhau.Size = new System.Drawing.Size(180, 45);
             this.btnLayMatKhau.TabIndex = 3;
             this.btnLayMatKhau.Text = "Lấy mật khẩu";
             this.btnLayMatKhau.Click += new System.EventHandler(this.btnLayMatKhau_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(207, 130);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(205, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Tên đăng nhập";
+            // 
+            // txtTenDangNhap
+            // 
+            this.txtTenDangNhap.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtTenDangNhap.DefaultText = "";
+            this.txtTenDangNhap.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtTenDangNhap.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtTenDangNhap.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDangNhap.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtTenDangNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtTenDangNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtTenDangNhap.Location = new System.Drawing.Point(448, 119);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.PasswordChar = '\0';
+            this.txtTenDangNhap.PlaceholderText = "";
+            this.txtTenDangNhap.SelectedText = "";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(286, 56);
+            this.txtTenDangNhap.TabIndex = 1;
+            // 
             // fQuenMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(919, 262);
+            this.ClientSize = new System.Drawing.Size(1000, 422);
             this.Controls.Add(this.btnLayMatKhau);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.txtSoDienThoai);
             this.Controls.Add(this.label1);
             this.Name = "fQuenMatKhau";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fQuenMatKhau";
+            this.Load += new System.EventHandler(this.fQuenMatKhau_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -111,5 +147,7 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2Button btnLayMatKhau;
+        private System.Windows.Forms.Label label3;
+        private Guna.UI2.WinForms.Guna2TextBox txtTenDangNhap;
     }
 }

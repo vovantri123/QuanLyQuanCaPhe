@@ -49,7 +49,6 @@
             this.btnThemNL = new Guna.UI2.WinForms.Guna2Button();
             this.cboLoaiSP = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.lblDonVi = new System.Windows.Forms.Label();
             this.lblTenFileAnh = new System.Windows.Forms.Label();
             this.lblDuongDanAnh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDSSanPham)).BeginInit();
@@ -340,15 +339,6 @@
             this.label6.TabIndex = 24;
             this.label6.Text = "Loại sản phẩm";
             // 
-            // lblDonVi
-            // 
-            this.lblDonVi.AutoSize = true;
-            this.lblDonVi.Location = new System.Drawing.Point(507, 477);
-            this.lblDonVi.Name = "lblDonVi";
-            this.lblDonVi.Size = new System.Drawing.Size(53, 20);
-            this.lblDonVi.TabIndex = 24;
-            this.lblDonVi.Text = "Đơn vị";
-            // 
             // lblTenFileAnh
             // 
             this.lblTenFileAnh.AutoSize = true;
@@ -373,7 +363,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1629, 844);
-            this.Controls.Add(this.lblDonVi);
             this.Controls.Add(this.lblDuongDanAnh);
             this.Controls.Add(this.lblTenFileAnh);
             this.Controls.Add(this.label6);
@@ -431,7 +420,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThemNL;
         private Guna.UI2.WinForms.Guna2ComboBox cboLoaiSP;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label lblDonVi;
         private System.Windows.Forms.Label lblTenFileAnh;
         private System.Windows.Forms.Label lblDuongDanAnh;
     }

@@ -1,4 +1,5 @@
-﻿using QuanLyQuanCaPhe.Views;
+﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,8 +21,20 @@ namespace QuanLyQuanCaPhe
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            fTrangChu f = new fTrangChu();
-            f.ShowDialog(); 
+            string tenDangNhap = txtTenDangNhap.Text.Trim(); // TextBox chứa tên đăng nhập
+            string matKhau = txtMatKhau.Text.Trim(); // TextBox chứa mật khẩu
+
+             
+            if (NhanVienDAO.CheckLogin(tenDangNhap, matKhau) >= 1)
+            { 
+                fTrangChu f = new fTrangChu();
+                f.Show();  
+                this.Hide(); // Ẩn form đăng nhập
+            }
+            else
+            {
+                MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
@@ -34,6 +47,11 @@ namespace QuanLyQuanCaPhe
         {
             fQuenMatKhau f = new fQuenMatKhau();
             f.ShowDialog();
+        }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

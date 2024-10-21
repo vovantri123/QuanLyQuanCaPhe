@@ -74,7 +74,7 @@
             this.txtMatKhau.PlaceholderText = "Mật khẩu";
             this.txtMatKhau.SelectedText = "";
             this.txtMatKhau.Size = new System.Drawing.Size(326, 60);
-            this.txtMatKhau.TabIndex = 0;
+            this.txtMatKhau.TabIndex = 1;
             // 
             // btnDangNhap
             // 
@@ -144,6 +144,7 @@
             this.Name = "fDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DangNhap";
+            this.Load += new System.EventHandler(this.fDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

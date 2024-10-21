@@ -40,8 +40,6 @@
             this.btnThem = new Guna.UI2.WinForms.Guna2Button();
             this.btnXoa = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cboDonVi = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSua = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudSoLuong)).BeginInit();
@@ -66,6 +64,7 @@
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.Size = new System.Drawing.Size(250, 45);
             this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
             // 
             // dgvHienThi
             // 
@@ -75,6 +74,7 @@
             this.dgvHienThi.Name = "dgvHienThi";
             this.dgvHienThi.RowHeadersWidth = 51;
             this.dgvHienThi.RowTemplate.Height = 24;
+            this.dgvHienThi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHienThi.Size = new System.Drawing.Size(831, 644);
             this.dgvHienThi.TabIndex = 2;
             this.dgvHienThi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHienThi_CellContentClick);
@@ -127,6 +127,11 @@
             this.nudSoLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.nudSoLuong.Location = new System.Drawing.Point(868, 434);
             this.nudSoLuong.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.nudSoLuong.Maximum = new decimal(new int[] {
+            1215752191,
+            23,
+            0,
+            0});
             this.nudSoLuong.Name = "nudSoLuong";
             this.nudSoLuong.Size = new System.Drawing.Size(281, 48);
             this.nudSoLuong.TabIndex = 6;
@@ -200,6 +205,7 @@
             this.btnThem.Size = new System.Drawing.Size(137, 46);
             this.btnThem.TabIndex = 9;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -216,6 +222,7 @@
             this.btnXoa.Size = new System.Drawing.Size(137, 46);
             this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label4
             // 
@@ -227,32 +234,6 @@
             this.label4.Size = new System.Drawing.Size(207, 52);
             this.label4.TabIndex = 8;
             this.label4.Text = "Kho hàng";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(873, 487);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 29);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Đơn vị";
-            // 
-            // cboDonVi
-            // 
-            this.cboDonVi.BackColor = System.Drawing.Color.Transparent;
-            this.cboDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboDonVi.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDonVi.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboDonVi.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboDonVi.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cboDonVi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cboDonVi.ItemHeight = 30;
-            this.cboDonVi.Location = new System.Drawing.Point(868, 519);
-            this.cboDonVi.Name = "cboDonVi";
-            this.cboDonVi.Size = new System.Drawing.Size(173, 36);
-            this.cboDonVi.TabIndex = 10;
             // 
             // btnSua
             // 
@@ -269,17 +250,16 @@
             this.btnSua.Size = new System.Drawing.Size(137, 46);
             this.btnSua.TabIndex = 9;
             this.btnSua.Text = "Sửa";
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // fKhoHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1163, 846);
-            this.Controls.Add(this.cboDonVi);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label4);
@@ -315,8 +295,6 @@
         private Guna.UI2.WinForms.Guna2Button btnThem;
         private Guna.UI2.WinForms.Guna2Button btnXoa;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2ComboBox cboDonVi;
         private Guna.UI2.WinForms.Guna2Button btnSua;
     }
 }

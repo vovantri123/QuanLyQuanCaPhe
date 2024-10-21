@@ -22,7 +22,7 @@ INNER JOIN LoaiSanPham lsp ON sp.MaLoaiSP = lsp.MaLoaiSP
 GO
 
 CREATE VIEW v_NguyenLieuDungDePhaCheSanPham AS
-SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho, nl.DonVi
+SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
 FROM NguyenLieu nl
 INNER JOIN PhaChe pc ON nl.MaNL = pc.MaNL
 INNER JOIN SanPham sp ON pc.MaSP = sp.MaSP
@@ -183,7 +183,7 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho, nl.DonVi
+    SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
 	FROM NguyenLieu nl
 	INNER JOIN PhaChe pc ON nl.MaNL = pc.MaNL
 	INNER JOIN SanPham sp ON pc.MaSP = sp.MaSP
