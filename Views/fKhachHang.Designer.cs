@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtMaKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtTimKiemSDT = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2Shapes2 = new Guna.UI2.WinForms.Guna2Shapes();
             this.txtTenKH = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoDienThoai = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtSoDiemTichLuy = new Guna.UI2.WinForms.Guna2TextBox();
@@ -44,6 +43,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.guna2Shapes1 = new Guna.UI2.WinForms.Guna2Shapes();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHienThi)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +51,7 @@
             // 
             this.dgvHienThi.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgvHienThi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHienThi.Location = new System.Drawing.Point(23, 105);
+            this.dgvHienThi.Location = new System.Drawing.Point(31, 105);
             this.dgvHienThi.Name = "dgvHienThi";
             this.dgvHienThi.RowHeadersWidth = 51;
             this.dgvHienThi.RowTemplate.Height = 24;
@@ -123,27 +123,6 @@
             this.txtTimKiemSDT.UseWaitCursor = true;
             this.txtTimKiemSDT.TextChanged += new System.EventHandler(this.txtTimKiemSDT_TextChanged);
             // 
-            // guna2Shapes2
-            // 
-            this.guna2Shapes2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes2.BorderColor = System.Drawing.Color.Black;
-            this.guna2Shapes2.FillColor = System.Drawing.Color.Transparent;
-            this.guna2Shapes2.LineEndCap = System.Drawing.Drawing2D.LineCap.RoundAnchor;
-            this.guna2Shapes2.LineStartCap = System.Drawing.Drawing2D.LineCap.RoundAnchor;
-            this.guna2Shapes2.Location = new System.Drawing.Point(659, 48);
-            this.guna2Shapes2.Name = "guna2Shapes2";
-            this.guna2Shapes2.PolygonSkip = 1;
-            this.guna2Shapes2.Rotate = 0F;
-            this.guna2Shapes2.RoundedRadius = 10;
-            this.guna2Shapes2.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes2.Size = new System.Drawing.Size(418, 530);
-            this.guna2Shapes2.TabIndex = 5;
-            this.guna2Shapes2.Text = "guna2Shapes2";
-            this.guna2Shapes2.UseTransparentBackground = true;
-            this.guna2Shapes2.UseWaitCursor = true;
-            this.guna2Shapes2.Zoom = 80;
-            this.guna2Shapes2.Click += new System.EventHandler(this.guna2Shapes2_Click);
-            // 
             // txtTenKH
             // 
             this.txtTenKH.BorderRadius = 10;
@@ -156,7 +135,7 @@
             this.txtTenKH.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenKH.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenKH.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenKH.Location = new System.Drawing.Point(717, 217);
+            this.txtTenKH.Location = new System.Drawing.Point(717, 203);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.PasswordChar = '\0';
@@ -178,7 +157,7 @@
             this.txtSoDienThoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDienThoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 296);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(717, 273);
             this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PasswordChar = '\0';
@@ -200,7 +179,7 @@
             this.txtSoDiemTichLuy.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoDiemTichLuy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDiemTichLuy.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDiemTichLuy.Location = new System.Drawing.Point(717, 378);
+            this.txtSoDiemTichLuy.Location = new System.Drawing.Point(717, 350);
             this.txtSoDiemTichLuy.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSoDiemTichLuy.Name = "txtSoDiemTichLuy";
             this.txtSoDiemTichLuy.PasswordChar = '\0';
@@ -223,7 +202,7 @@
             this.btnSua.FillColor = System.Drawing.Color.PeachPuff;
             this.btnSua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.ForeColor = System.Drawing.Color.Peru;
-            this.btnSua.Location = new System.Drawing.Point(731, 421);
+            this.btnSua.Location = new System.Drawing.Point(727, 404);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(114, 42);
             this.btnSua.TabIndex = 6;
@@ -245,7 +224,7 @@
             this.btnXoa.FillColor = System.Drawing.Color.PeachPuff;
             this.btnXoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.ForeColor = System.Drawing.Color.Peru;
-            this.btnXoa.Location = new System.Drawing.Point(855, 421);
+            this.btnXoa.Location = new System.Drawing.Point(858, 404);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(123, 42);
             this.btnXoa.TabIndex = 6;
@@ -267,7 +246,7 @@
             this.btnThem.FillColor = System.Drawing.Color.PeachPuff;
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Peru;
-            this.btnThem.Location = new System.Drawing.Point(774, 470);
+            this.btnThem.Location = new System.Drawing.Point(773, 456);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(164, 42);
             this.btnThem.TabIndex = 6;
@@ -286,28 +265,31 @@
             this.label6.Size = new System.Drawing.Size(110, 17);
             this.label6.TabIndex = 7;
             this.label6.Text = "Mã khách hàng";
+            this.label6.UseWaitCursor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label7.Location = new System.Drawing.Point(731, 368);
+            this.label7.Location = new System.Drawing.Point(731, 340);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(117, 17);
             this.label7.TabIndex = 8;
             this.label7.Text = "Số điểm tích lũy";
+            this.label7.UseWaitCursor = true;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label8.Location = new System.Drawing.Point(731, 288);
+            this.label8.Location = new System.Drawing.Point(731, 265);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(100, 17);
             this.label8.TabIndex = 9;
             this.label8.Text = "Số điện thoại";
+            this.label8.UseWaitCursor = true;
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
@@ -315,11 +297,25 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI Symbol", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.label9.Location = new System.Drawing.Point(732, 210);
+            this.label9.Location = new System.Drawing.Point(732, 196);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(113, 17);
             this.label9.TabIndex = 10;
             this.label9.Text = "Tên khách hàng";
+            this.label9.UseWaitCursor = true;
+            // 
+            // guna2Shapes1
+            // 
+            this.guna2Shapes1.FillColor = System.Drawing.Color.Linen;
+            this.guna2Shapes1.Location = new System.Drawing.Point(645, 48);
+            this.guna2Shapes1.Name = "guna2Shapes1";
+            this.guna2Shapes1.PolygonSkip = 1;
+            this.guna2Shapes1.Rotate = 0F;
+            this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
+            this.guna2Shapes1.Size = new System.Drawing.Size(429, 534);
+            this.guna2Shapes1.TabIndex = 11;
+            this.guna2Shapes1.Text = "guna2Shapes1";
+            this.guna2Shapes1.Zoom = 80;
             // 
             // fKhachHang
             // 
@@ -337,11 +333,11 @@
             this.Controls.Add(this.txtTimKiemSDT);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvHienThi);
-            this.Controls.Add(this.guna2Shapes2);
             this.Controls.Add(this.txtSoDiemTichLuy);
             this.Controls.Add(this.txtSoDienThoai);
             this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.txtMaKH);
+            this.Controls.Add(this.guna2Shapes1);
             this.Name = "fKhachHang";
             this.Text = "fKhachHang";
             this.UseWaitCursor = true;
@@ -357,7 +353,6 @@
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2TextBox txtMaKH;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiemSDT;
-        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes2;
         private Guna.UI2.WinForms.Guna2TextBox txtTenKH;
         private Guna.UI2.WinForms.Guna2TextBox txtSoDienThoai;
         private Guna.UI2.WinForms.Guna2TextBox txtSoDiemTichLuy;
@@ -368,5 +363,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Shapes guna2Shapes1;
     }
 }

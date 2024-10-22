@@ -72,5 +72,10 @@ namespace QuanLyQuanCaPhe.Views
             if(tsDungDiemTichLuy.Checked)
             {  }
         }
+
+        private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

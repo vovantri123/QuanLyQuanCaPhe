@@ -87,20 +87,20 @@ namespace QuanLyQuanCaPhe.Views
         }
 
         private void cboSapXep_SelectedIndexChanged(object sender, EventArgs e) //Sắp xếp ListUC rồi thêm vào flowPnlSanPham
-        {  
+        {
             string dieuKienSapXep = cboSapXep.SelectedItem.ToString();
-            if(dieuKienSapXep == "Giá: Thấp -> Cao")
+            if (dieuKienSapXep == "Giá: Thấp -> Cao")
                 listUCSanPham.Sort((x, y) => Double.Parse(x.lblGia.Text).CompareTo(Double.Parse(y.lblGia.Text)));
             else if (dieuKienSapXep == "Giá: Cao -> Thấp")
                 listUCSanPham.Sort((x, y) => Double.Parse(y.lblGia.Text).CompareTo(Double.Parse(x.lblGia.Text)));
-            else if (dieuKienSapXep == "Tên: A -> Z")
-                listUCSanPham.Sort((x, y) => x.lblTenSP.Text.CompareTo(y.lblTenSP.Text)); 
+            else if (dieuKienSapXep == "Tên: Z -> A")
+                listUCSanPham.Sort((x, y) => y.lblTenSP.Text.CompareTo(x.lblTenSP.Text));
             else
                 listUCSanPham.Sort((x, y) => x.lblTenSP.Text.CompareTo(y.lblTenSP.Text));
 
             ThemListUCVaoFlowPnlSanPham();
         }
-         
+
         private void btnSanPham_Click(object sender, EventArgs e)
         {
             fQLSanPham f = new fQLSanPham();

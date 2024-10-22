@@ -138,9 +138,10 @@ namespace QuanLyQuanCaPhe.Views
             cbbChonca_SelectedIndexChanged(sender, e);
             CaLamViec clv = new CaLamViec(txtMaCa.Text, cbbChonca.Text, dinhDangNgayLam, gioBatDau, gioKetThuc);
             CaLamViecDAO.Them(clv);
-            
+
             cbbCongViec_SelectedIndexChanged(sender, e);
             ThucHien th = new ThucHien(txtMaCa.Text, txtMaNV.Text, maNgheNghiep);
+
             ThucHienDAO.Them(th);
 
             flpCa.Controls.Clear();  // Xóa các button cũ trong FlowLayoutPanel trước khi tải lại

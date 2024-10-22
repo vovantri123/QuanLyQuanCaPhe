@@ -579,6 +579,44 @@ BEGIN
     FROM inserted;
 END;
 
+GO
+CREATE TRIGGER trg_TuDongTacMaSP_SanPham
+ON SanPham
+INSTEAD OF INSERT
+AS
+BEGIN
+    DECLARE @maxMaSP NVARCHAR(50);
+    DECLARE @newMaSP NVARCHAR(50);
+    DECLARE @numPart INT;
+
+    -- Tìm giá trị MaSP lớn nhất hiện có
+    SELECT @maxMaSP = MAX(MaSP)
+    FROM SanPham
+    WHERE MaSP LIKE 'SP%';
+
+    -- Lấy phần số từ MaSP (bỏ phần 'SP' phía trước) và chuyển sang kiểu INT
+    IF @maxMaSP IS NOT NULL
+    BEGIN
+        SET @numPart = CAST(SUBSTRING(@maxMaSP, 3, LEN(@maxMaSP) - 2) AS INT) + 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu chưa có MaSP nào, bắt đầu từ 1
+        SET @numPart = 1;
+    END
+
+    -- Tạo mã sản phẩm mới
+    SET @newMaSP = 'SP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+    -- Chèn bản ghi mới vào bảng SanPham với mã sản phẩm mới
+    INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP)
+    SELECT @newMaSP, TenSP, Gia, AnhSP, MaLoaiSP
+    FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn
+
+END;
+
+
+
 --   ROLLBACK TRANSACTION
 
 --   COMMIT TRANSACTION
