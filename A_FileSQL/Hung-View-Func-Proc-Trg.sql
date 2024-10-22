@@ -115,5 +115,39 @@ RETURN
     WHERE SoDienThoai LIKE '%' + @SoDienThoai + '%'
 );
 
+GO
+CREATE TRIGGER trg_TuDongTaoMaKH_KhachHang
+ON KhachHang
+INSTEAD OF INSERT
+AS
+BEGIN
+    DECLARE @maxMaKH NVARCHAR(50);
+    DECLARE @newMaKH NVARCHAR(50);
+    DECLARE @numPart INT;
+
+    -- Tìm giá trị MaKH lớn nhất hiện có
+    SELECT @maxMaKH = MAX(MaKH)
+    FROM KhachHang
+    WHERE MaKH LIKE 'KH%';
+
+    -- Lấy phần số từ MaKH (bỏ phần 'KH' phía trước) và chuyển sang kiểu INT
+    IF @maxMaKH IS NOT NULL
+    BEGIN
+        SET @numPart = CAST(SUBSTRING(@maxMaKH, 3, LEN(@maxMaKH) - 2) AS INT) + 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu chưa có MaKH nào, bắt đầu từ 1
+        SET @numPart = 1;
+    END
+
+    -- Tạo mã khách hàng mới
+    SET @newMaKH = 'KH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+    -- Chèn bản ghi mới vào bảng KhachHang với mã khách hàng mới
+    INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
+    SELECT @newMaKH, TenKH, SoDienThoai, SoDiemTichLuy
+    FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn
+END;
 
 
