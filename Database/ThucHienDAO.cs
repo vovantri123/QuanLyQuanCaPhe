@@ -88,5 +88,14 @@ namespace QuanLyQuanCaPhe.Database
 
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("Proc_ThemKhoaChinhThucHien_ThucHien", DBConnection.parameters);
         }
+
+        public static void Xoa(string maNV)
+        {
+            DBConnection.ClearParameters();
+
+            DBConnection.AddParameters("@MaNV", maNV);
+
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_XoaThucHienCongViec", DBConnection.parameters);
+        }
     }
 }

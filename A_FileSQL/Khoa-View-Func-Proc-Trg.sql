@@ -157,6 +157,16 @@ BEGIN
     RETURN;
 END;
 
+GO
+
+CREATE PROCEDURE proc_XoaThucHienCongViec
+	@MaNV nvarchar(50)
+AS
+BEGIN
+	DELETE FROM ThucHien
+	WHERE MaNV = @MaNV
+END
+
 
 
 

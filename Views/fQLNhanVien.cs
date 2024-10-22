@@ -84,23 +84,32 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string maNV = txtMaNV.Text;
-            string loaiNV = cboLoaiNV.Text;
+            try
+            {
+                string maNV = txtMaNV.Text;
+                string loaiNV = cboLoaiNV.Text;
 
-            if (loaiNV.Equals("Toàn thời gian"))
-            {
-                NhanVienToanThoiGianDAO.Xoa(maNV);
+                if (loaiNV.Equals("Toàn thời gian"))
+                {
+                    NhanVienToanThoiGianDAO.Xoa(maNV);
+                }
+                else
+                {
+                    NhanVienBanThoiGianDAO.Xoa(maNV);
+                }
                 NhanVienDAO.Xoa(maNV);
-                MessageBox.Show("Thành công");
-                LoadDGVHienThi();
+                ThucHienDAO.Xoa(maNV);
             }
-            else
+            catch(Exception ex) 
             {
-                NhanVienBanThoiGianDAO.Xoa(maNV);
-                NhanVienDAO.Xoa(maNV);
-                MessageBox.Show("Thành công");
-                LoadDGVHienThi();
+                MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                LoadDGVHienThi();
+                MessageBox.Show("Thành công");
+            }
+            
 
 
         }
