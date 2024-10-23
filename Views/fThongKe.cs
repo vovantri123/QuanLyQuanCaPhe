@@ -38,6 +38,9 @@ namespace QuanLyQuanCaPhe.Views
             myPane.XAxis.Title.Text = "Tên Sản phẩm";
             myPane.YAxis.Title.Text = "Số Lượng";
 
+            // Thiết lập trục X về kiểu Text
+            myPane.XAxis.Type = AxisType.Text;
+
             // Khởi tạo PointPairList cho các cột
             PointPairList points = new PointPairList();
 
@@ -68,6 +71,7 @@ namespace QuanLyQuanCaPhe.Views
             // Thiết lập TextLabels vào trục X, cần chỉ rõ các nhãn và chỉ số của trục X
             myPane.XAxis.Scale.TextLabels = textLabels;
 
+
             // Thiết lập độ rộng cột
             myPane.BarSettings.Type = BarType.Cluster;  // Đảm bảo sử dụng Cluster để các cột không chồng lên nhau
 
@@ -75,7 +79,7 @@ namespace QuanLyQuanCaPhe.Views
             BarItem myBar = myPane.AddBar("Số Lượng", points, System.Drawing.Color.Blue);
 
             // Thiết lập xoay tên trục X nếu các tên sản phẩm quá dài
-            myPane.XAxis.Scale.FontSpec.Angle = 45;  // Xoay tên sản phẩm 45 độ nếu cần
+            myPane.XAxis.Scale.FontSpec.Angle = 0;  // Xoay tên sản phẩm 45 độ nếu cần
 
             // Cập nhật đồ thị
             zgcSoLuongDaBanTheoTungSanPham.AxisChange();

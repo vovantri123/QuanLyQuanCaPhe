@@ -107,7 +107,6 @@ namespace QuanLyQuanCaPhe.Views
             finally
             {
                 LoadDGVHienThi();
-                MessageBox.Show("Thành công");
             }
             
 
@@ -126,7 +125,6 @@ namespace QuanLyQuanCaPhe.Views
             string loaiNV = cboLoaiNV.Text;
             NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
             NhanVienDAO.Them(nv, loaiNV);
-            MessageBox.Show("Thành công");
             LoadDGVHienThi();
         }
 
@@ -154,8 +152,6 @@ namespace QuanLyQuanCaPhe.Views
                     NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong);
                     NhanVienToanThoiGianDAO.Sua(nvToanTG);
                     NhanVienDAO.Sua(nv);
-                    MessageBox.Show("Thành công");
-                    LoadDGVHienThi();
                 }
                 else
                 {
@@ -163,13 +159,17 @@ namespace QuanLyQuanCaPhe.Views
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);
                     NhanVienDAO.Sua(nv);
-                    MessageBox.Show("Thành công");
-                    LoadDGVHienThi();
                 }
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi"+ex);
+            }
+            finally
+            {
+                
+                LoadDGVHienThi();
             }
 
         }

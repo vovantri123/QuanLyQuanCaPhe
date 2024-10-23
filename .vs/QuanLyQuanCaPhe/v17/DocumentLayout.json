@@ -1,176 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\DBMS\\QuanLyQuanCaPhe\\",
+  "WorkspaceRootPath": "C:\\DBMS\\QuanLyCaPhe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.KhachHang.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fthongke.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|e:\\dbms\\quanlyquancaphe\\views\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fphanca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fphanca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fkhachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|e:\\dbms\\quanlyquancaphe\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fphanca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fphanca.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.CaLamViec.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\loaisanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\loaisanphamdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\calamviecdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\calamviecdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\calamviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\calamviec.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\khachhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\loaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\nguyenlieudao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\nguyenlieudao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\phachedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\phachedao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\nhanvienbanthoigiandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\nhanvienbanthoigiandao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\khachhangdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\khachhangdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\donhangdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\donhangdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\nhanvientoanthoigian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\nhanvientoanthoigian.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\phache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\phache.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\sanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlsanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlloaisanpham.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fkhohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fkhohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fkhohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.CongViec.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\ftrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\ftrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\ftrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\ftrangchu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.NguyenLieu.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdonhang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\dbconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.NhanVien.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|QuanLyQuanCaPhe||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdangnhap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycaphe\\views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\database\\thuchiendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\thuchiendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\models\\thuchien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\thuchien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fdangky.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|E:\\DBMS\\QuanLyQuanCaPhe\\views\\fkhohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fkhohang.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -179,550 +33,132 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 284,
-          "SelectedChildIndex": 3,
+          "DockedHeight": 236,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "dbo.KhachHang [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.KhachHang.sql",
-              "ToolTip": "dbo.KhachHang [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-22T07:16:13.672Z",
+              "Title": "fThongKe.cs",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fThongKe.cs",
+              "RelativeDocumentMoniker": "Views\\fThongKe.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fThongKe.cs",
+              "RelativeToolTip": "Views\\fThongKe.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAADgvycAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T06:20:16.735Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "fDangNhap.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangNhap.cs",
-              "RelativeDocumentMoniker": "Views\\fDangNhap.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangNhap.cs [Design]",
-              "RelativeToolTip": "Views\\fDangNhap.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T07:15:44.951Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "fQLNhanVien.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLNhanVien.cs",
-              "RelativeDocumentMoniker": "Views\\fQLNhanVien.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLNhanVien.cs [Design]",
-              "RelativeToolTip": "Views\\fQLNhanVien.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:49:06.086Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "fQLLoaiSanPham.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLLoaiSanPham.cs",
-              "RelativeDocumentMoniker": "Views\\fQLLoaiSanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLLoaiSanPham.cs [Design]",
-              "RelativeToolTip": "Views\\fQLLoaiSanPham.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:37:45.895Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "fPhanCa.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fPhanCa.cs",
-              "RelativeDocumentMoniker": "Views\\fPhanCa.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fPhanCa.cs [Design]",
-              "RelativeToolTip": "Views\\fPhanCa.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:43:12.339Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "fKhachHang.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhachHang.cs",
-              "RelativeDocumentMoniker": "Views\\fKhachHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhachHang.cs [Design]",
-              "RelativeToolTip": "Views\\fKhachHang.cs [Design]",
+              "Title": "fThongKe.cs [Design]",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fThongKe.cs",
+              "RelativeDocumentMoniker": "Views\\fThongKe.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fThongKe.cs [Design]",
+              "RelativeToolTip": "Views\\fThongKe.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:45:10.855Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "fQLSanPham.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLSanPham.cs",
-              "RelativeDocumentMoniker": "Views\\fQLSanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLSanPham.cs [Design]",
-              "RelativeToolTip": "Views\\fQLSanPham.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:37:41.956Z",
+              "WhenOpened": "2024-10-23T06:19:05.564Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "fDonHang.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDonHang.cs",
-              "RelativeDocumentMoniker": "Views\\fDonHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDonHang.cs [Design]",
-              "RelativeToolTip": "Views\\fDonHang.cs [Design]",
+              "Title": "fKhachHang.cs [Design]",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fKhachHang.cs",
+              "RelativeDocumentMoniker": "Views\\fKhachHang.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fKhachHang.cs [Design]",
+              "RelativeToolTip": "Views\\fKhachHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:44:57.871Z",
+              "WhenOpened": "2024-10-23T06:17:25.55Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAmwBMAAAApAAAA",
+              "DocumentIndex": 2,
+              "Title": "fDonHang.cs [Design]",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fDonHang.cs",
+              "RelativeDocumentMoniker": "Views\\fDonHang.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fDonHang.cs [Design]",
+              "RelativeToolTip": "Views\\fDonHang.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:34:53.622Z",
+              "WhenOpened": "2024-10-23T06:16:54.738Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "fKhoHang.cs [Design]",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fKhoHang.cs",
+              "RelativeDocumentMoniker": "Views\\fKhoHang.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fKhoHang.cs [Design]",
+              "RelativeToolTip": "Views\\fKhoHang.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T06:16:29.351Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "fQLNhanVien.cs",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCaPhe\\Views\\fQLNhanVien.cs",
+              "RelativeDocumentMoniker": "Views\\fQLNhanVien.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCaPhe\\Views\\fQLNhanVien.cs",
+              "RelativeToolTip": "Views\\fQLNhanVien.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAswGMAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-23T05:10:14.465Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "dbo.CaLamViec [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.CaLamViec.sql",
-              "ToolTip": "dbo.CaLamViec [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-22T05:21:56.735Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "fPhanCa.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fPhanCa.cs",
-              "RelativeDocumentMoniker": "Views\\fPhanCa.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fPhanCa.cs",
-              "RelativeToolTip": "Views\\fPhanCa.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAIA8wJEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:05:43.2Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "LoaiSanPhamDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\LoaiSanPhamDAO.cs",
-              "RelativeDocumentMoniker": "Database\\LoaiSanPhamDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\LoaiSanPhamDAO.cs",
-              "RelativeToolTip": "Database\\LoaiSanPhamDAO.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAA3wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:41.184Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "CaLamViecDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\CaLamViecDAO.cs",
-              "RelativeDocumentMoniker": "Database\\CaLamViecDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\CaLamViecDAO.cs",
-              "RelativeToolTip": "Database\\CaLamViecDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAABEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:16:26.69Z"
-            },
+            }
+          ]
+        },
+        {
+          "DockedHeight": 95,
+          "SelectedChildIndex": -1,
+          "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "CaLamViec.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\CaLamViec.cs",
-              "RelativeDocumentMoniker": "Models\\CaLamViec.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\CaLamViec.cs",
-              "RelativeToolTip": "Models\\CaLamViec.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:16:17.852Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "KhachHang.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\KhachHang.cs",
-              "RelativeDocumentMoniker": "Models\\KhachHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\KhachHang.cs",
-              "RelativeToolTip": "Models\\KhachHang.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:16:11.88Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "LoaiSanPham.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\LoaiSanPham.cs",
-              "RelativeDocumentMoniker": "Models\\LoaiSanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\LoaiSanPham.cs",
-              "RelativeToolTip": "Models\\LoaiSanPham.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:16:10.594Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "NhanVien.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\NhanVien.cs",
-              "RelativeDocumentMoniker": "Models\\NhanVien.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\NhanVien.cs",
-              "RelativeToolTip": "Models\\NhanVien.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T06:16:09.8Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "PhaCheDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\PhaCheDAO.cs",
-              "RelativeDocumentMoniker": "Database\\PhaCheDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\PhaCheDAO.cs",
-              "RelativeToolTip": "Database\\PhaCheDAO.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:55.489Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "NhanVienDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NhanVienDAO.cs",
-              "RelativeDocumentMoniker": "Database\\NhanVienDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NhanVienDAO.cs",
-              "RelativeToolTip": "Database\\NhanVienDAO.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAkwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:48.562Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NguyenLieuDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NguyenLieuDAO.cs",
-              "RelativeDocumentMoniker": "Database\\NguyenLieuDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NguyenLieuDAO.cs",
-              "RelativeToolTip": "Database\\NguyenLieuDAO.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAYwBMAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:42:17.223Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "NhanVienBanThoiGianDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NhanVienBanThoiGianDAO.cs",
-              "RelativeDocumentMoniker": "Database\\NhanVienBanThoiGianDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\NhanVienBanThoiGianDAO.cs",
-              "RelativeToolTip": "Database\\NhanVienBanThoiGianDAO.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:46.611Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "KhachHangDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\KhachHangDAO.cs",
-              "RelativeDocumentMoniker": "Database\\KhachHangDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\KhachHangDAO.cs",
-              "RelativeToolTip": "Database\\KhachHangDAO.cs",
-              "ViewState": "AQIAAEoAAAAAAAAAAAAswAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:34.034Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "DonHangDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\DonHangDAO.cs",
-              "RelativeDocumentMoniker": "Database\\DonHangDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\DonHangDAO.cs",
-              "RelativeToolTip": "Database\\DonHangDAO.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:29.927Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "NhanVienToanThoiGian.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\NhanVienToanThoiGian.cs",
-              "RelativeDocumentMoniker": "Models\\NhanVienToanThoiGian.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\NhanVienToanThoiGian.cs",
-              "RelativeToolTip": "Models\\NhanVienToanThoiGian.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:14.958Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "PhaChe.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\PhaChe.cs",
-              "RelativeDocumentMoniker": "Models\\PhaChe.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\PhaChe.cs",
-              "RelativeToolTip": "Models\\PhaChe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:14.032Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SanPham.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\SanPham.cs",
-              "RelativeDocumentMoniker": "Models\\SanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\SanPham.cs",
-              "RelativeToolTip": "Models\\SanPham.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:46:10.452Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "fQLSanPham.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLSanPham.cs",
-              "RelativeDocumentMoniker": "Views\\fQLSanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLSanPham.cs",
-              "RelativeToolTip": "Views\\fQLSanPham.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAewD4AAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:43:30.967Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "fQLLoaiSanPham.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLLoaiSanPham.cs",
-              "RelativeDocumentMoniker": "Views\\fQLLoaiSanPham.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLLoaiSanPham.cs",
-              "RelativeToolTip": "Views\\fQLLoaiSanPham.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAIA8wCQAAAAfAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T05:37:49.744Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "dbo.CongViec [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.CongViec.sql",
-              "ToolTip": "dbo.CongViec [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-22T05:20:20.499Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "fTrangChu.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fTrangChu.cs",
-              "RelativeDocumentMoniker": "Views\\fTrangChu.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fTrangChu.cs",
-              "RelativeToolTip": "Views\\fTrangChu.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAASwF4AAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T04:50:07.785Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "fKhoHang.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhoHang.cs",
-              "RelativeDocumentMoniker": "Views\\fKhoHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhoHang.cs [Design]",
-              "RelativeToolTip": "Views\\fKhoHang.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:21:43.709Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "fTrangChu.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fTrangChu.cs",
-              "RelativeDocumentMoniker": "Views\\fTrangChu.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fTrangChu.cs [Design]",
-              "RelativeToolTip": "Views\\fTrangChu.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T04:50:04.19Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "dbo.NguyenLieu [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.NguyenLieu.sql",
-              "ToolTip": "dbo.NguyenLieu [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-22T04:24:28.345Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "fDonHang.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDonHang.cs",
-              "RelativeDocumentMoniker": "Views\\fDonHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDonHang.cs",
-              "RelativeToolTip": "Views\\fDonHang.cs",
-              "ViewState": "AQIAAB0AAAAAAAAAAAAMwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T04:17:46.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "dbo.NhanVien [Data]",
-              "DocumentMoniker": "ViewDataWindow_MSSQL__/LAPTOP_KN9ENH3A_SQLEXPRESS01/QuanLyQuanCaPhe/sa/SqlTable/dbo.NhanVien.sql",
-              "ToolTip": "dbo.NhanVien [Data]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-10-22T03:53:31.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "DBConnection.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\DBConnection.cs",
-              "RelativeDocumentMoniker": "Database\\DBConnection.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\DBConnection.cs",
-              "RelativeToolTip": "Database\\DBConnection.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAABvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T03:20:27.975Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "QuanLyQuanCaPhe",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\QuanLyQuanCaPhe.csproj",
-              "RelativeDocumentMoniker": "QuanLyQuanCaPhe.csproj",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\QuanLyQuanCaPhe.csproj",
-              "RelativeToolTip": "QuanLyQuanCaPhe.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-10-22T03:36:36.43Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "fDangKy.cs [Design]",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangKy.cs",
-              "RelativeDocumentMoniker": "Views\\fDangKy.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangKy.cs [Design]",
-              "RelativeToolTip": "Views\\fDangKy.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:48:43.607Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "ThucHienDAO.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\ThucHienDAO.cs",
-              "RelativeDocumentMoniker": "Database\\ThucHienDAO.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Database\\ThucHienDAO.cs",
-              "RelativeToolTip": "Database\\ThucHienDAO.cs",
-              "ViewState": "AQIAAEQAAAAAAAAAAAAwwFoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:02:47.082Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "ThucHien.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\ThucHien.cs",
-              "RelativeDocumentMoniker": "Models\\ThucHien.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Models\\ThucHien.cs",
-              "RelativeToolTip": "Models\\ThucHien.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:02:42.431Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "fQLNhanVien.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLNhanVien.cs",
-              "RelativeDocumentMoniker": "Views\\fQLNhanVien.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fQLNhanVien.cs",
-              "RelativeToolTip": "Views\\fQLNhanVien.cs",
-              "ViewState": "AQIAAE4AAAAAAAAAAAAqwGIAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T02:00:49.08Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "fDangKy.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangKy.cs",
-              "RelativeDocumentMoniker": "Views\\fDangKy.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangKy.cs",
-              "RelativeToolTip": "Views\\fDangKy.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T01:22:36.618Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "fDangNhap.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangNhap.cs",
-              "RelativeDocumentMoniker": "Views\\fDangNhap.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fDangNhap.cs",
-              "RelativeToolTip": "Views\\fDangNhap.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAABsAAAAmAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-22T01:22:16.101Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "fKhoHang.cs",
-              "DocumentMoniker": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhoHang.cs",
-              "RelativeDocumentMoniker": "Views\\fKhoHang.cs",
-              "ToolTip": "E:\\DBMS\\QuanLyQuanCaPhe\\Views\\fKhoHang.cs",
-              "RelativeToolTip": "Views\\fKhoHang.cs",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-21T14:21:46.552Z"
-            }
-          ]
-        },
-        {
-          "DockedHeight": 47,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
             }
           ]
         }
