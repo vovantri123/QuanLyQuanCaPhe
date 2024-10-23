@@ -213,12 +213,21 @@ END
 GO
 
 CREATE PROCEDURE proc_Them_KhachHang 
-	@SoDienThoai NVARCHAR(50)
+    @SoDienThoai NVARCHAR(50)
 AS
-BEGIN 
-	DECLARE @maxMaKH NVARCHAR(50);
-    DECLARE @newMaKH NVARCHAR(50); -- @newMaKH = @maxMaKH + 1
+BEGIN
+    DECLARE @maxMaKH NVARCHAR(50);
+    DECLARE @newMaKH NVARCHAR(50);
     DECLARE @numPart INT;
+
+    -- Kiểm tra xem số điện thoại đã tồn tại chưa
+    IF EXISTS (SELECT 1 FROM KhachHang WHERE SoDienThoai = @SoDienThoai)
+    BEGIN
+        -- Nếu đã tồn tại, không làm gì cả
+        RETURN;
+    END
+
+    -- Nếu chưa tồn tại, tiếp tục tạo mới khách hàng
 
     -- Tìm giá trị MaKH lớn nhất hiện có
     SELECT @maxMaKH = MAX(MaKH) 
@@ -239,7 +248,7 @@ BEGIN
     -- Tạo giá trị mới cho MaKH, với định dạng KHxx (2 số)
     SET @newMaKH = 'KH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
 
-    -- Thực hiện chèn bản ghi với maDH mới
+    -- Thực hiện chèn bản ghi với MaKH mới
     INSERT INTO KhachHang(MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
     VALUES(@newMaKH, N'Chưa nhập tên', @SoDienThoai, 0)
 END
@@ -266,22 +275,33 @@ GO
 CREATE PROCEDURE proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan
 AS
 BEGIN
-	DECLARE @MaDH NVARCHAR(50)
-
-	SELECT @MaDH = MaDH 
+	DECLARE @MaDH NVARCHAR(50),
+			@MaKH NVARCHAR(50),
+			@DonHangCount INT;
+	 
+	SELECT @MaDH = MaDH, @MaKH = MaKH
 	FROM DonHang
 	WHERE TrangThai =  N'Chưa thanh toán'
+
+	-- Đếm số đơn hàng còn lại của khách hàng trong bảng DonHang
+    SELECT @DonHangCount = COUNT(*)
+    FROM DonHang
+    WHERE MaKH = @MaKH; 
 	 
 	DELETE FROM ChiTietHoaDon
 	WHERE MaDH = @MaDH
 	 
 	DELETE FROM DonHang 
 	WHERE TrangThai = N'Chưa thanh toán'
-
-	DELETE FROM KhachHang
-	WHERE TenKH = N'Chưa nhập tên'
 	 
+    --Nếu KH chỉ có 1 đơn (đơn chưa thanh toán) hoặc 0 có đơn nào thì mới được xóa
+    IF @DonHangCount <= 1
+    BEGIN
+        DELETE FROM KhachHang
+        WHERE MaKH = @MaKH;
+    END
 END
+
 
 GO
 
@@ -341,24 +361,45 @@ END;
 
 GO
 
-CREATE PROCEDURE  proc_CapNhatSoDiemTichLuy_CapTrangThaiDonHang  
+CREATE PROCEDURE  proc_XacNhanThanhToan_DonHangVaKhachHang
 AS
 BEGIN  
 	DECLARE @GiaTriDon FLOAT
+    DECLARE @SoDiemTichLuy FLOAT 
 	DECLARE @MaKH NVARCHAR(50)
-	
-    SELECT @GiaTriDon = GiaTriDon, @MaKH = MaKH
+
+	SELECT @GiaTriDon = GiaTriDon, @MaKH = MaKH
     FROM DonHang
     WHERE TrangThai = N'Chưa thanh toán'
+
+	SELECT @SoDiemTichLuy = SoDiemTichLuy 
+    FROM KhachHang
+    WHERE MaKH = @MaKH
+    
+	IF @GiaTriDon > @SoDiemTichLuy
+	BEGIN
+		SET @GiaTriDon = @GiaTriDon - @SoDiemTichLuy
+		SET @SoDiemTichLuy = 0 + 0.01 * @GiaTriDon  -- Đã dùng hết điểm tích lũy
+	END
+	ELSE
+	BEGIN
+		SET @SoDiemTichLuy = (@SoDiemTichLuy - @GiaTriDon) + 0.01 * @GiaTriDon  -- Cập nhật điểm tích lũy còn lại và cộng thêm 0.01 GiaTriDon
+		SET @GiaTriDon = 0 -- Đơn đã được thanh toán hết
+	END
+
+    UPDATE DonHang 
+    SET GiaTriDon = @GiaTriDon
+    WHERE TrangThai = N'Chưa thanh toán'; 
 	 
 	UPDATE KhachHang 
-	SET SoDiemTichLuy = SoDienThoai + @GiaTriDon * 0.01
+	SET SoDiemTichLuy = @SoDiemTichLuy
 	WHERE MaKH =  @MaKH  
 
 	UPDATE DonHang 
 	SET TrangThai = N'Đã thanh toán'  
 	WHERE TrangThai =  N'Chưa thanh toán' 
 END
+
 
 GO
 

@@ -490,8 +490,7 @@
             this.txtSoDienThoai.PlaceholderText = "Nhập SĐT khách hàng";
             this.txtSoDienThoai.SelectedText = "";
             this.txtSoDienThoai.Size = new System.Drawing.Size(286, 60);
-            this.txtSoDienThoai.TabIndex = 1;
-            this.txtSoDienThoai.TextChanged += new System.EventHandler(this.txtTimKiemTheoTenSP_TextChanged);
+            this.txtSoDienThoai.TabIndex = 1; 
             // 
             // dgvHienThi
             // 

@@ -19,7 +19,7 @@ namespace QuanLyQuanCaPhe.Database
             
         }   
 
-        public static void XoaDonChuaThanhToan(string soDienThoai, string maNV)
+        public static void XoaDonChuaThanhToan()
         {
             DBConnection.ClearParameters(); 
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan ", DBConnection.parameters); 
@@ -38,6 +38,12 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.ClearParameters();
             DBConnection.AddParameters("@SoDienThoai", soDienThoai); 
             return DBConnection.ThucThiFunction_InlineVaMultiStatement("func_TimKiemTheoSoDienThoai_DonHang", DBConnection.parameters);
+        }
+
+        public static void XacNhanThanhToan()
+        {
+            DBConnection.ClearParameters();
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_XacNhanThanhToan_DonHangVaKhachHang", DBConnection.parameters);
         }
     }
 }
