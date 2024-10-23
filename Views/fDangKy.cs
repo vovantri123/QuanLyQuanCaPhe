@@ -31,8 +31,18 @@ namespace QuanLyQuanCaPhe.Views
             string tenDangNhap = txtTenDangNhap.Text;
             string matKhau = txtMatKhau.Text;
             string loaiNV = cboLoaiNV.Text;
-            NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, tenDangNhap, matKhau);
-            NhanVienDAO.Them(nv, loaiNV);
+
+            if (matKhau != txtNhapLaiMatKhau.Text)
+            {
+                MessageBox.Show("Vui lòng nhập lại mật khẩu");
+
+            }
+            else
+            {
+                NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, tenDangNhap, matKhau);
+                NhanVienDAO.Them(nv, loaiNV);
+            }
+            
         }
     }
 }

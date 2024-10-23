@@ -84,6 +84,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            bool co = false;
             try
             {
                 string maNV = txtMaNV.Text;
@@ -99,6 +100,7 @@ namespace QuanLyQuanCaPhe.Views
                 }
                 NhanVienDAO.Xoa(maNV);
                 ThucHienDAO.Xoa(maNV);
+                co = true;
             }
             catch(Exception ex) 
             {
@@ -107,6 +109,8 @@ namespace QuanLyQuanCaPhe.Views
             finally
             {
                 LoadDGVHienThi();
+                if (co)
+                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
 
@@ -115,21 +119,36 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            string hoTen = txtHoTen.Text;
-            string sdt = txtSoDienThoai.Text;
-            string namSinh = txtNamSinh.Text;
-            string gioiTinh = cboGioiTinh.Text;
-            string diaChi = txtDiaChi.Text;
-            string tenDangNhap = txtbTenDangNhap.Text;
-            string matKhau = txtMatKhau.Text;
-            string loaiNV = cboLoaiNV.Text;
-            NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
-            NhanVienDAO.Them(nv, loaiNV);
-            LoadDGVHienThi();
+            bool co = false;
+            try
+            {
+                string hoTen = txtHoTen.Text;
+                string sdt = txtSoDienThoai.Text;
+                string namSinh = txtNamSinh.Text;
+                string gioiTinh = cboGioiTinh.Text;
+                string diaChi = txtDiaChi.Text;
+                string tenDangNhap = txtbTenDangNhap.Text;
+                string matKhau = txtMatKhau.Text;
+                string loaiNV = cboLoaiNV.Text;
+                NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
+                NhanVienDAO.Them(nv, loaiNV);
+                co = true;
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                LoadDGVHienThi();
+                if(co)
+                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            bool co = false;
             try
             {
                 string maNV = txtMaNV.Text;
@@ -152,6 +171,7 @@ namespace QuanLyQuanCaPhe.Views
                     NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong);
                     NhanVienToanThoiGianDAO.Sua(nvToanTG);
                     NhanVienDAO.Sua(nv);
+                    co = true;
                 }
                 else
                 {
@@ -159,6 +179,7 @@ namespace QuanLyQuanCaPhe.Views
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);
                     NhanVienDAO.Sua(nv);
+                    co = true;
                 }
 
             }
@@ -168,8 +189,11 @@ namespace QuanLyQuanCaPhe.Views
             }
             finally
             {
-                
                 LoadDGVHienThi();
+                if (co)
+                {
+                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
 
         }

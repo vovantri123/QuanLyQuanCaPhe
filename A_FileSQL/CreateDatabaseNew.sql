@@ -14,21 +14,21 @@ CREATE TABLE NhanVien(
 	MaNV nvarchar(50) CONSTRAINT PK_NhanVien PRIMARY KEY,
 	HoTenNV nvarchar(50) NOT NULL,
 	SoDienThoai nvarchar(50) NOT NULL UNIQUE CHECK(LEN(SoDienThoai)=10),
-	NamSinh int CHECK(YEAR(GETDATE())-NamSinh>=16),
-	GioiTinh nvarchar(50),
-	DiaChi nvarchar(200),
+	NamSinh int NOT NULL CHECK(YEAR(GETDATE())-NamSinh>=16),
+	GioiTinh nvarchar(50) NOT NULL,
+	DiaChi nvarchar(200) NOT NULL,
 	TenDangNhap nvarchar(50) UNIQUE NOT NULL,
 	MatKhau nvarchar(50) NOT NULL
 )
 CREATE TABLE NhanVienToanThoiGian(
 	MaNV nvarchar(50) CONSTRAINT FK_NhanVien_ToanThoiGian FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
-	LuongCoDinh float CHECK(LuongCoDinh>0)
+	LuongCoDinh float NOT NULL CHECK(LuongCoDinh>=0)
 )
  
 CREATE TABLE NhanVienBanThoiGian(
 	MaNV nvarchar(50) CONSTRAINT FK_NhanVien_BanThoiGian FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
-	LuongTheoGio float CHECK(LuongTheoGio>0),
-	SoGio int CHECK(SoGio>0)
+	LuongTheoGio float NOT NULL CHECK(LuongTheoGio>=0),
+	SoGio int NOT NULL CHECK(SoGio>=0)
 )
 CREATE TABLE CaLamViec(
 	MaCa nvarchar(50) CONSTRAINT PK_CaLamViec PRIMARY KEY,

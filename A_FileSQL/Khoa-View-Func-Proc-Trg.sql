@@ -54,12 +54,12 @@ BEGIN
     IF @LoaiNhanVien = N'Toàn thời gian'
     BEGIN
         INSERT INTO NhanVienToanThoiGian (MaNV, LuongCoDinh)
-        VALUES (@mNV, 1);
+        VALUES (@mNV, 0);
     END
     ELSE IF @LoaiNhanVien = N'Bán thời gian'
     BEGIN
         INSERT INTO NhanVienBanThoiGian (MaNV, LuongTheoGio, SoGio)
-        VALUES (@mNV, 1, 0);
+        VALUES (@mNV, 0, 0);
     END
 END;
 
