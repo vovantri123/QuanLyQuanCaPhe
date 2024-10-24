@@ -203,7 +203,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnXoaChonTatCa_Click(object sender, EventArgs e)
         { 
-            DonHangDAO.XoaDonChuaThanhToan(txtSoDienThoai.Text, "NV01");
+            DonHangDAO.XoaDonChuaThanhToan();
 
             btnXoaChonTatCa.Enabled = false;
             dgvHienThi.Visible = false;

@@ -14,10 +14,7 @@ using System.Windows.Forms;
 namespace QuanLyQuanCaPhe.Views
 {
     public partial class fDonHang : Form
-    {
-        //được khởi tạo bên dưới
-        KhachHang kh; 
-
+    { 
         //Tham sô truyền giữa các form
         private string maNV;
         private string soDienThoai;
@@ -34,29 +31,50 @@ namespace QuanLyQuanCaPhe.Views
             InitializeComponent();
         }
 
-        private void LoadThongTinKhachHang()
+        private void ThanhToan_Load(object sender, EventArgs e)
         {
+            LoadDGVHienThi();
+            LoadThongTinKhachHang();
 
-            this.soDienThoai = "0981234567";
-             kh = KhachHangDAO.LoadThongTinKhachHang(soDienThoai);
+            lblNgayMua.Text = Ngay.NgayHienTai(); 
+            LoadThanhTien();
+        }
+
+        private void tsDungDiemTichLuy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (tsDungDiemTichLuy.Checked)
+            {
+                lblGiam.Text = txtSoDiemTichLuy.Text;
+                LoadThanhTien();
+            }
+            else
+            {
+                lblGiam.Text = "0";
+                LoadThanhTien();
+            }
+        }
+
+        private void LoadThanhTien()
+        {
+            lblTongTien.Text = ChiTietHoaDonDAO.TinhTongTien().ToString();  
+            lblThanhTien.Text = (Convert.ToDouble(lblTongTien.Text) - Convert.ToDouble(lblGiam.Text)).ToString();
+        }
+
+        private void LoadThongTinKhachHang()
+        { 
+            this.soDienThoai = soDienThoai;
+            KhachHang kh = KhachHangDAO.LoadThongTinKhachHang(soDienThoai);
             txtTenKhachHang.Text = kh.TenKH;
             txtSoDienThoai.Text = soDienThoai;  
             txtSoDiemTichLuy.Text = kh.SoDiemTichLuy.ToString();
         }
-
+           
+        
         private void LoadDGVHienThi()
         {
-            dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachSanPhamDaChon");
-            LoadThongTinKhachHang();
+            dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachSanPhamDaChon"); 
         }
-
-        private void ThanhToan_Load(object sender, EventArgs e)
-        {
-            LoadDGVHienThi();
-
-            lblNgayMua.Text = Ngay.NgayHienTai();
-        }
-
+          
         private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -67,15 +85,17 @@ namespace QuanLyQuanCaPhe.Views
             DGV.ChinhSizeCotTuDong(dgvHienThi);
         }
 
-        private void tsDungDiemTichLuy_CheckedChanged(object sender, EventArgs e)
+        private void btnXacNhanThanhToan_Click(object sender, EventArgs e)
         {
-            if(tsDungDiemTichLuy.Checked)
-            {  }
+            DonHangDAO.XacNhanThanhToan();
+            MessageBox.Show("Thanh toán thành công");
+            this.Close();
         }
 
-        private void txtSoDienThoai_TextChanged(object sender, EventArgs e)
-        {
-
+        private void btnSua_Click(object sender, EventArgs e)
+        { 
+            KhachHangDAO.SuaTenVaSoDienThoai(txtTenKhachHang.Text, soDienThoai, txtSoDienThoai.Text);
+            soDienThoai = txtSoDienThoai.Text;
         }
     }
 }

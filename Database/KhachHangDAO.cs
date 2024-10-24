@@ -24,6 +24,14 @@ namespace QuanLyQuanCaPhe.Database
 
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("Proc_ThemKhachHang_KhachHang", DBConnection.parameters);
         }
+
+        public static void Them(string SoDienThoai)
+        {
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@SoDienThoai", SoDienThoai);
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_KhachHang", DBConnection.parameters);
+        }
+
         public static void Xoa(KhachHang kh)
         {
             DBConnection.ClearParameters();
@@ -43,6 +51,18 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("Proc_SuaThongTinKhachhang_KhachHang", DBConnection.parameters);
         }
 
+        public static void SuaTenVaSoDienThoai(string ten, string soDienThoaiCu, string soDienThoaiMoi)
+        {
+            DBConnection.ClearParameters(); 
+            DBConnection.AddParameters("@TenKH", ten);
+            DBConnection.AddParameters("@SoDienThoaiCu", soDienThoaiCu); 
+            DBConnection.AddParameters("@SoDienThoaiMoi", soDienThoaiMoi); 
+
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Sua_KhachHang", DBConnection.parameters);
+            MessageBox.Show("Sửa thành công");
+        }
+
+
         public static DataTable TimKiem(string sdt)
         {
 
@@ -53,14 +73,7 @@ namespace QuanLyQuanCaPhe.Database
             return DBConnection.ThucThiFunction_InlineVaMultiStatement("Func_TimKiemTheoSoDienThoai_KhachHang", DBConnection.parameters);
         }
 
-   
-        public static void Them(string SoDienThoai)
-        {
-            DBConnection.ClearParameters();
-            DBConnection.AddParameters("@SoDienThoai",SoDienThoai); 
-            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_KhachHang",DBConnection.parameters);
-        }
-
+    
         public static KhachHang LoadThongTinKhachHang(string soDienThoai)
         {
             DBConnection.ClearParameters();

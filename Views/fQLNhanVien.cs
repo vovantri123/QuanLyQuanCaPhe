@@ -136,7 +136,7 @@ namespace QuanLyQuanCaPhe.Views
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
             finally
             {
