@@ -9,7 +9,8 @@ INSERT INTO CongViec (MaCV, TenCV) VALUES
 ('CV01', N'Phục vụ'),
 ('CV02', N'Pha chế'),
 ('CV03', N'Quản lý'),
-('CV04', N'Bảo vệ');
+('CV04', N'Bảo vệ'),
+('CV05', N'Thu ngân');
 
 -- Bảng Nhân Viên
 INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau) VALUES
