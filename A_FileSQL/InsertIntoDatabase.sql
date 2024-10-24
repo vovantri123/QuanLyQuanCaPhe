@@ -49,7 +49,8 @@ INSERT INTO ThucHien (MaNV, MaCV, MaCa) VALUES
 ('NV01', 'CV01', 'CA01'),
 ('NV02', 'CV02', 'CA02'),
 ('NV03', 'CV03', 'CA03'),
-('NV04', 'CV04', 'CA04')
+('NV04', 'CV04', 'CA04'),
+('NV05', 'CV05', 'CA05')
 
 -- Bảng Khách Hàng
 INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy) VALUES
