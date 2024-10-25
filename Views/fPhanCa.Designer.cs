@@ -58,7 +58,7 @@
             this.btnDangKi.FillColor = System.Drawing.Color.Tan;
             this.btnDangKi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangKi.ForeColor = System.Drawing.Color.White;
-            this.btnDangKi.Location = new System.Drawing.Point(1227, 697);
+            this.btnDangKi.Location = new System.Drawing.Point(1228, 648);
             this.btnDangKi.Name = "btnDangKi";
             this.btnDangKi.Size = new System.Drawing.Size(181, 47);
             this.btnDangKi.TabIndex = 28;
@@ -90,7 +90,7 @@
             "Tối",
             "FulltimeAM",
             "FulltimePM"});
-            this.cbbChonca.Location = new System.Drawing.Point(1191, 544);
+            this.cbbChonca.Location = new System.Drawing.Point(1191, 492);
             this.cbbChonca.Name = "cbbChonca";
             this.cbbChonca.Size = new System.Drawing.Size(236, 36);
             this.cbbChonca.StartIndex = 0;
@@ -111,7 +111,7 @@
             this.txtMaCa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaCa.ForeColor = System.Drawing.Color.Olive;
             this.txtMaCa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaCa.Location = new System.Drawing.Point(1191, 373);
+            this.txtMaCa.Location = new System.Drawing.Point(1191, 332);
             this.txtMaCa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaCa.Name = "txtMaCa";
             this.txtMaCa.PasswordChar = '\0';
@@ -144,6 +144,7 @@
             this.txtHoTen.Size = new System.Drawing.Size(236, 45);
             this.txtHoTen.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtHoTen.TabIndex = 25;
+            this.txtHoTen.Visible = false;
             // 
             // dtpkNgayLam
             // 
@@ -152,13 +153,13 @@
             this.dtpkNgayLam.FillColor = System.Drawing.Color.PeachPuff;
             this.dtpkNgayLam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpkNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpkNgayLam.Location = new System.Drawing.Point(1191, 624);
+            this.dtpkNgayLam.Location = new System.Drawing.Point(1191, 566);
             this.dtpkNgayLam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpkNgayLam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpkNgayLam.Name = "dtpkNgayLam";
             this.dtpkNgayLam.Size = new System.Drawing.Size(244, 40);
             this.dtpkNgayLam.TabIndex = 24;
-            this.dtpkNgayLam.Value = new System.DateTime(2024, 10, 18, 0, 0, 0, 0);
+            this.dtpkNgayLam.Value = new System.DateTime(2024, 10, 24, 0, 0, 0, 0);
             // 
             // flpNgay
             // 
@@ -256,7 +257,7 @@
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaNV.ForeColor = System.Drawing.Color.Olive;
             this.txtMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaNV.Location = new System.Drawing.Point(1191, 222);
+            this.txtMaNV.Location = new System.Drawing.Point(1191, 245);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.PasswordChar = '\0';
@@ -288,7 +289,7 @@
             "Pha chế",
             "Quản lí",
             "Bảo vệ"});
-            this.cbbCongViec.Location = new System.Drawing.Point(1191, 472);
+            this.cbbCongViec.Location = new System.Drawing.Point(1191, 417);
             this.cbbCongViec.Name = "cbbCongViec";
             this.cbbCongViec.Size = new System.Drawing.Size(236, 36);
             this.cbbCongViec.StartIndex = 0;
@@ -341,12 +342,12 @@
             // 
             this.guna2Shapes1.BorderColor = System.Drawing.Color.RosyBrown;
             this.guna2Shapes1.FillColor = System.Drawing.Color.Linen;
-            this.guna2Shapes1.Location = new System.Drawing.Point(1106, 100);
+            this.guna2Shapes1.Location = new System.Drawing.Point(1106, 151);
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes1.Size = new System.Drawing.Size(401, 769);
+            this.guna2Shapes1.Size = new System.Drawing.Size(401, 648);
             this.guna2Shapes1.TabIndex = 34;
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;

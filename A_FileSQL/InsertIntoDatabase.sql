@@ -6,10 +6,13 @@ GO
 
 -- Bảng Công Việc
 INSERT INTO CongViec (MaCV, TenCV) VALUES 
+
 ('CV01', N'Phục vụ'),
 ('CV02', N'Pha chế'),
 ('CV03', N'Quản lý'),
-('CV04', N'Bảo vệ');
+('CV04', N'Bảo vệ'),
+('CV05', N'Thu ngân');
+
 
 -- Bảng Nhân Viên
 INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau) VALUES
@@ -46,12 +49,12 @@ INSERT INTO CaLamViec (MaCa, TenCa, Ngay, GioBatDau, GioKetThuc) VALUES
 
 -- Bảng thực hiện
 INSERT INTO ThucHien (MaNV, MaCV, MaCa) VALUES
+
 ('NV01', 'CV01', 'CA01'),
 ('NV02', 'CV02', 'CA02'),
 ('NV03', 'CV03', 'CA03'),
 ('NV04', 'CV04', 'CA04'),
 ('NV05', 'CV05', 'CA05')
-
 -- Bảng Khách Hàng
 INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy) VALUES
 ('KH01', N'Nguyễn Phúc Bảo', '0981234567', 400),

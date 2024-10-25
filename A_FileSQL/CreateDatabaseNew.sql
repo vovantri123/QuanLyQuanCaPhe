@@ -33,7 +33,7 @@ CREATE TABLE NhanVienBanThoiGian(
 CREATE TABLE CaLamViec(
 	MaCa nvarchar(50) CONSTRAINT PK_CaLamViec PRIMARY KEY,
 	TenCa nvarchar(50) NOT NULL,
-	Ngay date CHECK(DATEDIFF(day,Ngay,GETDATE())>=0),
+	Ngay date ,
 	GioBatDau time(0),
 	GioKetThuc time(0)
 )

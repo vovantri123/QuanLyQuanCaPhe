@@ -141,7 +141,6 @@ namespace QuanLyQuanCaPhe.Views
 
             cbbCongViec_SelectedIndexChanged(sender, e);
             ThucHien th = new ThucHien(txtMaCa.Text, txtMaNV.Text, maNgheNghiep);
-
             ThucHienDAO.Them(th);
 
             flpCa.Controls.Clear();  // Xóa các button cũ trong FlowLayoutPanel trước khi tải lại

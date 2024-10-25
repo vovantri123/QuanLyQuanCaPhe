@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -32,13 +33,13 @@ namespace QuanLyQuanCaPhe.Database
         {
             
         }
-         
+
         public static DataTable LoadTableVaView(string tenTable)
         {
             try
             {
                 moKetNoi();
-                string truyVan = string.Format($"SELECT * FROM {tenTable}"); 
+                string truyVan = string.Format($"SELECT * FROM {tenTable}");
 
                 SqlDataAdapter adapter = new SqlDataAdapter(truyVan, conn);
                 DataTable dt = new DataTable();
@@ -57,7 +58,7 @@ namespace QuanLyQuanCaPhe.Database
         }
 
         public static object ThucThiFunction_Scalar(string tenFunction, List<KeyValuePair<string, object>> parameters)
-        { 
+        {
             try
             {
                 moKetNoi();
@@ -80,7 +81,7 @@ namespace QuanLyQuanCaPhe.Database
                     cmd.Parameters.AddWithValue(param.Key, param.Value);
                 }
 
-                return cmd.ExecuteScalar();  
+                return cmd.ExecuteScalar();
             }
             catch (Exception ex)
             {
@@ -288,25 +289,24 @@ namespace QuanLyQuanCaPhe.Database
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
-                    //MessageBox.Show("Kết nối thành công");
                 }
             }
-            catch (Exception ex) 
-            { 
+            catch (Exception ex)
+            {
                 MessageBox.Show(ex.Message);
             }
+
         }
 
         public static void dongKetNoi()
         {
-            if (conn != null && conn.State == ConnectionState.Open)
+            if(conn.State == ConnectionState.Open && conn != null)
             {
                 conn.Close();
-                //MessageBox.Show("Đóng kết nối thành công");
             }
             else
             {
-                MessageBox.Show("Chưa tạo kết nối");
+                MessageBox.Show("Chua ket noi");
             }
         }
 

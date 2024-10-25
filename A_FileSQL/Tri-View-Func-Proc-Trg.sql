@@ -656,6 +656,39 @@ BEGIN
 
 END;
 
+GO
+CREATE TRIGGER trg_KiemTraSoLuongTruocPhaChe
+ON PhaChe
+INSTEAD OF INSERT
+AS
+BEGIN
+    DECLARE @SoLuongTon INT;
+    DECLARE @MaNL NVARCHAR(50);
+    DECLARE @SoLuong INT;
+
+    SELECT @MaNL = MaNL, @SoLuong = SoLuong 
+	FROM inserted;
+    SELECT @SoLuongTon = SoLuongTonKho
+    FROM NguyenLieu
+    WHERE MaNL = @MaNL;
+
+    IF @SoLuongTon < @SoLuong
+    BEGIN
+        RAISERROR('Số lượng nguyên liệu không đủ để pha chế!', 16, 1);
+    END
+    ELSE
+    BEGIN
+        INSERT INTO PhaChe(MaSP, MaNL, SoLuong)
+        SELECT MaSP, MaNL, SoLuong FROM inserted;
+        UPDATE NguyenLieu
+        SET SoLuongTonKho = SoLuongTonKho - inserted.SoLuong
+        FROM NguyenLieu nl
+        INNER JOIN inserted ON nl.MaNL = inserted.MaNL;
+    END
+END;
+
+
+
 
 
 --   ROLLBACK TRANSACTION
