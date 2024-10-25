@@ -329,10 +329,10 @@
             this.btnXacNhanThanhToan.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnXacNhanThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnXacNhanThanhToan.ForeColor = System.Drawing.Color.White;
-            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(1315, 68);
+            this.btnXacNhanThanhToan.Location = new System.Drawing.Point(1268, 66);
             this.btnXacNhanThanhToan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnXacNhanThanhToan.Name = "btnXacNhanThanhToan";
-            this.btnXacNhanThanhToan.Size = new System.Drawing.Size(202, 45);
+            this.btnXacNhanThanhToan.Size = new System.Drawing.Size(250, 45);
             this.btnXacNhanThanhToan.TabIndex = 8;
             this.btnXacNhanThanhToan.Text = "Xác nhận thanh toán";
             this.btnXacNhanThanhToan.Click += new System.EventHandler(this.btnXacNhanThanhToan_Click);

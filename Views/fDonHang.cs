@@ -76,8 +76,9 @@ namespace QuanLyQuanCaPhe.Views
         }
           
         private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+        { 
 
+           
         }
 
         private void dgvHienThi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
