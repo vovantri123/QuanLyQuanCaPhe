@@ -11,11 +11,7 @@ INSERT INTO CongViec (MaCV, TenCV) VALUES
 ('CV02', N'Pha chế'),
 ('CV03', N'Quản lý'),
 ('CV04', N'Bảo vệ'),
-('CV05', N'Thu ngân');
-<<<<<<< HEAD
-
-=======
->>>>>>> 3789a284b8dfc577acf5ed5ee2aa2bbdf22eca4d
+('CV05', N'Thu ngân'); 
 
 -- Bảng Nhân Viên
 INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau) VALUES
@@ -127,30 +123,30 @@ INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP) VALUES
 ('SP28', N'Bánh chaud', 22000, 'chaud.jpg', 'LSP06');
 
 -- Bảng Nguyên liệu
-INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTonKho, DonVi) VALUES
-('NL01', N'Đá', 10000, N'gam'),
-('NL02', N'Đường', 5000, N'gam'),
-('NL03', N'Sữa tươi', 2000, N'lít'),
-('NL04', N'Muối', 5000, N'gam'),
-('NL05', N'Cà phê hạt', 2000, N'gam'),
-('NL06', N'Cà phê gói', 2000, N'gói'),
-('NL07', N'Bơ', 500, N'gam'),
-('NL08', N'Dâu', 500, N'gam'),
-('NL09', N'Nho', 200, N'gam'),
-('NL10', N'Cam', 200, N'gam'),
-('NL11', N'Vải', 200, N'gam'),
-('NL12', N'Đào', 300, N'gam'),
-('NL13', N'Mãng cầu', 250, N'gam'),
-('NL14', N'Trà', 2000, N'gói'),
-('NL15', N'Sữa đặc', 1500, N'lon'),
-('NL16', N'Trứng', 350, N'quả'),
-('NL17', N'Gelatin', 400, N'gói'),
-('NL18', N'Kem tươi', 500, N'lít'),
-('NL19', N'Socola', 550, N'gam'),
-('NL20', N'Phô mai', 550, N'gam'),
-('NL21', N'Bột ca cao', 500, N'gói'),
-('NL22', N'Bột trà xanh', 500, N'gói');
-
+INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTonKho) VALUES
+('NL01', N'Đá', 10000),
+('NL02', N'Đường', 5000),
+('NL03', N'Sữa tươi', 2000),
+('NL04', N'Muối', 5000),
+('NL05', N'Cà phê hạt', 2000),
+('NL06', N'Cà phê gói', 2000),
+('NL07', N'Bơ', 500),
+('NL08', N'Dâu', 500),
+('NL09', N'Nho', 200),
+('NL10', N'Cam', 200),
+('NL11', N'Vải', 200),
+('NL12', N'Đào', 300),
+('NL13', N'Mãng cầu', 250),
+('NL14', N'Trà', 2000),
+('NL15', N'Sữa đặc', 1500),
+('NL16', N'Trứng', 350),
+('NL17', N'Gelatin', 400),
+('NL18', N'Kem tươi', 500),
+('NL19', N'Socola', 550),
+('NL20', N'Phô mai', 550),
+('NL21', N'Bột ca cao', 500),
+('NL22', N'Bột trà xanh', 500);
+ 
 -- Bảng Pha Chế (Liên kết sản phẩm và nguyên liệu)
 INSERT INTO PhaChe (MaSP, MaNL, SoLuong) VALUES
 ('SP01', 'NL01', 1)

@@ -73,8 +73,7 @@ CREATE TABLE SanPham(
 CREATE TABLE NguyenLieu(
 	MaNL nvarchar(50) CONSTRAINT PK_NguyenLieu PRIMARY KEY,
 	TenNL nvarchar(50) NOT NULL,
-	SoLuongTonKho int CHECK (SoLuongTonKho >= 0),
-	DonVi nvarchar(50)
+	SoLuongTonKho int CHECK (SoLuongTonKho >= 0) 
 )
 
 CREATE TABLE PhaChe (

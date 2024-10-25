@@ -85,7 +85,7 @@
             this.btnThem.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnThem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnThem.ForeColor = System.Drawing.Color.White;
-            this.btnThem.Location = new System.Drawing.Point(507, 395);
+            this.btnThem.Location = new System.Drawing.Point(507, 411);
             this.btnThem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(137, 46);
