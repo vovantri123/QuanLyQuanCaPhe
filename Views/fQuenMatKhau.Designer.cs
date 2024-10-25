@@ -40,9 +40,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label1.Location = new System.Drawing.Point(329, 41);
+            this.label1.Location = new System.Drawing.Point(292, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(319, 52);
+            this.label1.Size = new System.Drawing.Size(273, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "Quên mật khẩu";
             // 
@@ -57,22 +57,22 @@
             this.txtSoDienThoai.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDienThoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtSoDienThoai.Location = new System.Drawing.Point(448, 199);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtSoDienThoai.Location = new System.Drawing.Point(398, 159);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PasswordChar = '\0';
             this.txtSoDienThoai.PlaceholderText = "";
             this.txtSoDienThoai.SelectedText = "";
-            this.txtSoDienThoai.Size = new System.Drawing.Size(286, 56);
+            this.txtSoDienThoai.Size = new System.Drawing.Size(254, 45);
             this.txtSoDienThoai.TabIndex = 1;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label2.Location = new System.Drawing.Point(231, 199);
+            this.label2.Location = new System.Drawing.Point(205, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(181, 32);
+            this.label2.Size = new System.Drawing.Size(154, 29);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số điện thoại";
             // 
@@ -84,9 +84,10 @@
             this.btnLayMatKhau.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnLayMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLayMatKhau.ForeColor = System.Drawing.Color.White;
-            this.btnLayMatKhau.Location = new System.Drawing.Point(554, 285);
+            this.btnLayMatKhau.Location = new System.Drawing.Point(486, 231);
+            this.btnLayMatKhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLayMatKhau.Name = "btnLayMatKhau";
-            this.btnLayMatKhau.Size = new System.Drawing.Size(180, 45);
+            this.btnLayMatKhau.Size = new System.Drawing.Size(160, 36);
             this.btnLayMatKhau.TabIndex = 3;
             this.btnLayMatKhau.Text = "Lấy mật khẩu";
             this.btnLayMatKhau.Click += new System.EventHandler(this.btnLayMatKhau_Click);
@@ -95,9 +96,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(207, 130);
+            this.label3.Location = new System.Drawing.Point(184, 104);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(205, 32);
+            this.label3.Size = new System.Drawing.Size(175, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Tên đăng nhập";
             // 
@@ -112,26 +113,27 @@
             this.txtTenDangNhap.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTenDangNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtTenDangNhap.Location = new System.Drawing.Point(448, 119);
-            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenDangNhap.Location = new System.Drawing.Point(398, 95);
+            this.txtTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenDangNhap.Name = "txtTenDangNhap";
             this.txtTenDangNhap.PasswordChar = '\0';
             this.txtTenDangNhap.PlaceholderText = "";
             this.txtTenDangNhap.SelectedText = "";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(286, 56);
+            this.txtTenDangNhap.Size = new System.Drawing.Size(254, 45);
             this.txtTenDangNhap.TabIndex = 1;
             // 
             // fQuenMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 422);
+            this.ClientSize = new System.Drawing.Size(889, 338);
             this.Controls.Add(this.btnLayMatKhau);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtTenDangNhap);
             this.Controls.Add(this.txtSoDienThoai);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fQuenMatKhau";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fQuenMatKhau";
