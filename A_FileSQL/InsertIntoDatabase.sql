@@ -2,7 +2,7 @@
 
 GO
 
---BEGIN TRANSACTION --Insert có lỗi thì chạy lệnh rollback bên dưới, chèn được hết thì nhớ commit
+--  BEGIN TRANSACTION --Insert có lỗi thì chạy lệnh rollback bên dưới, chèn được hết thì nhớ commit
 
 -- Bảng Công Việc
 INSERT INTO CongViec (MaCV, TenCV) VALUES 
@@ -78,9 +78,9 @@ INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy) VALUES
 
 -- Bảng Đơn Hàng 
 
-INSERT INTO DonHang (MaDH, MaKH, MaNV, NgayMua, GiaTriDon, TrangThai) VALUES
-('DH01', 'KH01', 'NV01', '2024-09-30', 40000, N'Đã thanh toán'),
-('DH02', 'KH02', 'NV04', '2024-10-01', 25000, N'Đã thanh toán');
+INSERT INTO DonHang (MaDH, NgayMua, GiaTriDon, TrangThai) VALUES
+('DH01', '2024-09-30', 40000, N'Đã thanh toán'),
+('DH02', '2024-10-01', 25000, N'Đã thanh toán');
 
 -- Bảng Loại Sản Phẩm
 INSERT INTO LoaiSanPham (MaLoaiSP, TenLoaiSP) VALUES
@@ -156,6 +156,12 @@ INSERT INTO PhaChe (MaSP, MaNL, SoLuong) VALUES
 INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien) VALUES
 ('DH01', 'SP01', 2, 40000),
 ('DH02', 'SP02', 1, 25000);
+
+-- Bảng Thanh Toán
+INSERT INTO ThanhToan(MaDH, MaNV, MaKH) VALUES
+('DH01', 'NV01', 'KH01'),
+('DH02', 'NV02', 'KH01');
+
 
 
 --ROLLBACK TRANSACTION

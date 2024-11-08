@@ -41,8 +41,9 @@ CREATE VIEW v_DanhSachHoaDon AS
 SELECT dh.MaDH, dh.NgayMua, kh.SoDienThoai, kh.TenKH, dh.GiaTriDon
 FROM DonHang dh 
 INNER JOIN ChiTietHoaDon cthd ON dh.MaDH = cthd.MaDH
-INNER JOIN NhanVien nv ON dh.MaNV = nv.MaNV
-INNER JOIN KhachHang kh ON dh.MaKH = kh.MaKH
+INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+INNER JOIN NhanVien nv ON tt.MaNV = nv.MaNV
+INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
 WHERE dh.TrangThai = N'Đã thanh toán'
 
 GO 
@@ -260,14 +261,42 @@ CREATE PROCEDURE proc_Them_DonHang
 	@MaNV NVARCHAR(50)
 AS
 BEGIN
-	DECLARE @MaKH NVARCHAR(50)
-	
+	DECLARE @MaKH NVARCHAR(50); 
+
+	DECLARE @maxMaDH NVARCHAR(50);
+    DECLARE @newMaDH NVARCHAR(50);
+    DECLARE @numPart INT;
+	  
+
 	SELECT @MaKH = MaKH
 	FROM KhachHang
 	WHERE SoDienThoai = @SoDienThoai
-	
-	INSERT INTO DonHang(MaKH, MaNV, NgayMua, GiaTriDon, TrangThai)
-	VALUES (@MaKH, @MaNV, GETDATE(), 1, N'Chưa thanh toán')
+	 
+	--Code bên trigger
+    -- Tìm giá trị maDH lớn nhất hiện có
+    SELECT @maxMaDH = MAX(maDH) 
+    FROM DonHang
+    WHERE maDH LIKE 'DH%';
+
+    -- Lấy phần số từ maDH (bỏ phần 'DH' phía trước) và convert sang kiểu INT
+    IF @maxMaDH IS NOT NULL
+    BEGIN
+        SET @numPart = CAST(SUBSTRING(@maxMaDH, 3, LEN(@maxMaDH) - 2) AS INT) + 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu chưa có maDH nào, bắt đầu từ 1
+        SET @numPart = 1;
+    END
+
+    -- Tạo giá trị mới cho maDH, với định dạng DHxx (2 số)
+    SET @newMaDH = 'DH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+	 
+	INSERT INTO DonHang(MaDH, NgayMua, GiaTriDon, TrangThai)
+	VALUES (@newMaDH, GETDATE(), 1, N'Chưa thanh toán') 
+	  
+	INSERT INTO ThanhToan(MaDH, MaNV, MaKH)
+	VALUES (@newMaDH, @MaNV, @MaKH)
 END
 
 GO
@@ -276,17 +305,26 @@ CREATE PROCEDURE proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan
 AS
 BEGIN
 	DECLARE @MaDH NVARCHAR(50),
+			@MaNV NVARCHAR(50),
 			@MaKH NVARCHAR(50),
 			@DonHangCount INT;
 	 
-	SELECT @MaDH = MaDH, @MaKH = MaKH
-	FROM DonHang
+	SELECT @MaDH = dh.MaDH, @MaKH = kh.MaKH, @MaNV = nv.MaNV
+	FROM DonHang dh
+	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+	INNER JOIN NhanVien nv ON tt.MaNV = nv.MaNV
+	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
 	WHERE TrangThai =  N'Chưa thanh toán'
 
 	-- Đếm số đơn hàng còn lại của khách hàng trong bảng DonHang
     SELECT @DonHangCount = COUNT(*)
-    FROM DonHang
-    WHERE MaKH = @MaKH; 
+    FROM DonHang dh
+	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
+    WHERE kh.MaKH = @MaKH; 
+
+	DELETE FROM ThanhToan
+	WHERE MaDH = @MaDH AND MaNV = @MaNV AND MaKH = @MaKH  
 	 
 	DELETE FROM ChiTietHoaDon
 	WHERE MaDH = @MaDH
@@ -368,8 +406,10 @@ BEGIN
     DECLARE @SoDiemTichLuy FLOAT 
 	DECLARE @MaKH NVARCHAR(50)
 
-	SELECT @GiaTriDon = GiaTriDon, @MaKH = MaKH
-    FROM DonHang
+	SELECT @GiaTriDon = dh.GiaTriDon, @MaKH = kh.MaKH
+    FROM DonHang dh
+	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
     WHERE TrangThai = N'Chưa thanh toán'
 
 	SELECT @SoDiemTichLuy = SoDiemTichLuy 
@@ -510,41 +550,7 @@ GO
 
   
 -- Trigger
-CREATE TRIGGER trg_TuDongTaoMaDH_DonHang
-ON DonHang
-INSTEAD OF INSERT
-AS
-BEGIN
-    DECLARE @maxMaDH NVARCHAR(50);
-    DECLARE @newMaDH NVARCHAR(50);
-    DECLARE @numPart INT;
-
-    -- Tìm giá trị maDH lớn nhất hiện có
-    SELECT @maxMaDH = MAX(maDH) 
-    FROM DonHang
-    WHERE maDH LIKE 'DH%';
-
-    -- Lấy phần số từ maDH (bỏ phần 'DH' phía trước) và convert sang kiểu INT
-    IF @maxMaDH IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaDH, 3, LEN(@maxMaDH) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có maDH nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
-
-    -- Tạo giá trị mới cho maDH, với định dạng DHxx (2 số)
-    SET @newMaDH = 'DH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-    -- Thực hiện chèn bản ghi với maDH mới
-    INSERT INTO DonHang (MaDH, MaKH, MaNV, NgayMua, GiaTriDon, TrangThai)
-    SELECT @newMaDH, MaKH, MaNV, NgayMua, GiaTriDon, TrangThai
-    FROM inserted;
-END;
-
-GO
+ 
 
 CREATE TRIGGER trg_Them_ChiTietHoaDon
 ON ChiTietHoaDon

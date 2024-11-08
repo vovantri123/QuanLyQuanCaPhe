@@ -201,3 +201,5 @@ E:\DBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
 E:\DBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
 E:\DBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 E:\DBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.nhap.resources
+E:\DBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.nhap.resources
