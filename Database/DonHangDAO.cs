@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Database
 {
@@ -15,6 +16,7 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.ClearParameters(); 
             DBConnection.AddParameters("@SoDienThoai", soDienThoai);
             DBConnection.AddParameters("@MaNV", maNV);
+            MessageBox.Show(maNV + " số ĐT là "+ soDienThoai);
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_DonHang", DBConnection.parameters);
             
         }   

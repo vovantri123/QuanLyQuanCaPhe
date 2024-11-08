@@ -19,12 +19,11 @@ namespace QuanLyQuanCaPhe.Views
         {
             InitializeComponent();
         }
-         
+
         private void LoadDGVHienThi()
         {
             dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachHoaDon");
         }
-
 
         private void fHoaDon_Load(object sender, EventArgs e)
         {

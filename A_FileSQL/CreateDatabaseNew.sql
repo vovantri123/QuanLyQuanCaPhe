@@ -40,7 +40,8 @@ CREATE TABLE CaLamViec(
 CREATE TABLE ThucHien (
 	MaNV nvarchar(50) CONSTRAINT FK_ThucHien_NhanVien FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
 	MaCV nvarchar(50) CONSTRAINT FK_ThucHien_CongViec FOREIGN KEY (MaCV) REFERENCES CongViec(MaCV),
-	MaCa nvarchar(50) CONSTRAINT FK_ThucHien_CaLamViec FOREIGN KEY (MaCa) REFERENCES CaLamViec(MaCa)
+	MaCa nvarchar(50) CONSTRAINT FK_ThucHien_CaLamViec FOREIGN KEY (MaCa) REFERENCES CaLamViec(MaCa),
+	CONSTRAINT PK_ThucHien PRIMARY KEY (MaNV,MaCV, MaCa)
 )
 CREATE TABLE KhachHang (
 	MaKH nvarchar(50) CONSTRAINT PK_KhangHang PRIMARY KEY,
@@ -50,9 +51,7 @@ CREATE TABLE KhachHang (
 )
 
 CREATE TABLE DonHang (
-	MaDH nvarchar(50) CONSTRAINT PK_DonHang PRIMARY KEY,
-	MaKH nvarchar(50) CONSTRAINT FP_DonHang_KhachHang FOREIGN KEY (MaKH) REFERENCES KhachHang(MaKH),
-	MaNV nvarchar(50) CONSTRAINT FK_DonHang_NhanVien FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
+	MaDH nvarchar(50) CONSTRAINT PK_DonHang PRIMARY KEY, 
 	NgayMua date CHECK (DATEDIFF(day, NgayMua, GETDATE()) >= 0),
 	GiaTriDon float CHECK (GiaTriDon > 0),
 	TrangThai nvarchar(50)
@@ -91,3 +90,12 @@ CREATE TABLE ChiTietHoaDon (
 
 	CONSTRAINT PK_ChiTietHoaDon PRIMARY KEY (MaDH, MaSP)
 )
+
+CREATE TABLE ThanhToan (
+	MaDH nvarchar(50) CONSTRAINT FK_ThanhToan_DonHang FOREIGN KEY REFERENCES DonHang(MaDH),
+	MaNV nvarchar(50) CONSTRAINT FK_ThanhToan_NhanVien FOREIGN KEY REFERENCES NhanVien(MaNV),
+	MaKH nvarchar(50) CONSTRAINT FK_ThanhToan_KhachHang FOREIGN KEY REFERENCES KhachHang(MaKH), 
+
+	CONSTRAINT PK_ThanhToan PRIMARY KEY (MaDH,MaNV, MaKH)
+)
+ 
