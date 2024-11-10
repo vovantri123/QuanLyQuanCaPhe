@@ -59,6 +59,51 @@ namespace QuanLyQuanCaPhe.Database
             return DBConnection.ThucThiFunction_InlineVaMultiStatement("func_timKiemTrenViewNhanVien", DBConnection.parameters);
         }
 
+        public static NhanVien timKiemNhanVienTheoTaiKhoan(string tenDangNhap, string matKhau)
+        {
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@TenDangNhap", tenDangNhap);
+            DBConnection.AddParameters("@MatKhau", matKhau);
+
+            List<SqlParameter> outputParameters = new List<SqlParameter>
+            {
+                new SqlParameter("@HoTenNV", SqlDbType.NVarChar, 50) { Direction = ParameterDirection.Output },
+                new SqlParameter("@SoDienThoai", SqlDbType.NVarChar, 50) { Direction = ParameterDirection.Output },
+                new SqlParameter("@NamSinh", SqlDbType.Int) { Direction = ParameterDirection.Output },
+                new SqlParameter("@GioiTinh", SqlDbType.NVarChar,50) { Direction = ParameterDirection.Output },
+                new SqlParameter("@DiaChi", SqlDbType.NVarChar,200) { Direction = ParameterDirection.Output },
+                new SqlParameter("@MaNV", SqlDbType.NVarChar,50) { Direction = ParameterDirection.Output },
+                new SqlParameter("@LuongCoDinh", SqlDbType.Float) { Direction = ParameterDirection.Output },
+                new SqlParameter("@LuongTheoGio", SqlDbType.Float) { Direction = ParameterDirection.Output },
+                new SqlParameter("@SoGio", SqlDbType.Float) { Direction = ParameterDirection.Output },
+
+            };
+
+            Dictionary<string, object> result = DBConnection.ThucThiProc_CoThamSoOutput("proc_timNhanVienTheoTaiKhoan", DBConnection.parameters, outputParameters);
+
+            if (result != null)
+            {
+                NhanVien nv = new NhanVien();
+                nv.MaNV = result["@MaNV"].ToString();
+                MessageBox.Show(nv.MaNV);
+                nv.HoTenNV = result["@HoTenNV"].ToString();
+                nv.SoDienThoai = result["@SoDienThoai"].ToString();
+                nv.NamSinh = Convert.ToInt32(result["@NamSinh"].ToString());
+                nv.GioiTinh = result["@GioiTinh"].ToString();
+                nv.DiaChi = result["@DiaChi"].ToString();
+                nv.MaNV = result["@MaNV"].ToString();
+                nv.TenDangNhap = tenDangNhap;
+                nv.MatKhau = matKhau;
+
+                return nv;
+            }
+            else
+            {
+                return null;
+            }
+
+        }
+
         public static int CheckLogin(string tenDangNhap, string matKhau)
         {
             DBConnection.ClearParameters();

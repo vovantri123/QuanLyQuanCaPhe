@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanCaPhe.Database;
+using QuanLyQuanCaPhe.Models;
 using QuanLyQuanCaPhe.Views;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,9 @@ namespace QuanLyQuanCaPhe
 
              
             if (NhanVienDAO.CheckLogin(tenDangNhap, matKhau) >= 1)
-            { 
-                fTrangChu f = new fTrangChu();
+            {
+                NhanVien nv = NhanVienDAO.timKiemNhanVienTheoTaiKhoan(tenDangNhap, matKhau);
+                fTrangChu f = new fTrangChu(nv);
                 f.Show();  
                 this.Hide(); // Ẩn form đăng nhập
             }

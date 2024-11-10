@@ -19,8 +19,15 @@ namespace QuanLyQuanCaPhe.Views
     public partial class fTrangChu : Form
     {
         List<ucSanPham> listUCSanPham  = new List<ucSanPham>(); //Tạo List dùng cho việc sắp xếp
+        NhanVien nhanVien;
         public fTrangChu()
         {
+            InitializeComponent();
+        }
+
+        public fTrangChu(NhanVien nv)
+        {
+            this.nhanVien = nv;
             InitializeComponent();
         }
         private void fTrangChu_Load(object sender, EventArgs e)
@@ -34,7 +41,7 @@ namespace QuanLyQuanCaPhe.Views
 
             lblNgayMua.Text = Ngay.NgayHienTai();
             cboSapXep.SelectedItem = "Tên: A -> Z";
-            
+            lblTenCuaBan.Text = nhanVien.HoTenNV;
         }
         
         private void ThemListUCVaoFlowPnlSanPham()
