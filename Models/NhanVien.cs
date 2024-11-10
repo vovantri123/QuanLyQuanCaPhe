@@ -14,6 +14,7 @@ namespace QuanLyQuanCaPhe.Models
         private int namSinh;
         private string gioiTinh;
         private string diaChi;
+        private string email;
         private string tenDangNhap;
         private string matKhau;
 
@@ -22,7 +23,7 @@ namespace QuanLyQuanCaPhe.Models
 
         }
 
-        public NhanVien(string maNV, string hoTenNV, string soDienThoai, int namSinh, string gioiTinh, string diaChi, string tenDangNhap, string matKhau)
+        public NhanVien(string maNV, string hoTenNV, string soDienThoai, int namSinh, string gioiTinh, string diaChi, string email,string tenDangNhap, string matKhau)
         {
             this.maNV = maNV;
             this.hoTenNV = hoTenNV;
@@ -30,6 +31,7 @@ namespace QuanLyQuanCaPhe.Models
             this.namSinh = namSinh;
             this.gioiTinh = gioiTinh;
             this.diaChi = diaChi;
+            this.email = email;
             this.tenDangNhap = tenDangNhap;
             this.matKhau = matKhau;
         }
@@ -42,5 +44,6 @@ namespace QuanLyQuanCaPhe.Models
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
+        public string Email { get => email; set => email = value; }
     }
 }

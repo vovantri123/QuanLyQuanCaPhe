@@ -14,15 +14,15 @@ INSERT INTO CongViec (MaCV, TenCV) VALUES
 ('CV05', N'Thu ngân'); 
 
 -- Bảng Nhân Viên
-INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau) VALUES
-('NV01', N'Nguyễn Hoàng Anh Khoa', '0934567893', 2004, 'Nam', 'Nha Trang', 'nv01', 'nv01'),
-('NV02', N'Võ Văn Trí', '0934567891', 2004, 'Nam', 'Nha Trang', 'nv02', 'nv02'),
-('NV03', N'Nguyễn Lý Hùng', '0926081451', 2004, 'Nam', 'Hồ Chí Minh', 'nv03', 'nv03'),
-('NV04', N'Trương Hồng Hạnh', '0839907328', 2004, 'Nữ', 'Tiền Giang', 'nv04', 'nv04'),
-('NV05', N'Lê Thị Khánh Ngọc', '0585850481', 2003, 'Nữ', 'Hà Nội', 'nv05', 'nv05'),
-('NV06', N'Hoàng Thị Thu Trang', '0876525505', 2006, 'Nữ', 'Đồng Nai', 'nv06', 'nv06'),
-('NV07', N'Phạm Ngọc Huy', '0977801301', 2000, 'Nam', 'Bến Tre', 'nv07', 'nv07'),
-('NV08', N'Trần Nhật Minh', '0843255905', 2001, 'Nam', 'Hồ Chí Minh', 'nv08', 'nv08');
+INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau) VALUES
+('NV01', N'Nguyễn Hoàng Anh Khoa', '0934567893', 2004, 'Nam', 'Nha Trang', 'anhkhoaxn11@gmail.com','nv01', 'nv01'),
+('NV02', N'Võ Văn Trí', '0934567891', 2004, 'Nam', 'Nha Trang', 'anhkhoaxn11@gmail.com','nv02', 'nv02'),
+('NV03', N'Nguyễn Lý Hùng', '0926081451', 2004, 'Nam', 'Hồ Chí Minh', 'anhkhoaxn11@gmail.com','nv03', 'nv03'),
+('NV04', N'Trương Hồng Hạnh', '0839907328', 2004, 'Nữ', 'Tiền Giang', 'anhkhoaxn11@gmail.com','nv04', 'nv04'),
+('NV05', N'Lê Thị Khánh Ngọc', '0585850481', 2003, 'Nữ', 'Hà Nội', 'anhkhoaxn11@gmail.com','nv05', 'nv05'),
+('NV06', N'Hoàng Thị Thu Trang', '0876525505', 2006, 'Nữ', 'Đồng Nai', 'anhkhoaxn11@gmail.com','nv06', 'nv06'),
+('NV07', N'Phạm Ngọc Huy', '0977801301', 2000, 'Nam', 'Bến Tre', 'anhkhoaxn11@gmail.com','nv07', 'nv07'),
+('NV08', N'Trần Nhật Minh', '0843255905', 2001, 'Nam', 'Hồ Chí Minh', 'anhkhoaxn11@gmail.com','nv08', 'nv08');
 
 -- Bảng Nhân Viên Toàn Thời Gian
 INSERT INTO NhanVienToanThoiGian (MaNV, LuongCoDinh) VALUES

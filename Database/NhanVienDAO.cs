@@ -21,6 +21,7 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.AddParameters("@NamSinh", lnv.NamSinh);
             DBConnection.AddParameters("@GioiTinh", lnv.GioiTinh);
             DBConnection.AddParameters("@DiaChi", lnv.DiaChi);
+            DBConnection.AddParameters("@Email", lnv.Email);
             DBConnection.AddParameters("@TenDangNhap", lnv.TenDangNhap);
             DBConnection.AddParameters("@MatKhau", lnv.MatKhau);
             DBConnection.AddParameters("@LoaiNhanVien", loaiNV);
@@ -45,6 +46,7 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.AddParameters("@NamSinh", lnv.NamSinh);
             DBConnection.AddParameters("@GioiTinh", lnv.GioiTinh);
             DBConnection.AddParameters("@DiaChi", lnv.DiaChi);
+            DBConnection.AddParameters("@Email", lnv.Email);
             DBConnection.AddParameters("@TenDangNhap", lnv.TenDangNhap);
             DBConnection.AddParameters("@MatKhau", lnv.MatKhau);
 
@@ -72,6 +74,7 @@ namespace QuanLyQuanCaPhe.Database
                 new SqlParameter("@NamSinh", SqlDbType.Int) { Direction = ParameterDirection.Output },
                 new SqlParameter("@GioiTinh", SqlDbType.NVarChar,50) { Direction = ParameterDirection.Output },
                 new SqlParameter("@DiaChi", SqlDbType.NVarChar,200) { Direction = ParameterDirection.Output },
+                new SqlParameter("@Email", SqlDbType.NVarChar,50) { Direction = ParameterDirection.Output },
                 new SqlParameter("@MaNV", SqlDbType.NVarChar,50) { Direction = ParameterDirection.Output },
                 new SqlParameter("@LuongCoDinh", SqlDbType.Float) { Direction = ParameterDirection.Output },
                 new SqlParameter("@LuongTheoGio", SqlDbType.Float) { Direction = ParameterDirection.Output },
@@ -91,6 +94,7 @@ namespace QuanLyQuanCaPhe.Database
                 nv.NamSinh = Convert.ToInt32(result["@NamSinh"].ToString());
                 nv.GioiTinh = result["@GioiTinh"].ToString();
                 nv.DiaChi = result["@DiaChi"].ToString();
+                nv.Email = result["@Email"].ToString();
                 nv.MaNV = result["@MaNV"].ToString();
                 nv.TenDangNhap = tenDangNhap;
                 nv.MatKhau = matKhau;

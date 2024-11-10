@@ -127,10 +127,11 @@ namespace QuanLyQuanCaPhe.Views
                 string namSinh = txtNamSinh.Text;
                 string gioiTinh = cboGioiTinh.Text;
                 string diaChi = txtDiaChi.Text;
+                string email = txtEmail.Text;
                 string tenDangNhap = txtbTenDangNhap.Text;
                 string matKhau = txtMatKhau.Text;
                 string loaiNV = cboLoaiNV.Text;
-                NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
+                NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email,tenDangNhap, matKhau);
                 NhanVienDAO.Them(nv, loaiNV);
                 co = true;
             }
@@ -158,6 +159,7 @@ namespace QuanLyQuanCaPhe.Views
                 int year = Convert.ToInt32(namSinh);
                 string gioiTinh = cboGioiTinh.Text;
                 string diaChi = txtDiaChi.Text;
+                string email = txtEmail.Text;
                 string tenDangNhap = txtbTenDangNhap.Text;
                 string matKhau = txtMatKhau.Text;
                 string loaiNV = cboLoaiNV.Text;
@@ -167,7 +169,7 @@ namespace QuanLyQuanCaPhe.Views
                 double luong = Convert.ToDouble(luongCoDinh);
                 if (loaiNV.Equals("Toàn thời gian"))
                 {
-                    NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
+                    NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
                     NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong);
                     NhanVienToanThoiGianDAO.Sua(nvToanTG);
                     NhanVienDAO.Sua(nv);
@@ -175,7 +177,7 @@ namespace QuanLyQuanCaPhe.Views
                 }
                 else
                 {
-                    NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, tenDangNhap, matKhau);
+                    NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);
                     NhanVienDAO.Sua(nv);

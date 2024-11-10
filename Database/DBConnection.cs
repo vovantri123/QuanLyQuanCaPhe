@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanCaPhe.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
@@ -13,9 +14,10 @@ namespace QuanLyQuanCaPhe.Database
     public class DBConnection
     {
         // Tạo một đối tượng kết nối Database
-        public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KN9ENH3A\SQLEXPRESS01;Initial Catalog=QuanLyQuanCaPhe;Persist Security Info=True;User ID=sa;Password=103204");
+        //public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KN9ENH3A\SQLEXPRESS01;Initial Catalog=QuanLyQuanCaPhe;Persist Security Info=True;User ID=sa;Password=103204");
         //public static SqlConnection conn = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QuanLyCaPhe;Integrated Security=True");
         //public static SqlConnection conn = new SqlConnection("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;Integrated Security=True");
+        public static SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
 
         // List tham số truyền vào proc và function
         public static List<KeyValuePair<string, object>> parameters = new List<KeyValuePair<string, object>>();

@@ -24,8 +24,9 @@ namespace QuanLyQuanCaPhe
         {
             string tenDangNhap = txtTenDangNhap.Text.Trim(); // TextBox chứa tên đăng nhập
             string matKhau = txtMatKhau.Text.Trim(); // TextBox chứa mật khẩu
+            GLOBAL.tenDangNhap = tenDangNhap;
+            GLOBAL.matKhau = matKhau;
 
-             
             if (NhanVienDAO.CheckLogin(tenDangNhap, matKhau) >= 1)
             {
                 NhanVien nv = NhanVienDAO.timKiemNhanVienTheoTaiKhoan(tenDangNhap, matKhau);

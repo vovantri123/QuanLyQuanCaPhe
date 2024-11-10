@@ -18,6 +18,7 @@ CREATE TABLE NhanVien(
 	NamSinh int NOT NULL CHECK(YEAR(GETDATE())-NamSinh>=16),
 	GioiTinh nvarchar(50) NOT NULL,
 	DiaChi nvarchar(200) NOT NULL,
+	Email nvarchar(50) NOT NULL,
 	TenDangNhap nvarchar(50) UNIQUE NOT NULL,
 	MatKhau nvarchar(50) NOT NULL
 )

@@ -49,7 +49,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            NguyenLieu nl = new NguyenLieu("", txtTenNguyenLieu.Text, Convert.ToInt32(nudSoLuong.Value)); //"" do có trigger sinh MaNL tự động
+            NguyenLieu nl = new NguyenLieu("NL00", txtTenNguyenLieu.Text, Convert.ToInt32(nudSoLuong.Value)); //"" do có trigger sinh MaNL tự động
             NguyenLieuDAO.Them(nl);
             LoadDGVHienThi();
         }

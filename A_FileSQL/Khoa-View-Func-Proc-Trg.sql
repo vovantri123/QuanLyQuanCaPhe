@@ -7,8 +7,7 @@ CREATE TRIGGER trg_TuDongTaoMaNV_NhanVien
 ON NhanVien
 INSTEAD OF INSERT
 AS
-BEGIN
-	BEGIN TRANSACTION
+BEGIN	   
 	BEGIN TRY
 		DECLARE @maxMaNV NVARCHAR(50);
 		DECLARE @newMaNV NVARCHAR(50);
@@ -29,15 +28,12 @@ BEGIN
 
 		SET @newMaNV = 'NV' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
 
-		INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi,TenDangNhap,MatKhau)
-		SELECT @newMaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau
-		FROM inserted;
-		
-		COMMIT TRANSACTION
+		INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email, TenDangNhap, MatKhau)
+		SELECT @newMaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau
+		FROM inserted; 
 	END TRY
 	BEGIN CATCH
-
-        ROLLBACK TRANSACTION; 
+	 
         DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
 		RAISERROR (@ErrorMessage, 16, 1);
 
@@ -52,6 +48,7 @@ CREATE PROCEDURE proc_ThemNhanVien
     @NamSinh int,
     @GioiTinh nvarchar(50),
     @DiaChi nvarchar(200),
+	@Email nvarchar(50),
     @TenDangNhap nvarchar(50),
     @MatKhau nvarchar(50),
     @LoaiNhanVien nvarchar(20)
@@ -59,8 +56,8 @@ AS
 BEGIN
 	BEGIN TRANSACTION
 	BEGIN TRY
-		INSERT INTO NhanVien (HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau)
-		VALUES (@HoTenNV, @SoDienThoai, @NamSinh, @GioiTinh, @DiaChi, @TenDangNhap, @MatKhau);
+		INSERT INTO NhanVien (HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau)
+		VALUES (@HoTenNV, @SoDienThoai, @NamSinh, @GioiTinh, @DiaChi, @Email, @TenDangNhap, @MatKhau);
 
 		DECLARE @mNV nvarchar(50);
 		SELECT @mNV = MaNV
@@ -123,6 +120,7 @@ CREATE PROCEDURE proc_SuaNhanVien
     @NamSinh int,
     @GioiTinh nvarchar(50),
     @DiaChi nvarchar(200),
+	@Email nvarchar(50),
     @TenDangNhap nvarchar(50),
     @MatKhau nvarchar(50)
 AS
@@ -133,6 +131,7 @@ BEGIN
 		NamSinh = @NamSinh,
 		GioiTinh = @GioiTinh,
 		DiaChi = @DiaChi,
+		Email = @Email,
 		TenDangNhap = @TenDangNhap,
 		MatKhau = @MatKhau
 	WHERE MaNV = @MaNV
@@ -175,6 +174,7 @@ RETURNS @KetQua TABLE (
     NamSinh INT,
     GioiTinh NVARCHAR(50),
     DiaChi NVARCHAR(200),
+	Email NVARCHAR(50),
     TenDangNhap NVARCHAR(50),
 	MatKhau NVARCHAR(50),
 	LuongCoDinh FLOAT,
@@ -184,7 +184,7 @@ RETURNS @KetQua TABLE (
 AS
 BEGIN
     INSERT INTO @KetQua
-    SELECT MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, TenDangNhap, MatKhau, LuongCoDinh, SoGio, LuongTheoGio
+    SELECT MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email, TenDangNhap, MatKhau, LuongCoDinh, SoGio, LuongTheoGio
     FROM v_DanhSachNhanVien
     WHERE HoTenNV LIKE '%' + @HoTenNV + '%'; 
 
@@ -210,6 +210,7 @@ CREATE PROCEDURE proc_timNhanVienTheoTaiKhoan
     @NamSinh int OUTPUT,
     @GioiTinh nvarchar(50) OUTPUT,
     @DiaChi nvarchar(50) OUTPUT,
+	@Email nvarchar(50) OUTPUT,
     @MaNV nvarchar(50) OUTPUT,
     @LuongCoDinh float OUTPUT,
     @LuongTheoGio float OUTPUT,
@@ -222,6 +223,7 @@ BEGIN
         @NamSinh = NhanVien.NamSinh,
         @GioiTinh = NhanVien.GioiTinh,
         @DiaChi = NhanVien.DiaChi,
+		@Email = NhanVien.Email,
         @MaNV = NhanVien.MaNV,
         @LuongCoDinh = NhanVienToanThoiGian.LuongCoDinh,
         @LuongTheoGio = NhanVienBanThoiGian.LuongTheoGio,

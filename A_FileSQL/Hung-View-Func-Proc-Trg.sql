@@ -117,12 +117,12 @@ RETURN
 );
 
 GO
+
 CREATE TRIGGER trg_TuDongTaoMaKH_KhachHang
 ON KhachHang
 INSTEAD OF INSERT
 AS
-BEGIN
-	BEGIN TRANSACTION
+BEGIN 
 	BEGIN TRY
 		DECLARE @maxMaKH NVARCHAR(50);
 		DECLARE @newMaKH NVARCHAR(50);
@@ -151,23 +151,21 @@ BEGIN
 		INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
 		SELECT @newMaKH, TenKH, SoDienThoai, SoDiemTichLuy
 		FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn
-		
-		COMMIT TRANSACTION
+		 
 	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION
+	BEGIN CATCH 
 		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
         RAISERROR (@ErrorMessage, 16, 1);
 	END CATCH
 END;
 
 GO
+
 CREATE TRIGGER Trg_LuatPhanCa_PhanCa
 ON ThucHien
 AFTER INSERT
 AS
-BEGIN
-	BEGIN TRANSACTION
+BEGIN 
 	BEGIN TRY
 		DECLARE @MaNV nvarchar(50), @Ngay DATE, @MaCa nvarchar(50), @TenCa nvarchar(50);
 
@@ -183,8 +181,7 @@ BEGIN
 			JOIN CaLamViec CLV ON TH.MaCa = CLV.MaCa
 			WHERE TH.MaNV = @MaNV AND CLV.Ngay = @Ngay) > 2
 		BEGIN
-			RAISERROR (N'Nhân viên này không được làm quá 2 ca trong 1 ngày. Vui lòng kiểm tra lại.', 16, 1);
-			ROLLBACK TRANSACTION;
+			RAISERROR (N'Nhân viên này không được làm quá 2 ca trong 1 ngày. Vui lòng kiểm tra lại.', 16, 1); 
 			RETURN;
 		END
 
@@ -194,8 +191,7 @@ BEGIN
 			JOIN CaLamViec CLV ON TH.MaCa = CLV.MaCa
 			WHERE MaNV = @MaNV AND TenCa = @TenCa AND Ngay = @Ngay) > 1
 		BEGIN
-			RAISERROR (N'Ca làm việc bị trùng lặp cho nhân viên này trong ngày. Vui lòng kiểm tra lại.', 16, 1);
-			ROLLBACK TRANSACTION;
+			RAISERROR (N'Ca làm việc bị trùng lặp cho nhân viên này trong ngày. Vui lòng kiểm tra lại.', 16, 1); 
 		END
 
 		 -- Kiểm tra ca làm việc theo quy định: Nếu nhân viên làm FulltimeAM thì không được làm sáng và chiều
@@ -209,8 +205,7 @@ BEGIN
 						AND CLV.TenCa = N'FulltimeAM'  -- Kiểm tra xem nhân viên đã làm FulltimeAM chưa
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimeAM, không được làm ca Sáng, Chiều .', 16, 1);
-				ROLLBACK TRANSACTION;
+				RAISERROR (N'Nhân viên đã làm FulltimeAM, không được làm ca Sáng, Chiều .', 16, 1); 
 				RETURN;
 			END
 		END
@@ -224,8 +219,7 @@ BEGIN
 						AND CLV.TenCa = N'FulltimePM'  -- Kiểm tra FulltimePM
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimePM, không được làm ca Chiều, Tối và FulltimeAM.', 16, 1);
-				ROLLBACK TRANSACTION;
+				RAISERROR (N'Nhân viên đã làm FulltimePM, không được làm ca Chiều, Tối và FulltimeAM.', 16, 1); 
 				RETURN;
 			END
 		END
@@ -240,16 +234,13 @@ BEGIN
 						AND (CLV.TenCa = N'FulltimeAM' OR CLV.TenCa = N'FulltimePM')  -- Kiểm tra xem nhân viên đã làm FulltimeAM chưa
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimeAM hoặc FulltimePM , không được làm ca Chiều .', 16, 1);
-				ROLLBACK TRANSACTION;
+				RAISERROR (N'Nhân viên đã làm FulltimeAM hoặc FulltimePM , không được làm ca Chiều .', 16, 1); 
 				RETURN;
 			END
 		END
-
-		COMMIT TRANSACTION
+		 
 	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION
+	BEGIN CATCH 
 		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
         RAISERROR (@ErrorMessage, 16, 1);
 	END CATCH

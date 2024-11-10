@@ -84,6 +84,7 @@
     <Compile Include="Models\CongViec.cs" />
     <Compile Include="Database\DBConnection.cs" />
     <Compile Include="Models\DonHang.cs" />
+    <Compile Include="Models\GLOBAL.cs" />
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\LoaiSanPham.cs" />
     <Compile Include="Models\NguyenLieu.cs" />
