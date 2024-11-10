@@ -28,7 +28,8 @@ namespace QuanLyQuanCaPhe.Views
         {
             
             DateTime today = DateTime.Today;
-            DateTime monday = today.AddDays(-(int)today.DayOfWeek + 1); // Bắt đầu từ thứ Hai
+            //DateTime monday = today.AddDays(-(int)today.DayOfWeek + 1); // Bắt đầu từ thứ Hai
+            DateTime monday = today.AddDays(-(int)today.DayOfWeek + (today.DayOfWeek == DayOfWeek.Sunday ? -6 : 1));
 
             string[] shifts = { "Sáng", "Chiều", "Tối", "FulltimeAM", "FulltimePM" }; // Các ca làm việc
 

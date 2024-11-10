@@ -40,11 +40,11 @@ INSERT INTO NhanVienBanThoiGian (MaNV, LuongTheoGio, SoGio) VALUES
 
 -- Bảng Ca Làm Việc
 INSERT INTO CaLamViec (MaCa, TenCa, Ngay, GioBatDau, GioKetThuc) VALUES
-('CA01', N'Sáng', '2024-09-01', '06:00', '11:00'),
-('CA02', N'Chiều', '2024-09-01', '13:00', '18:00'),
-('CA03', N'Tối', '2024-09-01', '18:00', '23:00'),
-('CA04', N'Sáng', '2024-09-02', '06:00', '12:00'),
-('CA05', N'Chiều', '2024-09-02', '12:00', '18:00');
+('CA01', N'FulltimeAM', '2024-11-10', '06:00', '11:00'),
+('CA02', N'FulltimePM', '2024-11-11', '13:00', '18:00'),
+('CA03', N'Tối', '2024-11-12', '18:00', '23:00'),
+('CA04', N'Sáng', '2024-11-13', '06:00', '12:00'),
+('CA05', N'Chiều', '2024-11-14', '12:00', '18:00');
 
 -- Bảng thực hiện
 INSERT INTO ThucHien (MaNV, MaCV, MaCa) VALUES
