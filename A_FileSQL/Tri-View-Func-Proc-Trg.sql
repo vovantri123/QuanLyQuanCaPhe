@@ -448,30 +448,20 @@ CREATE FUNCTION func_TongTien_ChiTietHoaDon
 )
 RETURNS FLOAT  
 AS
-BEGIN
-	BEGIN TRANSACTION
-	BEGIN TRY
-		DECLARE @MaDH NVARCHAR(50)
-		DECLARE @Tong FLOAT = 0
+BEGIN 
+	DECLARE @MaDH NVARCHAR(50)
+	DECLARE @Tong FLOAT = 0
 
-		SELECT @MaDH = MaDH
-		FROM DonHang
-		WHERE TrangThai = N'Chưa thanh toán'
+	SELECT @MaDH = MaDH
+	FROM DonHang
+	WHERE TrangThai = N'Chưa thanh toán'
 
-		-- Tính tổng tiền
-		SELECT @Tong = SUM(TongTien)
-		FROM ChiTietHoaDon
-		WHERE MaDH = @MaDH
+	-- Tính tổng tiền
+	SELECT @Tong = SUM(TongTien)
+	FROM ChiTietHoaDon
+	WHERE MaDH = @MaDH
 
-		RETURN @Tong 
-
-		COMMIT TRANSACTION
-	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION
-		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
-        RAISERROR (@ErrorMessage, 16, 1);
-	END CATCH
+	RETURN @Tong  
 END;
 
 GO
@@ -754,82 +744,77 @@ ON ChiTietHoaDon
 INSTEAD OF INSERT
 AS
 BEGIN
-	BEGIN TRANSACTION
-	BEGIN TRY
+    DECLARE @maDH NVARCHAR(50);
+    DECLARE @maSP NVARCHAR(50);
+    DECLARE @soLuong INT;
+    DECLARE @soLuongTonKho INT; 
+    DECLARE @tongNL INT;
+    DECLARE @TenNL NVARCHAR(50);
 
-		DECLARE @maDH NVARCHAR(50);
-		DECLARE @maSP NVARCHAR(50);
-		DECLARE @soLuong INT;
-		DECLARE @soLuongTonKho INT; 
-		DECLARE @tongNL INT;
-		DECLARE @TenNL NVARCHAR(50); 
+    BEGIN TRANSACTION;
 
-		-- Lấy giá trị từ bảng inserted
-		SELECT @maDH = MaDH, @maSP = MaSP
-		FROM inserted;
+    -- Lấy giá trị từ bảng inserted
+    SELECT @maDH = MaDH, @maSP = MaSP
+    FROM inserted;
 
-		-- Kiểm tra xem bản ghi đã tồn tại chưa
-		IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
-		BEGIN
-			-- Nếu đã tồn tại, tăng số lượng lên 1 
-			UPDATE ChiTietHoaDon
-			SET SoLuong = SoLuong + 1
-			WHERE MaDH = @maDH AND MaSP = @maSP;
+    -- Kiểm tra xem bản ghi đã tồn tại chưa
+    IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
+    BEGIN
+        -- Nếu đã tồn tại, tăng số lượng lên 1 
+        UPDATE ChiTietHoaDon
+        SET SoLuong = SoLuong + 1
+        WHERE MaDH = @maDH AND MaSP = @maSP;
 
-			-- Cập nhật tổng tiền
-			SELECT @soLuong = SoLuong
-			FROM ChiTietHoaDon
-			WHERE MaDH = @maDH AND MaSP = @maSP;
+        -- Cập nhật tổng tiền
+        SELECT @soLuong = SoLuong
+        FROM ChiTietHoaDon
+        WHERE MaDH = @maDH AND MaSP = @maSP;
 
-			UPDATE ChiTietHoaDon
-			SET TongTien = (SELECT Gia * @soLuong FROM SanPham WHERE MaSP = @maSP)
-			WHERE MaDH = @maDH AND MaSP = @maSP;
-		END
-		ELSE
-		BEGIN
-			-- Nếu chưa tồn tại, chèn bản ghi mới
-			INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
-			VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
-		END
+        UPDATE ChiTietHoaDon
+        SET TongTien = (SELECT Gia * @soLuong FROM SanPham WHERE MaSP = @maSP)
+        WHERE MaDH = @maDH AND MaSP = @maSP;
+    END
+    ELSE
+    BEGIN
+        -- Nếu chưa tồn tại, chèn bản ghi mới
+        INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
+        VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
+    END
 
-		-- Kiểm tra số lượng nguyên liệu tồn kho sau khi insert (hoặc update)
-		-- Tạo con trỏ để duyệt qua các dòng trả về từ truy vấn
-		DECLARE cur CURSOR FOR 
-		SELECT cthd.SoLuong * pc.SoLuong AS TongNL, nl.SoLuongTonKho AS SoLuongTonKho, nl.TenNL AS TenNL
-		FROM ChiTietHoaDon cthd
-		LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
-		LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
-		WHERE MaDH = @maDH AND pc.SoLuong IS NOT NULL;
+    -- Kiểm tra số lượng nguyên liệu tồn kho sau khi insert (hoặc update)
+    -- Tạo con trỏ để duyệt qua các dòng trả về từ truy vấn
+    DECLARE cur CURSOR FOR 
+    SELECT cthd.SoLuong * pc.SoLuong AS TongNL, nl.SoLuongTonKho AS SoLuongTonKho, nl.TenNL AS TenNL
+    FROM ChiTietHoaDon cthd
+    LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
+    LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
+    WHERE MaDH = @maDH AND pc.SoLuong IS NOT NULL;
 
-		OPEN cur;
-		FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
 
-		WHILE @@FETCH_STATUS = 0
-		BEGIN
-			-- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
-			IF @tongNL > @soLuongTonKho
-			BEGIN
-				-- Raise error nếu không đủ nguyên liệu 
-				CLOSE cur;
-				DEALLOCATE cur;
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
+        IF @tongNL > @soLuongTonKho
+        BEGIN
+            -- Raise error nếu không đủ nguyên liệu 
+            CLOSE cur;
+            DEALLOCATE cur;
 
-				RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL);
-				ROLLBACK TRANSACTION; 
-			END;
+            RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL);
+            ROLLBACK TRANSACTION;
 
-			FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
-		END;
+            RETURN;  -- Dừng trigger 
+        END;
 
-		CLOSE cur;
-		DEALLOCATE cur;
+        FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+    END;
 
-		COMMIT TRANSACTION
-	END TRY
-	BEGIN CATCH
-		ROLLBACK TRANSACTION
-		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
-        RAISERROR (@ErrorMessage, 16, 1);
-	END CATCH
+    CLOSE cur;
+    DEALLOCATE cur;
+
+    COMMIT TRANSACTION;
 END;
 
 
