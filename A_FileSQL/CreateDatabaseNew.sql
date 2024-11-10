@@ -10,6 +10,7 @@ CREATE TABLE CongViec(
 	MaCV nvarchar(50) CONSTRAINT PK_CongViec PRIMARY KEY,
 	TenCV nvarchar(50) NOT NULL
 )
+
 CREATE TABLE NhanVien(
 	MaNV nvarchar(50) CONSTRAINT PK_NhanVien PRIMARY KEY,
 	HoTenNV nvarchar(50) NOT NULL,

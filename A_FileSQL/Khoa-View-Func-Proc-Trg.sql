@@ -37,13 +37,15 @@ BEGIN
 	END TRY
 	BEGIN CATCH
 
-        ROLLBACK TRANSACTION;
-
+        ROLLBACK TRANSACTION; 
         DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR (@ErrorMessage, 16, 1);
+		RAISERROR (@ErrorMessage, 16, 1);
+
     END CATCH
 END;
+
 GO
+
 CREATE PROCEDURE proc_ThemNhanVien
     @HoTenNV nvarchar(50),
     @SoDienThoai nvarchar(50),
@@ -104,23 +106,13 @@ BEGIN
 	WHERE MaNV = @MaNV
 END
 GO
+
 CREATE PROCEDURE proc_XoaNhanVien
 	@MaNV nvarchar(50)
 AS
-BEGIN
-	BEGIN TRANSACTION;
-    BEGIN TRY
-		DELETE FROM NhanVien
-		WHERE MaNV = @MaNV
-		COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-
-        ROLLBACK TRANSACTION;
-
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR (@ErrorMessage, 16, 1);
-    END CATCH
+BEGIN 
+	DELETE FROM NhanVien
+	WHERE MaNV = @MaNV  
 END
 
 GO
@@ -134,30 +126,21 @@ CREATE PROCEDURE proc_SuaNhanVien
     @TenDangNhap nvarchar(50),
     @MatKhau nvarchar(50)
 AS
-BEGIN
-	BEGIN TRANSACTION;
-    BEGIN TRY
-		UPDATE NhanVien  
-		SET HoTenNV = @HoTenNV,
-			SoDienThoai = @SoDienThoai,
-			NamSinh = @NamSinh,
-			GioiTinh = @GioiTinh,
-			DiaChi = @DiaChi,
-			TenDangNhap = @TenDangNhap,
-			MatKhau = @MatKhau
-		WHERE MaNV = @MaNV
-		COMMIT TRANSACTION;
-    END TRY
-    BEGIN CATCH
-
-        ROLLBACK TRANSACTION;
-
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-        RAISERROR (@ErrorMessage, 16, 1);
-    END CATCH
+BEGIN 
+	UPDATE NhanVien  
+	SET HoTenNV = @HoTenNV,
+		SoDienThoai = @SoDienThoai,
+		NamSinh = @NamSinh,
+		GioiTinh = @GioiTinh,
+		DiaChi = @DiaChi,
+		TenDangNhap = @TenDangNhap,
+		MatKhau = @MatKhau
+	WHERE MaNV = @MaNV
+		 
 END
 
 GO
+
 CREATE PROCEDURE proc_SuaNhanVienToanThoiGian
     @MaNV NVARCHAR(50),
     @LuongCoDinh FLOAT
@@ -167,7 +150,9 @@ BEGIN
 	SET LuongCoDinh = @LuongCoDinh
     WHERE MaNV = @MaNV
 END
+
 GO
+
 CREATE PROCEDURE proc_SuaNhanVienBanThoiGian
     @MaNV NVARCHAR(50),
 	@SoGio INT,
@@ -179,7 +164,9 @@ BEGIN
 		LuongTheoGio = @LuongTheoGio
     WHERE MaNV = @MaNV
 END
+
 GO
+
 CREATE FUNCTION func_timKiemTrenViewNhanVien (@HoTenNV NVARCHAR(50))
 RETURNS @KetQua TABLE (
     MaNV NVARCHAR(50),

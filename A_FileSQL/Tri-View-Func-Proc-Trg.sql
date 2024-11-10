@@ -232,41 +232,53 @@ CREATE PROCEDURE proc_Them_KhachHang
     @SoDienThoai NVARCHAR(50)
 AS
 BEGIN
-    DECLARE @maxMaKH NVARCHAR(50);
-    DECLARE @newMaKH NVARCHAR(50);
-    DECLARE @numPart INT;
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @maxMaKH NVARCHAR(50);
+		DECLARE @newMaKH NVARCHAR(50);
+		DECLARE @numPart INT;
 
-    -- Kiểm tra xem số điện thoại đã tồn tại chưa
-    IF EXISTS (SELECT 1 FROM KhachHang WHERE SoDienThoai = @SoDienThoai)
-    BEGIN
-        -- Nếu đã tồn tại, không làm gì cả
-        RETURN;
-    END
+		-- Kiểm tra xem số điện thoại đã tồn tại chưa
+		IF EXISTS (SELECT 1 FROM KhachHang WHERE SoDienThoai = @SoDienThoai)
+		BEGIN
+			-- Nếu đã tồn tại, không làm gì cả
+			RETURN;
+		END
 
-    -- Nếu chưa tồn tại, tiếp tục tạo mới khách hàng
+		-- Nếu chưa tồn tại, tiếp tục tạo mới khách hàng
 
-    -- Tìm giá trị MaKH lớn nhất hiện có
-    SELECT @maxMaKH = MAX(MaKH) 
-    FROM KhachHang
-    WHERE MaKH LIKE 'KH%';
+		-- Tìm giá trị MaKH lớn nhất hiện có
+		SELECT @maxMaKH = MAX(MaKH) 
+		FROM KhachHang
+		WHERE MaKH LIKE 'KH%';
 
-    -- Lấy phần số từ MaKH (bỏ phần 'KH' phía trước) và convert sang kiểu INT
-    IF @maxMaKH IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaKH, 3, LEN(@maxMaKH) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có MaKH nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
+		-- Lấy phần số từ MaKH (bỏ phần 'KH' phía trước) và convert sang kiểu INT
+		IF @maxMaKH IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaKH, 3, LEN(@maxMaKH) - 2) AS INT) + 1;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa có MaKH nào, bắt đầu từ 1
+			SET @numPart = 1;
+		END
 
-    -- Tạo giá trị mới cho MaKH, với định dạng KHxx (2 số)
-    SET @newMaKH = 'KH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+		-- Tạo giá trị mới cho MaKH, với định dạng KHxx (2 số)
+		SET @newMaKH = 'KH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
 
-    -- Thực hiện chèn bản ghi với MaKH mới
-    INSERT INTO KhachHang(MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
-    VALUES(@newMaKH, N'Chưa nhập tên', @SoDienThoai, 0)
+		-- Thực hiện chèn bản ghi với MaKH mới
+		INSERT INTO KhachHang(MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
+		VALUES(@newMaKH, N'Chưa nhập tên', @SoDienThoai, 0)
+
+		COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION; 
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+		RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
+
+	
 END
 
 GO
@@ -276,42 +288,52 @@ CREATE PROCEDURE proc_Them_DonHang
 	@MaNV NVARCHAR(50)
 AS
 BEGIN
-	DECLARE @MaKH NVARCHAR(50); 
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @MaKH NVARCHAR(50); 
 
-	DECLARE @maxMaDH NVARCHAR(50);
-    DECLARE @newMaDH NVARCHAR(50);
-    DECLARE @numPart INT;
+		DECLARE @maxMaDH NVARCHAR(50);
+		DECLARE @newMaDH NVARCHAR(50);
+		DECLARE @numPart INT;
 	  
 
-	SELECT @MaKH = MaKH
-	FROM KhachHang
-	WHERE SoDienThoai = @SoDienThoai
+		SELECT @MaKH = MaKH
+		FROM KhachHang
+		WHERE SoDienThoai = @SoDienThoai
 	 
-	--Code bên trigger
-    -- Tìm giá trị maDH lớn nhất hiện có
-    SELECT @maxMaDH = MAX(maDH) 
-    FROM DonHang
-    WHERE maDH LIKE 'DH%';
+		--Code bên trigger
+		-- Tìm giá trị maDH lớn nhất hiện có
+		SELECT @maxMaDH = MAX(maDH) 
+		FROM DonHang
+		WHERE maDH LIKE 'DH%';
 
-    -- Lấy phần số từ maDH (bỏ phần 'DH' phía trước) và convert sang kiểu INT
-    IF @maxMaDH IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaDH, 3, LEN(@maxMaDH) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có maDH nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
+		-- Lấy phần số từ maDH (bỏ phần 'DH' phía trước) và convert sang kiểu INT
+		IF @maxMaDH IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaDH, 3, LEN(@maxMaDH) - 2) AS INT) + 1;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa có maDH nào, bắt đầu từ 1
+			SET @numPart = 1;
+		END
 
-    -- Tạo giá trị mới cho maDH, với định dạng DHxx (2 số)
-    SET @newMaDH = 'DH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+		-- Tạo giá trị mới cho maDH, với định dạng DHxx (2 số)
+		SET @newMaDH = 'DH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
 	 
-	INSERT INTO DonHang(MaDH, NgayMua, GiaTriDon, TrangThai)
-	VALUES (@newMaDH, GETDATE(), 1, N'Chưa thanh toán') 
+		INSERT INTO DonHang(MaDH, NgayMua, GiaTriDon, TrangThai)
+		VALUES (@newMaDH, GETDATE(), 1, N'Chưa thanh toán') 
 	  
-	INSERT INTO ThanhToan(MaDH, MaNV, MaKH)
-	VALUES (@newMaDH, @MaNV, @MaKH)
+		INSERT INTO ThanhToan(MaDH, MaNV, MaKH)
+		VALUES (@newMaDH, @MaNV, @MaKH)
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END
 
 GO
@@ -319,40 +341,50 @@ GO
 CREATE PROCEDURE proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan
 AS
 BEGIN
-	DECLARE @MaDH NVARCHAR(50),
-			@MaNV NVARCHAR(50),
-			@MaKH NVARCHAR(50),
-			@DonHangCount INT;
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @MaDH NVARCHAR(50),
+				@MaNV NVARCHAR(50),
+				@MaKH NVARCHAR(50),
+				@DonHangCount INT;
 	 
-	SELECT @MaDH = dh.MaDH, @MaKH = kh.MaKH, @MaNV = nv.MaNV
-	FROM DonHang dh
-	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
-	INNER JOIN NhanVien nv ON tt.MaNV = nv.MaNV
-	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
-	WHERE TrangThai =  N'Chưa thanh toán'
+		SELECT @MaDH = dh.MaDH, @MaKH = kh.MaKH, @MaNV = nv.MaNV
+		FROM DonHang dh
+		INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+		INNER JOIN NhanVien nv ON tt.MaNV = nv.MaNV
+		INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
+		WHERE TrangThai =  N'Chưa thanh toán'
 
-	-- Đếm số đơn hàng còn lại của khách hàng trong bảng DonHang
-    SELECT @DonHangCount = COUNT(*)
-    FROM DonHang dh
-	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
-	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
-    WHERE kh.MaKH = @MaKH; 
+		-- Đếm số đơn hàng còn lại của khách hàng trong bảng DonHang
+		SELECT @DonHangCount = COUNT(*)
+		FROM DonHang dh
+		INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+		INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
+		WHERE kh.MaKH = @MaKH; 
 
-	DELETE FROM ThanhToan
-	WHERE MaDH = @MaDH AND MaNV = @MaNV AND MaKH = @MaKH  
+		DELETE FROM ThanhToan
+		WHERE MaDH = @MaDH AND MaNV = @MaNV AND MaKH = @MaKH  
 	 
-	DELETE FROM ChiTietHoaDon
-	WHERE MaDH = @MaDH
+		DELETE FROM ChiTietHoaDon
+		WHERE MaDH = @MaDH
 	 
-	DELETE FROM DonHang 
-	WHERE TrangThai = N'Chưa thanh toán'
+		DELETE FROM DonHang 
+		WHERE TrangThai = N'Chưa thanh toán'
 	 
-    --Nếu KH chỉ có 1 đơn (đơn chưa thanh toán) hoặc 0 có đơn nào thì mới được xóa
-    IF @DonHangCount <= 1
-    BEGIN
-        DELETE FROM KhachHang
-        WHERE MaKH = @MaKH;
-    END
+		--Nếu KH chỉ có 1 đơn (đơn chưa thanh toán) hoặc 0 có đơn nào thì mới được xóa
+		IF @DonHangCount <= 1
+		BEGIN
+			DELETE FROM KhachHang
+			WHERE MaKH = @MaKH;
+		END
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END
 
 
@@ -362,14 +394,24 @@ CREATE PROCEDURE  proc_Them_ChiTietDonHang
 	@MaSP NVARCHAR(50)
 AS
 BEGIN
-	DECLARE @MaDH NVARCHAR(50) 
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @MaDH NVARCHAR(50) 
 
-	SELECT @MaDH = MaDH 
-	FROM DonHang
-	WHERE TrangThai =  N'Chưa thanh toán'
+		SELECT @MaDH = MaDH 
+		FROM DonHang
+		WHERE TrangThai =  N'Chưa thanh toán'
 	
-	INSERT INTO ChiTietHoaDon(MaDH, MaSP, SoLuong, TongTien)
-	VALUES (@MaDH, @MaSP, 1, (SELECT Gia*1 FROM SanPham WHERE MaSP = @maSP))
+		INSERT INTO ChiTietHoaDon(MaDH, MaSP, SoLuong, TongTien)
+		VALUES (@MaDH, @MaSP, 1, (SELECT Gia*1 FROM SanPham WHERE MaSP = @maSP))
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END
 
 GO
@@ -377,15 +419,25 @@ GO
 CREATE PROCEDURE  proc_CapNhatGiaTriDon_DonHang 
 AS
 BEGIN
-	DECLARE @MaDH NVARCHAR(50) 
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @MaDH NVARCHAR(50) 
 
-	SELECT @MaDH = MaDH 
-	FROM DonHang
-	WHERE TrangThai =  N'Chưa thanh toán'
+		SELECT @MaDH = MaDH 
+		FROM DonHang
+		WHERE TrangThai =  N'Chưa thanh toán'
 	
-	UPDATE DonHang 
-	SET GiaTriDon = (SELECT SUM(TongTien) FROM ChiTietHoaDon WHERE MaDH = @MaDH)
-	WHERE TrangThai =  N'Chưa thanh toán'  
+		UPDATE DonHang 
+		SET GiaTriDon = (SELECT SUM(TongTien) FROM ChiTietHoaDon WHERE MaDH = @MaDH)
+		WHERE TrangThai =  N'Chưa thanh toán'  
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END
 
 GO
@@ -397,19 +449,29 @@ CREATE FUNCTION func_TongTien_ChiTietHoaDon
 RETURNS FLOAT  
 AS
 BEGIN
-	DECLARE @MaDH NVARCHAR(50)
-    DECLARE @Tong FLOAT = 0
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @MaDH NVARCHAR(50)
+		DECLARE @Tong FLOAT = 0
 
-	SELECT @MaDH = MaDH
-    FROM DonHang
-    WHERE TrangThai = N'Chưa thanh toán'
+		SELECT @MaDH = MaDH
+		FROM DonHang
+		WHERE TrangThai = N'Chưa thanh toán'
 
-    -- Tính tổng tiền
-    SELECT @Tong = SUM(TongTien)
-    FROM ChiTietHoaDon
-    WHERE MaDH = @MaDH
+		-- Tính tổng tiền
+		SELECT @Tong = SUM(TongTien)
+		FROM ChiTietHoaDon
+		WHERE MaDH = @MaDH
 
-    RETURN @Tong 
+		RETURN @Tong 
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END;
 
 GO
@@ -417,57 +479,67 @@ GO
 CREATE PROCEDURE  proc_XacNhanThanhToan_DonHangVaKhachHang
 AS
 BEGIN  
-	DECLARE @GiaTriDon FLOAT
-    DECLARE @SoDiemTichLuy FLOAT 
-	DECLARE @MaKH NVARCHAR(50)
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @GiaTriDon FLOAT
+		DECLARE @SoDiemTichLuy FLOAT 
+		DECLARE @MaKH NVARCHAR(50)
 
-	DECLARE @maDHChuaThanhToan NVARCHAR(50)
+		DECLARE @maDHChuaThanhToan NVARCHAR(50)
 
-	SELECT @maDHChuaThanhToan = MaDH 
-	FROM DonHang
-	WHERE TrangThai =  N'Chưa thanh toán' 
+		SELECT @maDHChuaThanhToan = MaDH 
+		FROM DonHang
+		WHERE TrangThai =  N'Chưa thanh toán' 
 
-	SELECT @GiaTriDon = dh.GiaTriDon, @MaKH = kh.MaKH
-    FROM DonHang dh
-	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
-	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
-    WHERE dh.MaDH = @maDHChuaThanhToan
+		SELECT @GiaTriDon = dh.GiaTriDon, @MaKH = kh.MaKH
+		FROM DonHang dh
+		INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
+		INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
+		WHERE dh.MaDH = @maDHChuaThanhToan
 
-	SELECT @SoDiemTichLuy = SoDiemTichLuy 
-    FROM KhachHang
-    WHERE MaKH = @MaKH
+		SELECT @SoDiemTichLuy = SoDiemTichLuy 
+		FROM KhachHang
+		WHERE MaKH = @MaKH
     
-	IF @GiaTriDon > @SoDiemTichLuy
-	BEGIN
-		SET @GiaTriDon = @GiaTriDon - @SoDiemTichLuy
-		SET @SoDiemTichLuy = 0 + 0.01 * @GiaTriDon  -- Đã dùng hết điểm tích lũy
-	END
-	ELSE
-	BEGIN
-		SET @SoDiemTichLuy = (@SoDiemTichLuy - @GiaTriDon) + 0.01 * @GiaTriDon  -- Cập nhật điểm tích lũy còn lại và cộng thêm 0.01 GiaTriDon
-		SET @GiaTriDon = 0 -- Đơn đã được thanh toán hết
-	END
+		IF @GiaTriDon > @SoDiemTichLuy
+		BEGIN
+			SET @GiaTriDon = @GiaTriDon - @SoDiemTichLuy
+			SET @SoDiemTichLuy = 0 + 0.01 * @GiaTriDon  -- Đã dùng hết điểm tích lũy
+		END
+		ELSE
+		BEGIN
+			SET @SoDiemTichLuy = (@SoDiemTichLuy - @GiaTriDon) + 0.01 * @GiaTriDon  -- Cập nhật điểm tích lũy còn lại và cộng thêm 0.01 GiaTriDon
+			SET @GiaTriDon = 0 -- Đơn đã được thanh toán hết
+		END
 
 	
 
-    UPDATE DonHang 
-    SET GiaTriDon = @GiaTriDon
-    WHERE MaDH = @maDHChuaThanhToan; 
+		UPDATE DonHang 
+		SET GiaTriDon = @GiaTriDon
+		WHERE MaDH = @maDHChuaThanhToan; 
 	 
-	UPDATE KhachHang 
-	SET SoDiemTichLuy = @SoDiemTichLuy
-	WHERE MaKH =  @MaKH  
+		UPDATE KhachHang 
+		SET SoDiemTichLuy = @SoDiemTichLuy
+		WHERE MaKH =  @MaKH  
 	 
-	UPDATE DonHang 
-	SET TrangThai = N'Đã thanh toán'  
-	WHERE MaDH =  @maDHChuaThanhToan
+		UPDATE DonHang 
+		SET TrangThai = N'Đã thanh toán'  
+		WHERE MaDH =  @maDHChuaThanhToan
 	 
-	UPDATE nl
-	SET nl.SoLuongTonKho = nl.SoLuongTonKho - (cthd.SoLuong * pc.SoLuong)
-	FROM ChiTietHoaDon cthd
-	LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
-	LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
-	WHERE cthd.MaDH = @maDHChuaThanhToan AND pc.SoLuong IS NOT NULL;
+		UPDATE nl
+		SET nl.SoLuongTonKho = nl.SoLuongTonKho - (cthd.SoLuong * pc.SoLuong)
+		FROM ChiTietHoaDon cthd
+		LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
+		LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
+		WHERE cthd.MaDH = @maDHChuaThanhToan AND pc.SoLuong IS NOT NULL;
+		
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 	 
 END
 
@@ -588,33 +660,44 @@ ON LoaiSanPham
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @maxMaLoaiSP NVARCHAR(50);
-    DECLARE @newMaLoaiSP NVARCHAR(50);
-    DECLARE @numPart INT;
+	BEGIN TRANSACTION
+	BEGIN TRY
 
-    -- Tìm giá trị maLoaiSP lớn nhất hiện có
-    SELECT @maxMaLoaiSP = MAX(MaLoaiSP) 
-    FROM LoaiSanPham
-    WHERE MaLoaiSP LIKE 'LSP%';
+		DECLARE @maxMaLoaiSP NVARCHAR(50);
+		DECLARE @newMaLoaiSP NVARCHAR(50);
+		DECLARE @numPart INT;
 
-    -- Lấy phần số từ maLoaiSP (bỏ phần 'LSP' phía trước) và convert sang kiểu INT
-    IF @maxMaLoaiSP IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaLoaiSP, 4, LEN(@maxMaLoaiSP) - 2) AS INT)+1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có maSP nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
+		-- Tìm giá trị maLoaiSP lớn nhất hiện có
+		SELECT @maxMaLoaiSP = MAX(MaLoaiSP) 
+		FROM LoaiSanPham
+		WHERE MaLoaiSP LIKE 'LSP%';
 
-    -- Tạo giá trị mới cho maLoaiSP, với định dạng LSPxx (2 số)
-    SET @newMaLoaiSP = 'LSP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+		-- Lấy phần số từ maLoaiSP (bỏ phần 'LSP' phía trước) và convert sang kiểu INT
+		IF @maxMaLoaiSP IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaLoaiSP, 4, LEN(@maxMaLoaiSP) - 2) AS INT)+1;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa có maSP nào, bắt đầu từ 1
+			SET @numPart = 1;
+		END
 
-    -- Thực hiện chèn bản ghi với maLoaiSP mới
-    INSERT INTO LoaiSanPham(MaLoaiSP, TenLoaiSP)
-    SELECT @newMaLoaiSP, TenLoaiSP
-    FROM inserted;
+		-- Tạo giá trị mới cho maLoaiSP, với định dạng LSPxx (2 số)
+		SET @newMaLoaiSP = 'LSP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+		-- Thực hiện chèn bản ghi với maLoaiSP mới
+		INSERT INTO LoaiSanPham(MaLoaiSP, TenLoaiSP)
+		SELECT @newMaLoaiSP, TenLoaiSP
+		FROM inserted;
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END;
 
 GO
@@ -623,33 +706,44 @@ ON SanPham
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @maxMaSP NVARCHAR(50);
-    DECLARE @newMaSP NVARCHAR(50);
-    DECLARE @numPart INT;
+	BEGIN TRANSACTION
+	BEGIN TRY
 
-    -- Tìm giá trị MaSP lớn nhất hiện có
-    SELECT @maxMaSP = MAX(MaSP)
-    FROM SanPham
-    WHERE MaSP LIKE 'SP%';
+		DECLARE @maxMaSP NVARCHAR(50);
+		DECLARE @newMaSP NVARCHAR(50);
+		DECLARE @numPart INT;
 
-    -- Lấy phần số từ MaSP (bỏ phần 'SP' phía trước) và chuyển sang kiểu INT
-    IF @maxMaSP IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaSP, 3, LEN(@maxMaSP) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có MaSP nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
+		-- Tìm giá trị MaSP lớn nhất hiện có
+		SELECT @maxMaSP = MAX(MaSP)
+		FROM SanPham
+		WHERE MaSP LIKE 'SP%';
 
-    -- Tạo mã sản phẩm mới
-    SET @newMaSP = 'SP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+		-- Lấy phần số từ MaSP (bỏ phần 'SP' phía trước) và chuyển sang kiểu INT
+		IF @maxMaSP IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaSP, 3, LEN(@maxMaSP) - 2) AS INT) + 1;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa có MaSP nào, bắt đầu từ 1
+			SET @numPart = 1;
+		END
 
-    -- Chèn bản ghi mới vào bảng SanPham với mã sản phẩm mới
-    INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP)
-    SELECT @newMaSP, TenSP, Gia, AnhSP, MaLoaiSP
-    FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn
+		-- Tạo mã sản phẩm mới
+		SET @newMaSP = 'SP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+		-- Chèn bản ghi mới vào bảng SanPham với mã sản phẩm mới
+		INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP)
+		SELECT @newMaSP, TenSP, Gia, AnhSP, MaLoaiSP
+		FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 
 END;
 
@@ -660,77 +754,82 @@ ON ChiTietHoaDon
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @maDH NVARCHAR(50);
-    DECLARE @maSP NVARCHAR(50);
-    DECLARE @soLuong INT;
-    DECLARE @soLuongTonKho INT; 
-    DECLARE @tongNL INT;
-    DECLARE @TenNL NVARCHAR(50);
+	BEGIN TRANSACTION
+	BEGIN TRY
 
-    BEGIN TRANSACTION;
+		DECLARE @maDH NVARCHAR(50);
+		DECLARE @maSP NVARCHAR(50);
+		DECLARE @soLuong INT;
+		DECLARE @soLuongTonKho INT; 
+		DECLARE @tongNL INT;
+		DECLARE @TenNL NVARCHAR(50); 
 
-    -- Lấy giá trị từ bảng inserted
-    SELECT @maDH = MaDH, @maSP = MaSP
-    FROM inserted;
+		-- Lấy giá trị từ bảng inserted
+		SELECT @maDH = MaDH, @maSP = MaSP
+		FROM inserted;
 
-    -- Kiểm tra xem bản ghi đã tồn tại chưa
-    IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
-    BEGIN
-        -- Nếu đã tồn tại, tăng số lượng lên 1 
-        UPDATE ChiTietHoaDon
-        SET SoLuong = SoLuong + 1
-        WHERE MaDH = @maDH AND MaSP = @maSP;
+		-- Kiểm tra xem bản ghi đã tồn tại chưa
+		IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
+		BEGIN
+			-- Nếu đã tồn tại, tăng số lượng lên 1 
+			UPDATE ChiTietHoaDon
+			SET SoLuong = SoLuong + 1
+			WHERE MaDH = @maDH AND MaSP = @maSP;
 
-        -- Cập nhật tổng tiền
-        SELECT @soLuong = SoLuong
-        FROM ChiTietHoaDon
-        WHERE MaDH = @maDH AND MaSP = @maSP;
+			-- Cập nhật tổng tiền
+			SELECT @soLuong = SoLuong
+			FROM ChiTietHoaDon
+			WHERE MaDH = @maDH AND MaSP = @maSP;
 
-        UPDATE ChiTietHoaDon
-        SET TongTien = (SELECT Gia * @soLuong FROM SanPham WHERE MaSP = @maSP)
-        WHERE MaDH = @maDH AND MaSP = @maSP;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa tồn tại, chèn bản ghi mới
-        INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
-        VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
-    END
+			UPDATE ChiTietHoaDon
+			SET TongTien = (SELECT Gia * @soLuong FROM SanPham WHERE MaSP = @maSP)
+			WHERE MaDH = @maDH AND MaSP = @maSP;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa tồn tại, chèn bản ghi mới
+			INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
+			VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
+		END
 
-    -- Kiểm tra số lượng nguyên liệu tồn kho sau khi insert (hoặc update)
-    -- Tạo con trỏ để duyệt qua các dòng trả về từ truy vấn
-    DECLARE cur CURSOR FOR 
-    SELECT cthd.SoLuong * pc.SoLuong AS TongNL, nl.SoLuongTonKho AS SoLuongTonKho, nl.TenNL AS TenNL
-    FROM ChiTietHoaDon cthd
-    LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
-    LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
-    WHERE MaDH = @maDH AND pc.SoLuong IS NOT NULL;
+		-- Kiểm tra số lượng nguyên liệu tồn kho sau khi insert (hoặc update)
+		-- Tạo con trỏ để duyệt qua các dòng trả về từ truy vấn
+		DECLARE cur CURSOR FOR 
+		SELECT cthd.SoLuong * pc.SoLuong AS TongNL, nl.SoLuongTonKho AS SoLuongTonKho, nl.TenNL AS TenNL
+		FROM ChiTietHoaDon cthd
+		LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
+		LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
+		WHERE MaDH = @maDH AND pc.SoLuong IS NOT NULL;
 
-    OPEN cur;
-    FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+		OPEN cur;
+		FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
 
-    WHILE @@FETCH_STATUS = 0
-    BEGIN
-        -- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
-        IF @tongNL > @soLuongTonKho
-        BEGIN
-            -- Raise error nếu không đủ nguyên liệu 
-            CLOSE cur;
-            DEALLOCATE cur;
+		WHILE @@FETCH_STATUS = 0
+		BEGIN
+			-- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
+			IF @tongNL > @soLuongTonKho
+			BEGIN
+				-- Raise error nếu không đủ nguyên liệu 
+				CLOSE cur;
+				DEALLOCATE cur;
 
-            RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL);
-            ROLLBACK TRANSACTION;
+				RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL);
+				ROLLBACK TRANSACTION; 
+			END;
 
-            RETURN;  -- Dừng trigger 
-        END;
+			FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+		END;
 
-        FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
-    END;
+		CLOSE cur;
+		DEALLOCATE cur;
 
-    CLOSE cur;
-    DEALLOCATE cur;
-
-    COMMIT TRANSACTION;
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END;
 
 

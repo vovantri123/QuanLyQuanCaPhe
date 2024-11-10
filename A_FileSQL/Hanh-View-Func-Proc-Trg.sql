@@ -103,32 +103,42 @@ ON NguyenLieu
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @maxMaNL NVARCHAR(50);
-    DECLARE @newMaNL NVARCHAR(50);
-    DECLARE @numPart INT;
+	BEGIN TRANSACTION
+	BEGIN TRY
+		DECLARE @maxMaNL NVARCHAR(50);
+		DECLARE @newMaNL NVARCHAR(50);
+		DECLARE @numPart INT;
 
-    -- Tìm giá trị maNL lớn nhất hiện có
-    SELECT @maxMaNL = MAX(maNL) 
-    FROM NguyenLieu
-    WHERE maNL LIKE 'NL%';
+		-- Tìm giá trị maNL lớn nhất hiện có
+		SELECT @maxMaNL = MAX(maNL) 
+		FROM NguyenLieu
+		WHERE maNL LIKE 'NL%';
 
-    -- Lấy phần số từ maNL (bỏ phần 'NL' phía trước) và convert sang kiểu INT
-    IF @maxMaNL IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaNL, 3, LEN(@maxMaNL) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa có maNL nào, bắt đầu từ 1
-        SET @numPart = 1;
-    END
+		-- Lấy phần số từ maNL (bỏ phần 'NL' phía trước) và convert sang kiểu INT
+		IF @maxMaNL IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaNL, 3, LEN(@maxMaNL) - 2) AS INT) + 1;
+		END
+		ELSE
+		BEGIN
+			-- Nếu chưa có maNL nào, bắt đầu từ 1
+			SET @numPart = 1;
+		END
 
-    -- Tạo giá trị mới cho maNL, với định dạng NLxx (2 số)
-    SET @newMaNL = 'NL' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+		-- Tạo giá trị mới cho maNL, với định dạng NLxx (2 số)
+		SET @newMaNL = 'NL' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
 
-    -- Thực hiện chèn bản ghi với maNL mới
-    INSERT INTO NguyenLieu(MaNL, TenNL, SoLuongTonKho)
-    SELECT @newMaNL, TenNL, SoLuongTonKho
-    FROM inserted;
+		-- Thực hiện chèn bản ghi với maNL mới
+		INSERT INTO NguyenLieu(MaNL, TenNL, SoLuongTonKho)
+		SELECT @newMaNL, TenNL, SoLuongTonKho
+		FROM inserted;
+
+		COMMIT TRANSACTION
+	END TRY
+	BEGIN CATCH
+		ROLLBACK TRANSACTION
+		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
+        RAISERROR (@ErrorMessage, 16, 1);
+	END CATCH
 END;
 
