@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.lblMaHoaDon = new System.Windows.Forms.Label();
+            this.lblMaHD = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,14 +67,14 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã đơn hàng: ";
             // 
-            // lblMaHoaDon
+            // lblMaHD
             // 
-            this.lblMaHoaDon.AutoSize = true;
-            this.lblMaHoaDon.Location = new System.Drawing.Point(703, 106);
-            this.lblMaHoaDon.Name = "lblMaHoaDon";
-            this.lblMaHoaDon.Size = new System.Drawing.Size(51, 20);
-            this.lblMaHoaDon.TabIndex = 0;
-            this.lblMaHoaDon.Text = "DH00";
+            this.lblMaHD.AutoSize = true;
+            this.lblMaHD.Location = new System.Drawing.Point(703, 106);
+            this.lblMaHD.Name = "lblMaHD";
+            this.lblMaHD.Size = new System.Drawing.Size(51, 20);
+            this.lblMaHD.TabIndex = 0;
+            this.lblMaHD.Text = "DH00";
             // 
             // label4
             // 
@@ -385,7 +385,7 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.lblMaHoaDon);
+            this.Controls.Add(this.lblMaHD);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "fDonHang";
@@ -402,7 +402,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblMaHoaDon;
+        private System.Windows.Forms.Label lblMaHD;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

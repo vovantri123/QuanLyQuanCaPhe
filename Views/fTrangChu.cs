@@ -178,6 +178,8 @@ namespace QuanLyQuanCaPhe.Views
                     sanPham.pbSanPham.Image = XyLyAnh.GetImage(row["AnhSP"].ToString());
                     sanPham.lblMaSP.Text = row["MaSP"].ToString();
 
+                    sanPham.SuKienGoiFormChaTuFormCon += UCSanPhamGoiFTrangChu;
+
                     flowPnlSanPham.Controls.Add(sanPham);
                 }
             }

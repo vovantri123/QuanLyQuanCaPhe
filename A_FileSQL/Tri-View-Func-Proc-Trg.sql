@@ -154,6 +154,21 @@ BEGIN
 	WHERE MaSP = @MaSP  
 END
 
+GO
+
+CREATE FUNCTION func_LayMaDHChuaThanhToan_DonHang()
+RETURNS NVARCHAR(50)
+AS
+BEGIN 
+	DECLARE @MaDH NVARCHAR(50)
+
+    SELECT @MaDH = MaDH
+    FROM DonHang
+    WHERE TrangThai = N'Chưa thanh toán';
+
+    RETURN @MaDH;
+END;
+
 GO 
 
 CREATE PROCEDURE proc_Them_PhaChe
@@ -406,11 +421,17 @@ BEGIN
     DECLARE @SoDiemTichLuy FLOAT 
 	DECLARE @MaKH NVARCHAR(50)
 
+	DECLARE @maDHChuaThanhToan NVARCHAR(50)
+
+	SELECT @maDHChuaThanhToan = MaDH 
+	FROM DonHang
+	WHERE TrangThai =  N'Chưa thanh toán' 
+
 	SELECT @GiaTriDon = dh.GiaTriDon, @MaKH = kh.MaKH
     FROM DonHang dh
 	INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
 	INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
-    WHERE TrangThai = N'Chưa thanh toán'
+    WHERE dh.MaDH = @maDHChuaThanhToan
 
 	SELECT @SoDiemTichLuy = SoDiemTichLuy 
     FROM KhachHang
@@ -427,17 +448,27 @@ BEGIN
 		SET @GiaTriDon = 0 -- Đơn đã được thanh toán hết
 	END
 
+	
+
     UPDATE DonHang 
     SET GiaTriDon = @GiaTriDon
-    WHERE TrangThai = N'Chưa thanh toán'; 
+    WHERE MaDH = @maDHChuaThanhToan; 
 	 
 	UPDATE KhachHang 
 	SET SoDiemTichLuy = @SoDiemTichLuy
 	WHERE MaKH =  @MaKH  
-
+	 
 	UPDATE DonHang 
 	SET TrangThai = N'Đã thanh toán'  
-	WHERE TrangThai =  N'Chưa thanh toán' 
+	WHERE MaDH =  @maDHChuaThanhToan
+	 
+	UPDATE nl
+	SET nl.SoLuongTonKho = nl.SoLuongTonKho - (cthd.SoLuong * pc.SoLuong)
+	FROM ChiTietHoaDon cthd
+	LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
+	LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
+	WHERE cthd.MaDH = @maDHChuaThanhToan AND pc.SoLuong IS NOT NULL;
+	 
 END
 
 
@@ -551,47 +582,7 @@ GO
   
 -- Trigger
  
-
-CREATE TRIGGER trg_Them_ChiTietHoaDon
-ON ChiTietHoaDon
-INSTEAD OF INSERT
-AS
-BEGIN
-    DECLARE @maDH NVARCHAR(50);
-    DECLARE @maSP NVARCHAR(50);
-    DECLARE @soLuong INT;
-
-    -- Lấy giá trị từ bảng inserted
-    SELECT @maDH = MaDH, @maSP = MaSP
-    FROM inserted;
-
-    -- Kiểm tra xem bản ghi đã tồn tại chưa
-    IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
-    BEGIN
-        -- Nếu đã tồn tại, tăng số lượng lên 1 
-        UPDATE ChiTietHoaDon
-        SET SoLuong = SoLuong + 1
-        WHERE MaDH = @maDH AND MaSP = @maSP;
-
-	-- Cập nhật tổng tiền
-	SELECT @soLuong = SoLuong
-	FROM ChiTietHoaDon
-	WHERE MaDH = @maDH AND MaSP = @maSP;
-
-	UPDATE ChiTietHoaDon
-	SET TongTien = (SELECT Gia*@soLuong FROM SanPham WHERE MaSP = @maSP)
-	WHERE MaDH = @maDH AND MaSP = @maSP;
-    END
-    ELSE
-    BEGIN
-        -- Nếu chưa tồn tại, chèn bản ghi mới
-        INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
-        VALUES (@maDH, @maSP, 1, (SELECT Gia*1 FROM SanPham WHERE MaSP = @maSP));  
-    END
-END;
-
-GO
-
+  
 CREATE TRIGGER trg_TuDongTaoMaLoaiSanPham_LoaiSanPham
 ON LoaiSanPham
 INSTEAD OF INSERT
@@ -663,36 +654,84 @@ BEGIN
 END;
 
 GO
-CREATE TRIGGER trg_KiemTraSoLuongTruocPhaChe
-ON PhaChe
+
+CREATE TRIGGER trg_KiemTraSoLuongTruocKhiThem_ChiTietHoaDon
+ON ChiTietHoaDon
 INSTEAD OF INSERT
 AS
 BEGIN
-    DECLARE @SoLuongTon INT;
-    DECLARE @MaNL NVARCHAR(50);
-    DECLARE @SoLuong INT;
+    DECLARE @maDH NVARCHAR(50);
+    DECLARE @maSP NVARCHAR(50);
+    DECLARE @soLuong INT;
+    DECLARE @soLuongTonKho INT; 
+    DECLARE @tongNL INT;
+    DECLARE @TenNL NVARCHAR(50);
 
-    SELECT @MaNL = MaNL, @SoLuong = SoLuong 
-	FROM inserted;
-    SELECT @SoLuongTon = SoLuongTonKho
-    FROM NguyenLieu
-    WHERE MaNL = @MaNL;
+    BEGIN TRANSACTION;
 
-    IF @SoLuongTon < @SoLuong
+    -- Lấy giá trị từ bảng inserted
+    SELECT @maDH = MaDH, @maSP = MaSP
+    FROM inserted;
+
+    -- Kiểm tra xem bản ghi đã tồn tại chưa
+    IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
     BEGIN
-        RAISERROR('Số lượng nguyên liệu không đủ để pha chế!', 16, 1);
+        -- Nếu đã tồn tại, tăng số lượng lên 1 
+        UPDATE ChiTietHoaDon
+        SET SoLuong = SoLuong + 1
+        WHERE MaDH = @maDH AND MaSP = @maSP;
+
+        -- Cập nhật tổng tiền
+        SELECT @soLuong = SoLuong
+        FROM ChiTietHoaDon
+        WHERE MaDH = @maDH AND MaSP = @maSP;
+
+        UPDATE ChiTietHoaDon
+        SET TongTien = (SELECT Gia * @soLuong FROM SanPham WHERE MaSP = @maSP)
+        WHERE MaDH = @maDH AND MaSP = @maSP;
     END
     ELSE
     BEGIN
-        INSERT INTO PhaChe(MaSP, MaNL, SoLuong)
-        SELECT MaSP, MaNL, SoLuong FROM inserted;
-        UPDATE NguyenLieu
-        SET SoLuongTonKho = SoLuongTonKho - inserted.SoLuong
-        FROM NguyenLieu nl
-        INNER JOIN inserted ON nl.MaNL = inserted.MaNL;
+        -- Nếu chưa tồn tại, chèn bản ghi mới
+        INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
+        VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
     END
-END;
 
+    -- Kiểm tra số lượng nguyên liệu tồn kho sau khi insert (hoặc update)
+    -- Tạo con trỏ để duyệt qua các dòng trả về từ truy vấn
+    DECLARE cur CURSOR FOR 
+    SELECT cthd.SoLuong * pc.SoLuong AS TongNL, nl.SoLuongTonKho AS SoLuongTonKho, nl.TenNL AS TenNL
+    FROM ChiTietHoaDon cthd
+    LEFT OUTER JOIN PhaChe pc ON cthd.MaSP = pc.MaSP
+    LEFT OUTER JOIN NguyenLieu nl ON pc.MaNL = nl.maNL
+    WHERE MaDH = @maDH AND pc.SoLuong IS NOT NULL;
+
+    OPEN cur;
+    FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+
+    WHILE @@FETCH_STATUS = 0
+    BEGIN
+        -- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
+        IF @tongNL > @soLuongTonKho
+        BEGIN
+            -- Raise error nếu không đủ nguyên liệu 
+            CLOSE cur;
+            DEALLOCATE cur;
+
+            RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL);
+            ROLLBACK TRANSACTION;
+
+            RETURN;  -- Dừng trigger 
+        END;
+
+        FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
+    END;
+
+    CLOSE cur;
+    DEALLOCATE cur;
+
+    COMMIT TRANSACTION;
+END;
 
 
 
