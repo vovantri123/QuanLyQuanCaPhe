@@ -15,8 +15,7 @@ namespace QuanLyQuanCaPhe.Database
         {
             DBConnection.ClearParameters(); 
             DBConnection.AddParameters("@SoDienThoai", soDienThoai);
-            DBConnection.AddParameters("@MaNV", maNV);
-            MessageBox.Show(maNV + " số ĐT là "+ soDienThoai);
+            DBConnection.AddParameters("@MaNV", maNV); 
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_DonHang", DBConnection.parameters);
             
         }   
@@ -46,6 +45,15 @@ namespace QuanLyQuanCaPhe.Database
         {
             DBConnection.ClearParameters();
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_XacNhanThanhToan_DonHangVaKhachHang", DBConnection.parameters);
+        }
+
+        public static string LayMaDHChuaThanhToan()
+        {
+            DBConnection.ClearParameters();
+            object maDH = DBConnection.ThucThiFunction_Scalar("func_LayMaDHChuaThanhToan_DonHang", DBConnection.parameters);
+            if (maDH is DBNull || maDH == null)
+                return "Please click \"New Order\"";
+            return maDH.ToString(); 
         }
     }
 }

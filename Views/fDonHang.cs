@@ -38,6 +38,7 @@ namespace QuanLyQuanCaPhe.Views
 
             lblNgayMua.Text = Ngay.NgayHienTai(); 
             LoadThanhTien();
+            lblMaHD.Text = DonHangDAO.LayMaDHChuaThanhToan();
         }
 
         private void tsDungDiemTichLuy_CheckedChanged(object sender, EventArgs e)

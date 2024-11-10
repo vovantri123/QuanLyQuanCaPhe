@@ -22,14 +22,17 @@ CREATE TABLE NhanVien(
 )
 CREATE TABLE NhanVienToanThoiGian(
 	MaNV nvarchar(50) CONSTRAINT FK_NhanVien_ToanThoiGian FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
-	LuongCoDinh float NOT NULL CHECK(LuongCoDinh>=0)
+	LuongCoDinh float NOT NULL CHECK(LuongCoDinh>=0),
+	CONSTRAINT PK_NhanVienToanThoiGian PRIMARY KEY(MaNV)
 )
  
 CREATE TABLE NhanVienBanThoiGian(
 	MaNV nvarchar(50) CONSTRAINT FK_NhanVien_BanThoiGian FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
 	LuongTheoGio float NOT NULL CHECK(LuongTheoGio>=0),
-	SoGio int NOT NULL CHECK(SoGio>=0)
+	SoGio int NOT NULL CHECK(SoGio>=0),
+	CONSTRAINT PK_NhanVienBanThoiGian PRIMARY KEY(MaNV)
 )
+
 CREATE TABLE CaLamViec(
 	MaCa nvarchar(50) CONSTRAINT PK_CaLamViec PRIMARY KEY,
 	TenCa nvarchar(50) NOT NULL,
