@@ -28,6 +28,7 @@ namespace QuanLyQuanCaPhe.Views
             int yearBirth = Convert.ToInt32(namSinh);
             string gioiTinh = cboGioiTinh.Text;
             string diaChi = txtDiaChi.Text;
+            string email = txtEmail.Text;
             string tenDangNhap = txtTenDangNhap.Text;
             string matKhau = txtMatKhau.Text;
             string loaiNV = cboLoaiNV.Text;
@@ -39,7 +40,7 @@ namespace QuanLyQuanCaPhe.Views
             }
             else
             {
-                NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, tenDangNhap, matKhau);
+                NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, email, tenDangNhap, matKhau);
                 NhanVienDAO.Them(nv, loaiNV);
             }
             

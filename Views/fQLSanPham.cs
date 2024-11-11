@@ -149,7 +149,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThemSP_Click(object sender, EventArgs e)
         {
-            SanPham sp = new SanPham("",txtTenSP.Text, Convert.ToDouble(txtGia.Text), lblTenFileAnh.Text, cboLoaiSP.SelectedValue.ToString());
+            SanPham sp = new SanPham("SP00",txtTenSP.Text, Convert.ToDouble(txtGia.Text), lblTenFileAnh.Text, cboLoaiSP.SelectedValue.ToString());
             SanPhamDAO.Them(sp);
 
             XyLyAnh.LuuAnhVaoThuMuc(lblDuongDanAnh.Text, "HinhSanPham");

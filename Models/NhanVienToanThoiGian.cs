@@ -15,7 +15,7 @@ namespace QuanLyQuanCaPhe.Models
 
         }
 
-        public NhanVienToanThoiGian(string maNV, string hoTenNV, string soDienThoai, int namSinh, string gioiTinh, string diaChi, string tenDangNhap, string matKhau, double luongCoDinh):base(maNV, hoTenNV, soDienThoai, namSinh, gioiTinh, diaChi,  tenDangNhap, matKhau)
+        public NhanVienToanThoiGian(string maNV, string hoTenNV, string soDienThoai, int namSinh, string gioiTinh, string diaChi, string email,string tenDangNhap, string matKhau, double luongCoDinh):base(maNV, hoTenNV, soDienThoai, namSinh, gioiTinh, diaChi,  email,tenDangNhap, matKhau)
         {
             this.luongCoDinh = luongCoDinh;
         }
