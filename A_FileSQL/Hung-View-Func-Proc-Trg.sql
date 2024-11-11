@@ -246,6 +246,40 @@ BEGIN
 	END CATCH
 END;
 
+----------New
+
+CREATE FUNCTION func_LayMaCaMoiDeDangKy_CaLamViec()
+RETURNS NVARCHAR(50)
+AS
+BEGIN   
+	DECLARE @maxMaCa NVARCHAR(50);
+	DECLARE @newMaCa NVARCHAR(50);
+	DECLARE @numPart INT;
+
+    -- Tìm giá trị MaCa lớn nhất hiện có
+    SELECT @maxMaCa = MAX(MaCa) 
+    FROM CaLamViec
+    WHERE MaCa LIKE 'CA%';
+
+    -- Lấy phần số từ MaCa (bỏ phần 'CA' phía trước) và convert sang kiểu INT
+    IF @maxMaCa IS NOT NULL
+    BEGIN
+        SET @numPart = CAST(SUBSTRING(@maxMaCa, 3, LEN(@maxMaCa) - 2) AS INT) + 1;
+    END
+    ELSE
+    BEGIN
+        -- Nếu chưa có MaCa nào, bắt đầu từ 1
+        SET @numPart = 1;
+    END
+
+    -- Tạo giá trị mới cho MaCa, với định dạng CAxx (2 số)
+    SET @newMaCa = 'CA' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+    RETURN @newMaCa; -- Trả về mã mới 
+END;
+
+select dbo.func_LayMaCaMoiDeDangKy_CaLamViec()
+
 
 
 

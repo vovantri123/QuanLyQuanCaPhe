@@ -1,6 +1,6 @@
 ﻿namespace QuanLyQuanCaPhe.Views
 {
-    partial class fPhanCa
+    partial class fQLPhanCa
     {
         /// <summary>
         /// Required designer variable.
@@ -58,9 +58,10 @@
             this.btnDangKi.FillColor = System.Drawing.Color.Tan;
             this.btnDangKi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnDangKi.ForeColor = System.Drawing.Color.White;
-            this.btnDangKi.Location = new System.Drawing.Point(1228, 648);
+            this.btnDangKi.Location = new System.Drawing.Point(1382, 810);
+            this.btnDangKi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDangKi.Name = "btnDangKi";
-            this.btnDangKi.Size = new System.Drawing.Size(181, 47);
+            this.btnDangKi.Size = new System.Drawing.Size(204, 59);
             this.btnDangKi.TabIndex = 28;
             this.btnDangKi.Text = "Đăng Kí";
             this.btnDangKi.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
@@ -90,9 +91,10 @@
             "Tối",
             "FulltimeAM",
             "FulltimePM"});
-            this.cbbChonca.Location = new System.Drawing.Point(1191, 492);
+            this.cbbChonca.Location = new System.Drawing.Point(1340, 615);
+            this.cbbChonca.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbChonca.Name = "cbbChonca";
-            this.cbbChonca.Size = new System.Drawing.Size(236, 36);
+            this.cbbChonca.Size = new System.Drawing.Size(265, 36);
             this.cbbChonca.StartIndex = 0;
             this.cbbChonca.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbChonca.TabIndex = 27;
@@ -111,13 +113,13 @@
             this.txtMaCa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaCa.ForeColor = System.Drawing.Color.Olive;
             this.txtMaCa.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaCa.Location = new System.Drawing.Point(1191, 332);
-            this.txtMaCa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaCa.Location = new System.Drawing.Point(1339, 448);
+            this.txtMaCa.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtMaCa.Name = "txtMaCa";
             this.txtMaCa.PasswordChar = '\0';
             this.txtMaCa.PlaceholderText = "Mã ca";
             this.txtMaCa.SelectedText = "";
-            this.txtMaCa.Size = new System.Drawing.Size(236, 45);
+            this.txtMaCa.Size = new System.Drawing.Size(266, 56);
             this.txtMaCa.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtMaCa.TabIndex = 26;
             // 
@@ -126,7 +128,7 @@
             this.txtHoTen.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.txtHoTen.BorderThickness = 5;
             this.txtHoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtHoTen.DefaultText = "Nguyen Van A";
+            this.txtHoTen.DefaultText = "";
             this.txtHoTen.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtHoTen.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtHoTen.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -135,16 +137,15 @@
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtHoTen.ForeColor = System.Drawing.Color.Olive;
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtHoTen.Location = new System.Drawing.Point(1191, 298);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtHoTen.Location = new System.Drawing.Point(1340, 372);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "Họ và tên";
             this.txtHoTen.SelectedText = "";
-            this.txtHoTen.Size = new System.Drawing.Size(236, 45);
+            this.txtHoTen.Size = new System.Drawing.Size(266, 56);
             this.txtHoTen.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtHoTen.TabIndex = 25;
-            this.txtHoTen.Visible = false;
             // 
             // dtpkNgayLam
             // 
@@ -153,19 +154,21 @@
             this.dtpkNgayLam.FillColor = System.Drawing.Color.PeachPuff;
             this.dtpkNgayLam.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.dtpkNgayLam.Format = System.Windows.Forms.DateTimePickerFormat.Long;
-            this.dtpkNgayLam.Location = new System.Drawing.Point(1191, 566);
+            this.dtpkNgayLam.Location = new System.Drawing.Point(1340, 708);
+            this.dtpkNgayLam.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpkNgayLam.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
             this.dtpkNgayLam.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
             this.dtpkNgayLam.Name = "dtpkNgayLam";
-            this.dtpkNgayLam.Size = new System.Drawing.Size(244, 40);
+            this.dtpkNgayLam.Size = new System.Drawing.Size(274, 50);
             this.dtpkNgayLam.TabIndex = 24;
             this.dtpkNgayLam.Value = new System.DateTime(2024, 10, 24, 0, 0, 0, 0);
             // 
             // flpNgay
             // 
-            this.flpNgay.Location = new System.Drawing.Point(164, 111);
+            this.flpNgay.Location = new System.Drawing.Point(184, 139);
+            this.flpNgay.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpNgay.Name = "flpNgay";
-            this.flpNgay.Size = new System.Drawing.Size(936, 79);
+            this.flpNgay.Size = new System.Drawing.Size(1053, 99);
             this.flpNgay.TabIndex = 23;
             // 
             // btnChieu
@@ -179,9 +182,10 @@
             this.btnChieu.FillColor = System.Drawing.Color.Wheat;
             this.btnChieu.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChieu.ForeColor = System.Drawing.Color.Black;
-            this.btnChieu.Location = new System.Drawing.Point(54, 358);
+            this.btnChieu.Location = new System.Drawing.Point(61, 448);
+            this.btnChieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnChieu.Name = "btnChieu";
-            this.btnChieu.Size = new System.Drawing.Size(100, 60);
+            this.btnChieu.Size = new System.Drawing.Size(112, 75);
             this.btnChieu.TabIndex = 22;
             this.btnChieu.Text = "Chiều";
             // 
@@ -196,9 +200,10 @@
             this.btnToi.FillColor = System.Drawing.Color.Wheat;
             this.btnToi.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnToi.ForeColor = System.Drawing.Color.Black;
-            this.btnToi.Location = new System.Drawing.Point(54, 492);
+            this.btnToi.Location = new System.Drawing.Point(61, 615);
+            this.btnToi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnToi.Name = "btnToi";
-            this.btnToi.Size = new System.Drawing.Size(100, 60);
+            this.btnToi.Size = new System.Drawing.Size(112, 75);
             this.btnToi.TabIndex = 21;
             this.btnToi.Text = "Tối";
             // 
@@ -213,9 +218,10 @@
             this.guna2Button1.FillColor = System.Drawing.Color.Wheat;
             this.guna2Button1.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.Location = new System.Drawing.Point(54, 627);
+            this.guna2Button1.Location = new System.Drawing.Point(61, 784);
+            this.guna2Button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(100, 59);
+            this.guna2Button1.Size = new System.Drawing.Size(112, 74);
             this.guna2Button1.TabIndex = 20;
             this.guna2Button1.Text = "FulltimeAM";
             // 
@@ -230,17 +236,19 @@
             this.btnSang.FillColor = System.Drawing.Color.Wheat;
             this.btnSang.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSang.ForeColor = System.Drawing.Color.Black;
-            this.btnSang.Location = new System.Drawing.Point(54, 242);
+            this.btnSang.Location = new System.Drawing.Point(61, 302);
+            this.btnSang.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSang.Name = "btnSang";
-            this.btnSang.Size = new System.Drawing.Size(100, 53);
+            this.btnSang.Size = new System.Drawing.Size(112, 66);
             this.btnSang.TabIndex = 19;
             this.btnSang.Text = "Sáng";
             // 
             // flpCa
             // 
-            this.flpCa.Location = new System.Drawing.Point(164, 196);
+            this.flpCa.Location = new System.Drawing.Point(184, 245);
+            this.flpCa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.flpCa.Name = "flpCa";
-            this.flpCa.Size = new System.Drawing.Size(936, 657);
+            this.flpCa.Size = new System.Drawing.Size(1053, 821);
             this.flpCa.TabIndex = 18;
             // 
             // txtMaNV
@@ -248,7 +256,7 @@
             this.txtMaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.txtMaNV.BorderThickness = 5;
             this.txtMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtMaNV.DefaultText = "NV01";
+            this.txtMaNV.DefaultText = "";
             this.txtMaNV.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtMaNV.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtMaNV.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -257,13 +265,13 @@
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaNV.ForeColor = System.Drawing.Color.Olive;
             this.txtMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtMaNV.Location = new System.Drawing.Point(1191, 245);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMaNV.Location = new System.Drawing.Point(1340, 306);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.PasswordChar = '\0';
             this.txtMaNV.PlaceholderText = "Mã nhân viên";
             this.txtMaNV.SelectedText = "";
-            this.txtMaNV.Size = new System.Drawing.Size(236, 45);
+            this.txtMaNV.Size = new System.Drawing.Size(266, 56);
             this.txtMaNV.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.txtMaNV.TabIndex = 29;
             // 
@@ -289,9 +297,10 @@
             "Pha chế",
             "Quản lí",
             "Bảo vệ"});
-            this.cbbCongViec.Location = new System.Drawing.Point(1191, 417);
+            this.cbbCongViec.Location = new System.Drawing.Point(1340, 521);
+            this.cbbCongViec.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbbCongViec.Name = "cbbCongViec";
-            this.cbbCongViec.Size = new System.Drawing.Size(236, 36);
+            this.cbbCongViec.Size = new System.Drawing.Size(265, 36);
             this.cbbCongViec.StartIndex = 0;
             this.cbbCongViec.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.cbbCongViec.TabIndex = 31;
@@ -311,13 +320,13 @@
             this.guna2TextBox1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 25.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2TextBox1.ForeColor = System.Drawing.Color.Peru;
             this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.Location = new System.Drawing.Point(324, 25);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
+            this.guna2TextBox1.Location = new System.Drawing.Point(364, 31);
+            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(7, 9, 7, 9);
             this.guna2TextBox1.Name = "guna2TextBox1";
             this.guna2TextBox1.PasswordChar = '\0';
             this.guna2TextBox1.PlaceholderText = "";
             this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.Size = new System.Drawing.Size(586, 76);
+            this.guna2TextBox1.Size = new System.Drawing.Size(659, 95);
             this.guna2TextBox1.Style = Guna.UI2.WinForms.Enums.TextBoxStyle.Material;
             this.guna2TextBox1.TabIndex = 32;
             // 
@@ -332,9 +341,10 @@
             this.guna2Button2.FillColor = System.Drawing.Color.Wheat;
             this.guna2Button2.Font = new System.Drawing.Font("Palatino Linotype", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2Button2.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button2.Location = new System.Drawing.Point(54, 751);
+            this.guna2Button2.Location = new System.Drawing.Point(61, 939);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Button2.Name = "guna2Button2";
-            this.guna2Button2.Size = new System.Drawing.Size(100, 59);
+            this.guna2Button2.Size = new System.Drawing.Size(112, 74);
             this.guna2Button2.TabIndex = 33;
             this.guna2Button2.Text = "Fulltime PM";
             // 
@@ -342,22 +352,24 @@
             // 
             this.guna2Shapes1.BorderColor = System.Drawing.Color.RosyBrown;
             this.guna2Shapes1.FillColor = System.Drawing.Color.Linen;
-            this.guna2Shapes1.Location = new System.Drawing.Point(1106, 151);
+            this.guna2Shapes1.Location = new System.Drawing.Point(1244, 189);
+            this.guna2Shapes1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.guna2Shapes1.Name = "guna2Shapes1";
             this.guna2Shapes1.PolygonSkip = 1;
             this.guna2Shapes1.Rotate = 0F;
             this.guna2Shapes1.Shape = Guna.UI2.WinForms.Enums.ShapeType.Rounded;
-            this.guna2Shapes1.Size = new System.Drawing.Size(401, 648);
+            this.guna2Shapes1.Size = new System.Drawing.Size(451, 810);
             this.guna2Shapes1.TabIndex = 34;
             this.guna2Shapes1.Text = "guna2Shapes1";
             this.guna2Shapes1.Zoom = 80;
             // 
             // fPhanCa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Linen;
-            this.ClientSize = new System.Drawing.Size(1483, 931);
+            this.ClientSize = new System.Drawing.Size(1668, 1164);
             this.Controls.Add(this.guna2Button2);
             this.Controls.Add(this.guna2TextBox1);
             this.Controls.Add(this.cbbCongViec);

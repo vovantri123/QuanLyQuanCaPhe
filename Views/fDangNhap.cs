@@ -31,6 +31,9 @@ namespace QuanLyQuanCaPhe
             {
                 NhanVien nv = NhanVienDAO.timKiemNhanVienTheoTaiKhoan(tenDangNhap, matKhau);
                 fTrangChu f = new fTrangChu(nv);
+
+                f.FormClosed += (s, args) => this.Show(); // Hiện lại form đăng nhập khi fTrangChu đóng
+
                 f.Show();  
                 this.Hide(); // Ẩn form đăng nhập
             }

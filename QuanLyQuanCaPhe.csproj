@@ -98,11 +98,11 @@
     <Compile Include="Utilities\Ngay.cs" />
     <Compile Include="Utilities\XyLyAnh.cs" />
     <Compile Include="Utilities\Tien.cs" />
-    <Compile Include="Views\fHoaDon.cs">
+    <Compile Include="Views\fQLHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fHoaDon.Designer.cs">
-      <DependentUpon>fHoaDon.cs</DependentUpon>
+    <Compile Include="Views\fQLHoaDon.Designer.cs">
+      <DependentUpon>fQLHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fDangKy.cs">
       <SubType>Form</SubType>
@@ -124,17 +124,17 @@
     <Compile Include="Views\fDonHang.Designer.cs">
       <DependentUpon>fDonHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\fKhachHang.cs">
+    <Compile Include="Views\fQLKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fKhachHang.Designer.cs">
-      <DependentUpon>fKhachHang.cs</DependentUpon>
+    <Compile Include="Views\fQLKhachHang.Designer.cs">
+      <DependentUpon>fQLKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\fKhoHang.cs">
+    <Compile Include="Views\fQLKhoHang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fKhoHang.Designer.cs">
-      <DependentUpon>fKhoHang.cs</DependentUpon>
+    <Compile Include="Views\fQLKhoHang.Designer.cs">
+      <DependentUpon>fQLKhoHang.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fQLNhanVien.cs">
       <SubType>Form</SubType>
@@ -142,11 +142,11 @@
     <Compile Include="Views\fQLNhanVien.Designer.cs">
       <DependentUpon>fQLNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\fPhanCa.cs">
+    <Compile Include="Views\fQLPhanCa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\fPhanCa.Designer.cs">
-      <DependentUpon>fPhanCa.cs</DependentUpon>
+    <Compile Include="Views\fQLPhanCa.Designer.cs">
+      <DependentUpon>fQLPhanCa.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\fQLLoaiSanPham.cs">
       <SubType>Form</SubType>
@@ -205,23 +205,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\fHoaDon.resx">
-      <DependentUpon>fHoaDon.cs</DependentUpon>
+    <EmbeddedResource Include="Views\fQLHoaDon.resx">
+      <DependentUpon>fQLHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fDonHang.resx">
       <DependentUpon>fDonHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\fKhachHang.resx">
-      <DependentUpon>fKhachHang.cs</DependentUpon>
+    <EmbeddedResource Include="Views\fQLKhachHang.resx">
+      <DependentUpon>fQLKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\fKhoHang.resx">
-      <DependentUpon>fKhoHang.cs</DependentUpon>
+    <EmbeddedResource Include="Views\fQLKhoHang.resx">
+      <DependentUpon>fQLKhoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fQLNhanVien.resx">
       <DependentUpon>fQLNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\fPhanCa.resx">
-      <DependentUpon>fPhanCa.cs</DependentUpon>
+    <EmbeddedResource Include="Views\fQLPhanCa.resx">
+      <DependentUpon>fQLPhanCa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\fQLLoaiSanPham.resx">
       <DependentUpon>fQLLoaiSanPham.cs</DependentUpon>
@@ -244,6 +244,7 @@
     <EmbeddedResource Include="Views\UserControls\ucSanPham.resx">
       <DependentUpon>ucSanPham.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -62,8 +62,7 @@ namespace QuanLyQuanCaPhe.Views
         }
 
         private void LoadThongTinKhachHang()
-        { 
-            this.soDienThoai = soDienThoai;
+        {  
             KhachHang kh = KhachHangDAO.LoadThongTinKhachHang(soDienThoai);
             txtTenKhachHang.Text = kh.TenKH;
             txtSoDienThoai.Text = soDienThoai;  

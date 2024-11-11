@@ -108,15 +108,15 @@ namespace QuanLyQuanCaPhe.Views
             ThemListUCVaoFlowPnlSanPham();
         }
 
-        private void btnSanPham_Click(object sender, EventArgs e)
+        private void btnQLSanPham_Click(object sender, EventArgs e)
         {
             fQLSanPham f = new fQLSanPham();
             f.ShowDialog();
         }
 
-        private void btnKhoHang_Click(object sender, EventArgs e)
+        private void btnQLKhoHang_Click(object sender, EventArgs e)
         {
-            fKhoHang f = new fKhoHang();
+            fQLKhoHang f = new fQLKhoHang();
             f.ShowDialog();
         }
 
@@ -129,7 +129,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnHoaDon_Click(object sender, EventArgs e)
         {
-            fHoaDon f = new fHoaDon();
+            fQLHoaDon f = new fQLHoaDon();
             f.ShowDialog();
         }
 
@@ -139,9 +139,9 @@ namespace QuanLyQuanCaPhe.Views
             f.ShowDialog();
         }
 
-        private void btnPhanCa_Click(object sender, EventArgs e)
+        private void btnQLPhanCa_Click(object sender, EventArgs e)
         {
-            fPhanCa f = new fPhanCa();
+            fQLPhanCa f = new fQLPhanCa(nhanVien);
             f.ShowDialog();
         }
 
@@ -160,7 +160,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnQLKhachHang_Click(object sender, EventArgs e)
         {
-            fKhachHang f = new fKhachHang();
+            fQLKhachHang f = new fQLKhachHang();
             f.ShowDialog();
         }
 
@@ -220,6 +220,16 @@ namespace QuanLyQuanCaPhe.Views
             btnThanhToan.Enabled = false;
 
             LoadTongTien();
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                this.Close(); // Đóng fTrangChu, sẽ tự động hiển thị lại form đăng nhập
+            }
         }
     }
 }

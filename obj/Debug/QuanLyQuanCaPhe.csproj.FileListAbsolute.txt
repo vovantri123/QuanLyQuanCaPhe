@@ -10,7 +10,6 @@ D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\bin\Debug\Guna.UI2.dll
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fHoaDon.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fTrangChu.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.UserControls.ucSanPham.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDangKy.resources
@@ -34,13 +33,10 @@ C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
 C:\DBMS\QLyCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fSanPham.resources
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhoHang.resources
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fPhanCa.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fDonHang.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLNhanVien.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLLoaiSanPham.resources
 D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLSanPham.resources
-D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fKhachHang.resources
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe.config
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.exe
 E:\Hệ quản trị cơ sở dữ liệu\QuanLyQuanCaPhe\bin\Debug\QuanLyQuanCaPhe.pdb
@@ -244,3 +240,7 @@ C:\DBMS\QliCaPhe\obj\Debug\QuanLyQuanCaPhe.csproj.CoreCompileInputs.cache
 C:\DBMS\QliCaPhe\obj\Debug\QuanLyQu.E4A908DB.Up2Date
 C:\DBMS\QliCaPhe\obj\Debug\QuanLyQuanCaPhe.exe
 C:\DBMS\QliCaPhe\obj\Debug\QuanLyQuanCaPhe.pdb
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLHoaDon.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLKhachHang.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLKhoHang.resources
+D:\A.HocKy1.Nam3\DBMS\DoAnDBMS\QuanLyQuanCaPhe\obj\Debug\QuanLyQuanCaPhe.Views.fQLPhanCa.resources

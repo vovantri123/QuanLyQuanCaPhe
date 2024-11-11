@@ -61,11 +61,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label1.Location = new System.Drawing.Point(999, -4);
+            this.label1.Location = new System.Drawing.Point(608, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 52);
+            this.label1.Size = new System.Drawing.Size(375, 52);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Sản phẩm";
+            this.label1.Text = "Quản lý sản phẩm";
             // 
             // dgvDSSanPham
             // 
@@ -212,6 +212,7 @@
             // 
             // pbAnhSP
             // 
+            this.pbAnhSP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbAnhSP.Image = ((System.Drawing.Image)(resources.GetObject("pbAnhSP.Image")));
             this.pbAnhSP.Location = new System.Drawing.Point(32, 79);
             this.pbAnhSP.Name = "pbAnhSP";

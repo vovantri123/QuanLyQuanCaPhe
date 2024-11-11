@@ -1,4 +1,8 @@
-﻿CREATE ROLE Staff
+﻿USE QuanLyQuanCaPhe
+
+GO
+
+CREATE ROLE Staff
 -- Gán các quyền trên table cho role Staff
 GRANT SELECT, INSERT, DELETE,REFERENCES ON KhachHang TO Staff
 GRANT SELECT, INSERT, DELETE,REFERENCES ON DonHang TO Staff
@@ -15,8 +19,8 @@ GRANT SELECT, REFERENCES ON ThucHien TO Staff
 GRANT SELECT, REFERENCES ON CongViec TO Staff
 GRANT SELECT, REFERENCES ON CaLamViec TO Staff
 -- Gán quyền thực thi trên các procedure, function cho role Staff
-GRANT EXECUTE TO Staff
-GRANT SELECT TO Staff
+GRANT EXECUTE TO Staff 
+GRANT SELECT TO Staff --Cấp quyền SELECT trên toàn bộ bảng trong CSDL QuanLyQuanCaPhe
 
 DENY EXECUTE ON proc_ThemNhanVien to Staff;
 DENY EXECUTE ON proc_XoaNhanVien to Staff;

@@ -37,6 +37,7 @@ namespace QuanLyQuanCaPhe.Views
                 txtSoDienThoai.Text = row.Cells["SoDienThoai"].Value.ToString();
                 txtNamSinh.Text = row.Cells["NamSinh"].Value.ToString();
                 cboGioiTinh.Text = row.Cells["GioiTinh"].Value.ToString();
+                txtEmail.Text = row.Cells["Email"].Value.ToString();
                 txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
                 txtbTenDangNhap.Text = row.Cells["TenDangNhap"].Value.ToString();
                 txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
@@ -84,7 +85,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            bool co = false;
+            //bool co = false;
             try
             {
                 string maNV = txtMaNV.Text;
@@ -100,7 +101,7 @@ namespace QuanLyQuanCaPhe.Views
                 }
                 NhanVienDAO.Xoa(maNV);
                 ThucHienDAO.Xoa(maNV);
-                co = true;
+                //co = true;
             }
             catch(Exception ex) 
             {
@@ -109,8 +110,8 @@ namespace QuanLyQuanCaPhe.Views
             finally
             {
                 LoadDGVHienThi();
-                if (co)
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if (co)
+                    //MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
 
@@ -119,7 +120,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            bool co = false;
+            //bool co = false;
             try
             {
                 string hoTen = txtHoTen.Text;
@@ -131,9 +132,9 @@ namespace QuanLyQuanCaPhe.Views
                 string tenDangNhap = txtbTenDangNhap.Text;
                 string matKhau = txtMatKhau.Text;
                 string loaiNV = cboLoaiNV.Text;
-                NhanVien nv = new NhanVien("", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email,tenDangNhap, matKhau);
+                NhanVien nv = new NhanVien("NV00", hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email,tenDangNhap, matKhau);
                 NhanVienDAO.Them(nv, loaiNV);
-                co = true;
+                //co = true;
             }
             catch (Exception ex)
             {
@@ -142,14 +143,14 @@ namespace QuanLyQuanCaPhe.Views
             finally
             {
                 LoadDGVHienThi();
-                if(co)
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //if(co)
+                //    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-            bool co = false;
+            //bool co = false;
             try
             {
                 string maNV = txtMaNV.Text;
@@ -170,18 +171,18 @@ namespace QuanLyQuanCaPhe.Views
                 if (loaiNV.Equals("Toàn thời gian"))
                 {
                     NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
-                    NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong);
+                    NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, email,tenDangNhap, matKhau, luong);
                     NhanVienToanThoiGianDAO.Sua(nvToanTG);
                     NhanVienDAO.Sua(nv);
-                    co = true;
+                    //co = true;
                 }
                 else
                 {
                     NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
-                    NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, tenDangNhap, matKhau, luong, soGio);
+                    NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, email,tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);
                     NhanVienDAO.Sua(nv);
-                    co = true;
+                    //co = true;
                 }
 
             }
@@ -192,10 +193,10 @@ namespace QuanLyQuanCaPhe.Views
             finally
             {
                 LoadDGVHienThi();
-                if (co)
-                {
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                //if (co)
+                //{
+                //    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
             }
 
         }

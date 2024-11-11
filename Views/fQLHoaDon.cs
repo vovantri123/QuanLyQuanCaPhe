@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Views
 {
-    public partial class fHoaDon : Form
+    public partial class fQLHoaDon : Form
     {
-        public fHoaDon()
+        public fQLHoaDon()
         {
             InitializeComponent();
         }

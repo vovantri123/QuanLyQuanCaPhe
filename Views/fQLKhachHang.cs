@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Views
 {
-    public partial class fKhachHang : Form
+    public partial class fQLKhachHang : Form
     {
-        public fKhachHang()
+        public fQLKhachHang()
         {
             InitializeComponent();
         }

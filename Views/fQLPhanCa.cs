@@ -13,20 +13,30 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Views
 {
-    public partial class fPhanCa : Form
+    public partial class fQLPhanCa : Form
     {
         ThucHienDAO nguoiThucHienCaDao = new ThucHienDAO();
         private TimeSpan gioBatDau = new TimeSpan(0, 0, 0);
         private TimeSpan gioKetThuc = new TimeSpan(0, 0, 0);
         private string maNgheNghiep;
-        public fPhanCa()
+        private NhanVien nhanVien = null;
+
+        public fQLPhanCa()
         {
+            InitializeComponent();
+        }
+
+        public fQLPhanCa(NhanVien nv)
+        {
+            nhanVien = nv;
             InitializeComponent();
         }
 
         public void LoadCa()
         {
-            
+            txtMaNV.Text = nhanVien.MaNV;
+
+            txtHoTen.Text = nhanVien.HoTenNV;
             DateTime today = DateTime.Today;
             //DateTime monday = today.AddDays(-(int)today.DayOfWeek + 1); // Bắt đầu từ thứ Hai
             DateTime monday = today.AddDays(-(int)today.DayOfWeek + (today.DayOfWeek == DayOfWeek.Sunday ? -6 : 1));
@@ -129,6 +139,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void fPhanCa_Load(object sender, EventArgs e)
         {
+            txtMaCa.Text = CaLamViecDAO.LayMaCaMoiDeDangKy();
             LoadCa();
             BayNgayTrongTuan();
         }
@@ -137,10 +148,11 @@ namespace QuanLyQuanCaPhe.Views
         {
             string dinhDangNgayLam = dtpkNgayLam.Value.ToString("yyyy-MM-dd");
             cbbChonca_SelectedIndexChanged(sender, e);
-            CaLamViec clv = new CaLamViec(txtMaCa.Text, cbbChonca.Text, dinhDangNgayLam, gioBatDau, gioKetThuc);
+            cbbCongViec_SelectedIndexChanged(sender, e); 
+
+            CaLamViec clv = new CaLamViec(txtMaCa.Text, cbbChonca.Text, dinhDangNgayLam, gioBatDau, gioKetThuc); //Ca00 thêm cho nó k dính check null, chứ Trigger nó tự tạo mã ca rồi
             CaLamViecDAO.Them(clv);
 
-            cbbCongViec_SelectedIndexChanged(sender, e);
             ThucHien th = new ThucHien(txtMaCa.Text, txtMaNV.Text, maNgheNghiep);
             ThucHienDAO.Them(th);
 

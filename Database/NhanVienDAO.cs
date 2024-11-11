@@ -88,7 +88,7 @@ namespace QuanLyQuanCaPhe.Database
             {
                 NhanVien nv = new NhanVien();
                 nv.MaNV = result["@MaNV"].ToString();
-                MessageBox.Show(nv.MaNV);
+                //MessageBox.Show(nv.MaNV);
                 nv.HoTenNV = result["@HoTenNV"].ToString();
                 nv.SoDienThoai = result["@SoDienThoai"].ToString();
                 nv.NamSinh = Convert.ToInt32(result["@NamSinh"].ToString());
