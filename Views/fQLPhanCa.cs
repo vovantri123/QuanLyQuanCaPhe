@@ -55,7 +55,7 @@ namespace QuanLyQuanCaPhe.Views
                     List<string> employeeNames = nguoiThucHienCaDao.TimNguoiThucHien(shiftCa, currentDateString);
 
                     // Hiển thị danh sách tên nhân viên trên nút, nếu có nhiều nhân viên
-                    string employeeNamesText = employeeNames.Count > 0 ? string.Join(", ", employeeNames) : "Chưa có nhân viên";
+                    string employeeNamesText = employeeNames.Count > 0 ? string.Join(", ", employeeNames) : "Ca trống";
 
                     Guna2Button btn = new Guna2Button()
                     {
