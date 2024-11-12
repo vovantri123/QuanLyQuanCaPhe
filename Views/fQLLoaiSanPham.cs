@@ -33,7 +33,7 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnThem_Click(object sender, EventArgs e)
         { 
-            LoaiSanPham lsp = new LoaiSanPham(txtMaSP.Text, txtTenLoaiSP.Text);
+            LoaiSanPham lsp = new LoaiSanPham("LSP00", txtTenLoaiSP.Text);
             LoaiSanPhamDAO.Them(lsp);
             LoadDGVHienThi();
         }

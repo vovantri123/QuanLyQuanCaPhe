@@ -343,16 +343,17 @@
             // lblTenFileAnh
             // 
             this.lblTenFileAnh.AutoSize = true;
-            this.lblTenFileAnh.Location = new System.Drawing.Point(28, 22);
+            this.lblTenFileAnh.Location = new System.Drawing.Point(676, 835);
             this.lblTenFileAnh.Name = "lblTenFileAnh";
             this.lblTenFileAnh.Size = new System.Drawing.Size(91, 20);
             this.lblTenFileAnh.TabIndex = 24;
             this.lblTenFileAnh.Text = "Tên file ảnh";
+            this.lblTenFileAnh.Visible = false;
             // 
             // lblDuongDanAnh
             // 
             this.lblDuongDanAnh.AutoSize = true;
-            this.lblDuongDanAnh.Location = new System.Drawing.Point(304, 22);
+            this.lblDuongDanAnh.Location = new System.Drawing.Point(27, 835);
             this.lblDuongDanAnh.Name = "lblDuongDanAnh";
             this.lblDuongDanAnh.Size = new System.Drawing.Size(119, 20);
             this.lblDuongDanAnh.TabIndex = 24;
@@ -363,7 +364,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1629, 844);
+            this.ClientSize = new System.Drawing.Size(1629, 870);
             this.Controls.Add(this.lblDuongDanAnh);
             this.Controls.Add(this.lblTenFileAnh);
             this.Controls.Add(this.label6);

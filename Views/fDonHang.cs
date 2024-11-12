@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ZedGraph;
 
 namespace QuanLyQuanCaPhe.Views
 {
     public partial class fDonHang : Form
     { 
         //Tham sô truyền giữa các form
-        private string maNV;
+        private NhanVien nhanVien;
         private string soDienThoai;
 
         public fDonHang()
@@ -24,9 +25,9 @@ namespace QuanLyQuanCaPhe.Views
             InitializeComponent();
         }
 
-        public fDonHang(string maNV, string soDienThoai) //xử lý đơn chưa thanh toán
+        public fDonHang(NhanVien nhanVien, string soDienThoai) //xử lý đơn chưa thanh toán
         {
-            this.maNV = maNV;
+            this.nhanVien = nhanVien;
             this.soDienThoai = soDienThoai;
             InitializeComponent();
         }
@@ -74,12 +75,7 @@ namespace QuanLyQuanCaPhe.Views
         {
             dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachSanPhamDaChon"); 
         }
-          
-        private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        { 
-
            
-        }
 
         private void dgvHienThi_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -88,11 +84,14 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnXacNhanThanhToan_Click(object sender, EventArgs e)
         {
-            DonHangDAO.XacNhanThanhToan();
-            MessageBox.Show("Thanh toán thành công");
+            MessageBox.Show("Thanh toán thành công"); 
             this.Close();
-        }
 
+            fBill f = new fBill(lblNgayMua.Text, lblMaHD.Text, txtTenKhachHang.Text, nhanVien.HoTenNV, lblTongTien.Text, lblGiam.Text, lblThanhTien.Text);
+            f.ShowDialog();
+
+            DonHangDAO.XacNhanThanhToan();
+        }
         private void btnSua_Click(object sender, EventArgs e)
         { 
             KhachHangDAO.SuaTenVaSoDienThoai(txtTenKhachHang.Text, soDienThoai, txtSoDienThoai.Text);

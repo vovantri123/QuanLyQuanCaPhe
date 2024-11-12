@@ -54,7 +54,7 @@ namespace QuanLyQuanCaPhe.Views
         private void btnThem_Click(object sender, EventArgs e)
         {
             double diemTichLuy = double.Parse(txtSoDiemTichLuy.Text);
-            KhachHang kh = new KhachHang(txtMaKH.Text, txtTenKH.Text, txtSoDienThoai.Text, diemTichLuy);
+            KhachHang kh = new KhachHang("KH00", txtTenKH.Text, txtSoDienThoai.Text, diemTichLuy);
             KhachHangDAO.Them(kh);
             fKhachHang_Load(sender,e); // Gọi lại phương thức để tải ca làm việc mới nhất
         }
@@ -83,10 +83,11 @@ namespace QuanLyQuanCaPhe.Views
         {
 
         }
+         
 
-        private void guna2Shapes2_Click(object sender, EventArgs e)
+        private void guna2Shapes1_Click(object sender, EventArgs e)
         {
-                    
+
         }
     }
 }

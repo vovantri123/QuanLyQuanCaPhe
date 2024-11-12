@@ -123,7 +123,7 @@ namespace QuanLyQuanCaPhe.Views
         private void btnThanhToan_Click(object sender, EventArgs e)
         {
             DonHangDAO.CapNhatGiaTriDonHangChuaThanhToan();
-            fDonHang f = new fDonHang("NV01", txtSoDienThoai.Text); 
+            fDonHang f = new fDonHang(nhanVien, txtSoDienThoai.Text); 
             f.ShowDialog();
         }
 
@@ -200,7 +200,7 @@ namespace QuanLyQuanCaPhe.Views
         private void btnNewOrder_Click(object sender, EventArgs e)
         {   
                 KhachHangDAO.Them(txtSoDienThoai.Text);
-                DonHangDAO.Them(txtSoDienThoai.Text, "NV01");
+                DonHangDAO.Them(txtSoDienThoai.Text, nhanVien.MaNV);
 
                 btnXoaChonTatCa.Enabled = true;
                 dgvHienThi.Visible = true;
