@@ -29,6 +29,8 @@ namespace QuanLyQuanCaPhe.Views
 
         private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            txtLuong.Clear();
+            txtSoGio.Clear();
             if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = dgvHienThi.Rows[e.RowIndex];
@@ -201,6 +203,26 @@ namespace QuanLyQuanCaPhe.Views
 
         }
 
-       
+        private void btnPhatLuong_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime selectedDate = dtpNgayPhatLuong.Value;
+                string maNV = txtMaNV.Text;
+                int month = selectedDate.Month;
+                int year = selectedDate.Year;
+                double Luong = Convert.ToDouble(NhanVienDAO.tinhLuongNV(maNV, month, year));
+                NhanVienDAO.guiMail(maNV, month, year, Luong);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi "+ex.Message);
+            }
+            finally
+            {
+                MessageBox.Show("Thành công");
+            }
+           
+        }
     }
 }

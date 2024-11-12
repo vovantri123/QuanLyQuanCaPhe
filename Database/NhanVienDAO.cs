@@ -125,5 +125,27 @@ namespace QuanLyQuanCaPhe.Database
 
             return DBConnection.ThucThiFunction_Scalar("func_LayMatKhau_NhanVien", DBConnection.parameters).ToString(); 
         }
+
+        public static string tinhLuongNV(string maNV, int thang, int nam)
+        {
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@MaNV", maNV);
+            DBConnection.AddParameters("@Thang", thang);
+            DBConnection.AddParameters("@Nam", nam);
+
+            return DBConnection.ThucThiFunction_Scalar("func_TinhLuong", DBConnection.parameters).ToString();
+        }
+
+
+        public static void guiMail(string maNV, int thang, int nam, double luong)
+        {
+            DBConnection.ClearParameters();
+            DBConnection.AddParameters("@MaNV", maNV);
+            DBConnection.AddParameters("@Thang", thang);
+            DBConnection.AddParameters("@Nam", nam);
+            DBConnection.AddParameters("@LuongNV", luong);
+
+           DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_guiThongBaoLuongThang",DBConnection.parameters);
+        }
     }
 }
