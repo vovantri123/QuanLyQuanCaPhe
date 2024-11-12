@@ -84,6 +84,8 @@ namespace QuanLyQuanCaPhe.Views
                     flpCa.Controls.Add(btn);
                 }
             }
+            txtMaCa.Text = CaLamViecDAO.LayMaCaMoiDeDangKy();
+
 
         }
         public void BayNgayTrongTuan()
@@ -142,6 +144,8 @@ namespace QuanLyQuanCaPhe.Views
             txtMaCa.Text = CaLamViecDAO.LayMaCaMoiDeDangKy();
             LoadCa();
             BayNgayTrongTuan();
+            dtpkNgayLam.Value = DateTime.Now;
+
         }
 
         private void btnDangKi_Click(object sender, EventArgs e)
