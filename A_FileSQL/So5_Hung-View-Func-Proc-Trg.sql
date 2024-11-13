@@ -171,7 +171,6 @@ BEGIN
 			WHERE TH.MaNV = @MaNV AND CLV.Ngay = @Ngay) > 2
 		BEGIN
 			RAISERROR (N'Nhân viên này không được làm quá 2 ca trong 1 ngày. Vui lòng kiểm tra lại.', 16, 1); 
-			RETURN;
 		END
 
 		-- Kiểm tra nhân viên không được làm trùng ca làm việc (tức ca đó nhân viên đã làm rồi mà lại đăng kí nữa)
