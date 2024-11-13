@@ -2,46 +2,7 @@
 
 GO
 
--- Thêm nhân viên
-CREATE TRIGGER trg_TuDongTaoMaNV_NhanVien
-ON NhanVien
-INSTEAD OF INSERT
-AS
-BEGIN	   
-	BEGIN TRY
-		DECLARE @maxMaNV NVARCHAR(50);
-		DECLARE @newMaNV NVARCHAR(50);
-		DECLARE @numPart INT;
-
-		SELECT @maxMaNV = MAX(MaNV) 
-		FROM NhanVien
-		WHERE MaNV LIKE 'NV%';
-
-		IF @maxMaNV IS NOT NULL
-		BEGIN
-			SET @numPart = CAST(SUBSTRING(@maxMaNV, 3, LEN(@maxMaNV) - 2) AS INT) + 1;
-		END
-		ELSE
-		BEGIN
-			SET @numPart = 1;
-		END
-
-		SET @newMaNV = 'NV' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-		INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email, TenDangNhap, MatKhau)
-		SELECT @newMaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau
-		FROM inserted; 
-	END TRY
-	BEGIN CATCH
-	 
-        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
-		RAISERROR (@ErrorMessage, 16, 1);
-
-    END CATCH
-END;
-
-GO
-
+--------------------------------------------------------------Func và Proc--------------------------------------------------------------
 CREATE PROCEDURE proc_ThemNhanVien
     @HoTenNV nvarchar(50),
     @SoDienThoai nvarchar(50),
@@ -86,6 +47,7 @@ BEGIN
 END;
 
 GO
+
 CREATE PROCEDURE proc_XoaNhanVienToanThoiGian
 	@MaNV nvarchar(50)
 AS
@@ -93,6 +55,7 @@ BEGIN
 	DELETE FROM NhanVienToanThoiGian
 	WHERE MaNV = @MaNV
 END
+
 GO
 
 CREATE PROCEDURE proc_XoaNhanVienBanThoiGian
@@ -102,17 +65,9 @@ BEGIN
 	DELETE FROM NhanVienBanThoiGian
 	WHERE MaNV = @MaNV
 END
-GO
-
-CREATE PROCEDURE proc_XoaNhanVien
-	@MaNV nvarchar(50)
-AS
-BEGIN 
-	DELETE FROM NhanVien
-	WHERE MaNV = @MaNV  
-END
 
 GO
+  
 CREATE PROCEDURE proc_SuaNhanVien
     @MaNV NVARCHAR(50),
     @HoTenNV nvarchar(50),
@@ -134,8 +89,7 @@ BEGIN
 		Email = @Email,
 		TenDangNhap = @TenDangNhap,
 		MatKhau = @MatKhau
-	WHERE MaNV = @MaNV
-		 
+	WHERE MaNV = @MaNV 
 END
 
 GO
@@ -200,6 +154,7 @@ BEGIN
 	DELETE FROM ThucHien
 	WHERE MaNV = @MaNV
 END
+
 GO
 
 CREATE PROCEDURE proc_timNhanVienTheoTaiKhoan
@@ -338,5 +293,42 @@ ORDER BY log_date DESC;
 */
 
 
+----------------------------------------------------------------Trigger----------------------------------------------------------------
+CREATE TRIGGER trg_TuDongTaoMaNV_NhanVien
+ON NhanVien
+INSTEAD OF INSERT
+AS
+BEGIN	   
+	BEGIN TRY
+		DECLARE @maxMaNV NVARCHAR(50);
+		DECLARE @newMaNV NVARCHAR(50);
+		DECLARE @numPart INT;
 
+		SELECT @maxMaNV = MAX(MaNV) 
+		FROM NhanVien
+		WHERE MaNV LIKE 'NV%';
 
+		IF @maxMaNV IS NOT NULL
+		BEGIN
+			SET @numPart = CAST(SUBSTRING(@maxMaNV, 3, LEN(@maxMaNV) - 2) AS INT) + 1;
+		END
+		ELSE
+		BEGIN
+			SET @numPart = 1;
+		END
+
+		SET @newMaNV = 'NV' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+		INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email, TenDangNhap, MatKhau)
+		SELECT @newMaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau
+		FROM inserted; 
+	END TRY
+	BEGIN CATCH
+	 
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+		RAISERROR (@ErrorMessage, 16, 1);
+
+    END CATCH
+END;
+
+GO

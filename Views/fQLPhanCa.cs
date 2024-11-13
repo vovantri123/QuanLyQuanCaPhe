@@ -150,18 +150,27 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnDangKi_Click(object sender, EventArgs e)
         {
-            string dinhDangNgayLam = dtpkNgayLam.Value.ToString("yyyy-MM-dd");
-            cbbChonca_SelectedIndexChanged(sender, e);
-            cbbCongViec_SelectedIndexChanged(sender, e); 
+            try
+            {
+                string dinhDangNgayLam = dtpkNgayLam.Value.ToString("yyyy-MM-dd");
+                cbbCongViec_SelectedIndexChanged(sender, e);
+                cbbChonca_SelectedIndexChanged(sender, e);
 
-            CaLamViec clv = new CaLamViec(txtMaCa.Text, cbbChonca.Text, dinhDangNgayLam, gioBatDau, gioKetThuc); //Ca00 thêm cho nó k dính check null, chứ Trigger nó tự tạo mã ca rồi
-            CaLamViecDAO.Them(clv);
+                CaLamViec clv = new CaLamViec(txtMaCa.Text, cbbChonca.Text, dinhDangNgayLam, gioBatDau, gioKetThuc); //Ca00 thêm cho nó k dính check null, chứ Trigger nó tự tạo mã ca rồi
+                CaLamViecDAO.Them(clv);
 
-            ThucHien th = new ThucHien(txtMaCa.Text, txtMaNV.Text, maNgheNghiep);
-            ThucHienDAO.Them(th);
+                ThucHien th = new ThucHien(txtMaCa.Text, txtMaNV.Text, maNgheNghiep);
+                ThucHienDAO.Them(th);
 
-            flpCa.Controls.Clear();  // Xóa các button cũ trong FlowLayoutPanel trước khi tải lại
-            LoadCa(); // Gọi lại phương thức để tải ca làm việc mới nhất
+                flpCa.Controls.Clear();  // Xóa các button cũ trong FlowLayoutPanel trước khi tải lại
+                LoadCa(); // Gọi lại phương thức để tải ca làm việc mới nhất
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message);
+            } 
+            
+            
         }
 
         private void SetWorkingHours(string selectedShift)
@@ -225,7 +234,7 @@ namespace QuanLyQuanCaPhe.Views
                     break;
                 default:
                     // Xử lý trường hợp không hợp lệ (có thể gán giá trị mặc định hoặc ném ngoại lệ)
-                    throw new ArgumentException("Ca làm không hợp lệ.");
+                    throw new ArgumentException("Công việc không hợp lệ.");
             }
         }
         private void cbbCongViec_SelectedIndexChanged(object sender, EventArgs e)

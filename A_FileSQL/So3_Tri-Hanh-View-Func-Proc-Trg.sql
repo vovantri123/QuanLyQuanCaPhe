@@ -2,7 +2,7 @@
 
 GO
 
--- View
+-----------------------------------------------------------------View--------------------------------------------------------------------
 
 CREATE VIEW v_DanhSachSanPhamDaChon AS
 SELECT sp.MaSP, sp.TenSP, sp.Gia, cthd.SoLuong, cthd.TongTien 
@@ -56,7 +56,7 @@ GROUP BY sp.MaSP, sp.TenSP
 
 GO
 
---Proc và Func
+----------------------------------------------------------------Proc và Func--------------------------------------------------------------
 CREATE PROCEDURE proc_Them_LoaiSanPham 
     @MaLoaiSP NVARCHAR(50),
     @TenLoaiSP NVARCHAR(50)
@@ -237,36 +237,29 @@ BEGIN
 		DECLARE @maxMaKH NVARCHAR(50);
 		DECLARE @newMaKH NVARCHAR(50);
 		DECLARE @numPart INT;
-
-		-- Kiểm tra xem số điện thoại đã tồn tại chưa
+ 
 		IF EXISTS (SELECT 1 FROM KhachHang WHERE SoDienThoai = @SoDienThoai)
 		BEGIN
 			COMMIT TRANSACTION -- Bắt buột commit hoặc rollback trước khi return
 			RETURN;
 		END
-
-		-- Nếu chưa tồn tại, tiếp tục tạo mới khách hàng
-
-		-- Tìm giá trị MaKH lớn nhất hiện có
+		  
 		SELECT @maxMaKH = MAX(MaKH) 
 		FROM KhachHang
 		WHERE MaKH LIKE 'KH%';
-
-		-- Lấy phần số từ MaKH (bỏ phần 'KH' phía trước) và convert sang kiểu INT
+		 
 		IF @maxMaKH IS NOT NULL
 		BEGIN
 			SET @numPart = CAST(SUBSTRING(@maxMaKH, 3, LEN(@maxMaKH) - 2) AS INT) + 1;
 		END
 		ELSE
-		BEGIN
-			-- Nếu chưa có MaKH nào, bắt đầu từ 1
+		BEGIN 
 			SET @numPart = 1;
 		END
 
 		-- Tạo giá trị mới cho MaKH, với định dạng KHxx (2 số)
 		SET @newMaKH = 'KH' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-		-- Thực hiện chèn bản ghi với MaKH mới
+		 
 		INSERT INTO KhachHang(MaKH, TenKH, SoDienThoai, SoDiemTichLuy)
 		VALUES(@newMaKH, N'Chưa nhập tên', @SoDienThoai, 0)
 
@@ -300,21 +293,17 @@ BEGIN
 		SELECT @MaKH = MaKH
 		FROM KhachHang
 		WHERE SoDienThoai = @SoDienThoai
-	 
-		--Code bên trigger
-		-- Tìm giá trị maDH lớn nhất hiện có
+	  
 		SELECT @maxMaDH = MAX(maDH) 
 		FROM DonHang
 		WHERE maDH LIKE 'DH%';
-
-		-- Lấy phần số từ maDH (bỏ phần 'DH' phía trước) và convert sang kiểu INT
+		 
 		IF @maxMaDH IS NOT NULL
 		BEGIN
 			SET @numPart = CAST(SUBSTRING(@maxMaDH, 3, LEN(@maxMaDH) - 2) AS INT) + 1;
 		END
 		ELSE
-		BEGIN
-			-- Nếu chưa có maDH nào, bắt đầu từ 1
+		BEGIN 
 			SET @numPart = 1;
 		END
 
@@ -455,8 +444,7 @@ BEGIN
 	SELECT @MaDH = MaDH
 	FROM DonHang
 	WHERE TrangThai = N'Chưa thanh toán'
-
-	-- Tính tổng tiền
+	 
 	SELECT @Tong = SUM(TongTien)
 	FROM ChiTietHoaDon
 	WHERE MaDH = @MaDH
@@ -497,12 +485,11 @@ BEGIN
 			SET @SoDiemTichLuy = 0 + 0.01 * @GiaTriDon  -- Đã dùng hết điểm tích lũy
 		END
 		ELSE
-		BEGIN
-			SET @SoDiemTichLuy = (@SoDiemTichLuy - @GiaTriDon) + 0.01 * @GiaTriDon  -- Cập nhật điểm tích lũy còn lại và cộng thêm 0.01 GiaTriDon
+		BEGIN 
+			SET @SoDiemTichLuy = (@SoDiemTichLuy - @GiaTriDon) + 0.01 * @GiaTriDon  
 			SET @GiaTriDon = 0 -- Đơn đã được thanh toán hết
 		END
-
-	
+		 
 
 		UPDATE DonHang 
 		SET GiaTriDon = @GiaTriDon
@@ -642,13 +629,11 @@ RETURNS INT
 AS
 BEGIN
     DECLARE @Count INT;
-
-    -- Đếm số lượng nhân viên với TenDangNhap và MatKhau khớp
+	 
     SELECT @Count = COUNT(*) 
     FROM NhanVien 
     WHERE TenDangNhap = @TenDangNhap AND MatKhau = @MatKhau;
-
-    -- Trả về kết quả đếm
+	 
     RETURN @Count;
 END
 
@@ -724,15 +709,11 @@ RETURN
 
 GO 
  
-  
-  
+   
 
 
 
-
-
-
----------------------------------------------------------Trigger-------------------------------------------------------------------
+-----------------------------------------------------------Trigger-------------------------------------------------------------------
  
 CREATE TRIGGER trg_TuDongTaoMaNL_NguyenLieu
 ON NguyenLieu
@@ -743,27 +724,23 @@ BEGIN
 		DECLARE @maxMaNL NVARCHAR(50);
 		DECLARE @newMaNL NVARCHAR(50);
 		DECLARE @numPart INT;
-
-		-- Tìm giá trị maNL lớn nhất hiện có
+		 
 		SELECT @maxMaNL = MAX(maNL) 
 		FROM NguyenLieu
 		WHERE maNL LIKE 'NL%';
-
-		-- Lấy phần số từ maNL (bỏ phần 'NL' phía trước) và convert sang kiểu INT
+		 
 		IF @maxMaNL IS NOT NULL
 		BEGIN
 			SET @numPart = CAST(SUBSTRING(@maxMaNL, 3, LEN(@maxMaNL) - 2) AS INT) + 1;
 		END
 		ELSE
-		BEGIN
-			-- Nếu chưa có maNL nào, bắt đầu từ 1
+		BEGIN 
 			SET @numPart = 1;
 		END
 
 		-- Tạo giá trị mới cho maNL, với định dạng NLxx (2 số)
 		SET @newMaNL = 'NL' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-		-- Thực hiện chèn bản ghi với maNL mới
+		 
 		INSERT INTO NguyenLieu(MaNL, TenNL, SoLuongTonKho)
 		SELECT @newMaNL, TenNL, SoLuongTonKho
 		FROM inserted;
@@ -787,27 +764,23 @@ BEGIN
 		DECLARE @maxMaLoaiSP NVARCHAR(50);
 		DECLARE @newMaLoaiSP NVARCHAR(50);
 		DECLARE @numPart INT;
-
-		-- Tìm giá trị maLoaiSP lớn nhất hiện có
+		 
 		SELECT @maxMaLoaiSP = MAX(MaLoaiSP) 
 		FROM LoaiSanPham
 		WHERE MaLoaiSP LIKE 'LSP%';
-
-		-- Lấy phần số từ maLoaiSP (bỏ phần 'LSP' phía trước) và convert sang kiểu INT
+		 
 		IF @maxMaLoaiSP IS NOT NULL
 		BEGIN
 			SET @numPart = CAST(SUBSTRING(@maxMaLoaiSP, 4, LEN(@maxMaLoaiSP) - 2) AS INT)+1;
 		END
 		ELSE
-		BEGIN
-			-- Nếu chưa có maSP nào, bắt đầu từ 1
+		BEGIN 
 			SET @numPart = 1;
 		END
 
 		-- Tạo giá trị mới cho maLoaiSP, với định dạng LSPxx (2 số)
 		SET @newMaLoaiSP = 'LSP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-		-- Thực hiện chèn bản ghi với maLoaiSP mới
+		 
 		INSERT INTO LoaiSanPham(MaLoaiSP, TenLoaiSP)
 		SELECT @newMaLoaiSP, TenLoaiSP
 		FROM inserted; 
@@ -830,30 +803,26 @@ BEGIN
 		DECLARE @maxMaSP NVARCHAR(50);
 		DECLARE @newMaSP NVARCHAR(50);
 		DECLARE @numPart INT;
-
-		-- Tìm giá trị MaSP lớn nhất hiện có
+		 
 		SELECT @maxMaSP = MAX(MaSP)
 		FROM SanPham
 		WHERE MaSP LIKE 'SP%';
-
-		-- Lấy phần số từ MaSP (bỏ phần 'SP' phía trước) và chuyển sang kiểu INT
+		 
 		IF @maxMaSP IS NOT NULL
 		BEGIN
 			SET @numPart = CAST(SUBSTRING(@maxMaSP, 3, LEN(@maxMaSP) - 2) AS INT) + 1;
 		END
 		ELSE
-		BEGIN
-			-- Nếu chưa có MaSP nào, bắt đầu từ 1
+		BEGIN 
 			SET @numPart = 1;
 		END
 
-		-- Tạo mã sản phẩm mới
+		-- Tạo giá trị mới cho maSP, với định dạng SPxx (2 số)
 		SET @newMaSP = 'SP' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-		-- Chèn bản ghi mới vào bảng SanPham với mã sản phẩm mới
+		 
 		INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP)
 		SELECT @newMaSP, TenSP, Gia, AnhSP, MaLoaiSP
-		FROM inserted;  -- Bảng tạm chứa các bản ghi được chèn 
+		FROM inserted;   
 	END TRY
 	BEGIN CATCH 
 		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
@@ -877,12 +846,11 @@ BEGIN
 		DECLARE @soLuongTonKho INT; 
 		DECLARE @tongNL INT;
 		DECLARE @TenNL NVARCHAR(50);
-		 
-		-- Lấy giá trị từ bảng inserted
+		  
 		SELECT @maDH = MaDH, @maSP = MaSP
 		FROM inserted;
 
-		-- Kiểm tra xem bản ghi đã tồn tại chưa
+		-- Kiểm tra sản phẩm đã tồn tại chưa 
 		IF EXISTS (SELECT 1 FROM ChiTietHoaDon WHERE MaDH = @maDH AND MaSP = @maSP)
 		BEGIN
 			-- Nếu đã tồn tại, tăng số lượng lên 1 
@@ -901,7 +869,7 @@ BEGIN
 		END
 		ELSE
 		BEGIN
-			-- Nếu chưa tồn tại, chèn bản ghi mới
+			-- Nếu chưa tồn tại thì thêm sản phẩm mới
 			INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien)
 			VALUES (@maDH, @maSP, 1, (SELECT Gia * 1 FROM SanPham WHERE MaSP = @maSP));  
 		END
@@ -922,13 +890,10 @@ BEGIN
 		BEGIN
 			-- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
 			IF @tongNL > @soLuongTonKho
-			BEGIN
-				-- Raise error nếu không đủ nguyên liệu 
+			BEGIN 
 				CLOSE cur;
-				DEALLOCATE cur;
- 
-				RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL); --Khi RAISERROR thì SQL server sẽ tự động rollback trigger 
-			 
+				DEALLOCATE cur; 
+				RAISERROR(N'%s không đủ để pha chế', 16, 1, @TenNL); --Khi RAISERROR thì SQL server sẽ tự động rollback trigger  
 			END;
 
 			FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
@@ -944,9 +909,4 @@ BEGIN
 	END CATCH
 END;
 
-
-
-
---   ROLLBACK TRANSACTION
-
---   COMMIT TRANSACTION
+ 

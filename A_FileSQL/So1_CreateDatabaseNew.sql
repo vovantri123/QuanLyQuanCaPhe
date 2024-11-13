@@ -22,6 +22,7 @@ CREATE TABLE NhanVien(
 	TenDangNhap nvarchar(50) UNIQUE NOT NULL,
 	MatKhau nvarchar(50) NOT NULL
 )
+
 CREATE TABLE NhanVienToanThoiGian(
 	MaNV nvarchar(50) CONSTRAINT FK_NhanVien_ToanThoiGian FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
 	LuongCoDinh float NOT NULL CHECK(LuongCoDinh>=0),
@@ -42,12 +43,14 @@ CREATE TABLE CaLamViec(
 	GioBatDau time(0),
 	GioKetThuc time(0)
 )
+
 CREATE TABLE ThucHien (
 	MaNV nvarchar(50) CONSTRAINT FK_ThucHien_NhanVien FOREIGN KEY (MaNV) REFERENCES NhanVien(MaNV),
 	MaCV nvarchar(50) CONSTRAINT FK_ThucHien_CongViec FOREIGN KEY (MaCV) REFERENCES CongViec(MaCV),
 	MaCa nvarchar(50) CONSTRAINT FK_ThucHien_CaLamViec FOREIGN KEY (MaCa) REFERENCES CaLamViec(MaCa),
 	CONSTRAINT PK_ThucHien PRIMARY KEY (MaNV,MaCV, MaCa)
 )
+
 CREATE TABLE KhachHang (
 	MaKH nvarchar(50) CONSTRAINT PK_KhangHang PRIMARY KEY,
 	TenKH nvarchar(50) NOT NULL,
@@ -74,6 +77,7 @@ CREATE TABLE SanPham(
 	AnhSP nvarchar(200) NOT NULL,
 	MaLoaiSP nvarchar(50) CONSTRAINT FK_SanPham_LoaiSP FOREIGN KEY REFERENCES LoaiSanPham(MaLoaiSP)
 )
+
 CREATE TABLE NguyenLieu(
 	MaNL nvarchar(50) CONSTRAINT PK_NguyenLieu PRIMARY KEY,
 	TenNL nvarchar(50) NOT NULL,
@@ -87,6 +91,7 @@ CREATE TABLE PhaChe (
 
     CONSTRAINT PK_PhaChe PRIMARY KEY (MaSP, MaNL)  
 )
+
 CREATE TABLE ChiTietHoaDon (
 	MaDH nvarchar(50) CONSTRAINT FK_ChiTietHoaDon_DonHang FOREIGN KEY REFERENCES DonHang(MaDH),
 	MaSP nvarchar(50) CONSTRAINT FK_ChiTietHoaDon_SanPham FOREIGN KEY REFERENCES SanPham(MaSP),

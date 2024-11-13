@@ -1,9 +1,8 @@
 ﻿USE QuanLyQuanCaPhe
 
------------------------------------------------------INSERT------------------------------------------------------------------
+-------------------------------------------------------INSERT------------------------------------------------------------------
 GO
   
--- Bảng Công Việc
 INSERT INTO CongViec (MaCV, TenCV) VALUES 
 
 ('CV01', N'Phục vụ'),
@@ -12,7 +11,6 @@ INSERT INTO CongViec (MaCV, TenCV) VALUES
 ('CV04', N'Bảo vệ'),
 ('CV05', N'Thu ngân'); 
 
--- Bảng Nhân Viên
 INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Email,TenDangNhap, MatKhau) VALUES
 ('NV01', N'Nguyễn Hoàng Anh Khoa', '0934567893', 2004, 'Nam', 'Nha Trang', 'anhkhoaxn11@gmail.com','nv01', 'nv01'),
 ('NV02', N'Võ Văn Trí', '0934567891', 2004, 'Nam', 'Nha Trang', 'anhkhoaxn11@gmail.com','nv02', 'nv02'),
@@ -23,21 +21,18 @@ INSERT INTO NhanVien (MaNV, HoTenNV, SoDienThoai, NamSinh, GioiTinh, DiaChi, Ema
 ('NV07', N'Phạm Ngọc Huy', '0977801301', 2000, 'Nam', 'Bến Tre', 'anhkhoaxn11@gmail.com','nv07', 'nv07'),
 ('NV08', N'Trần Nhật Minh', '0843255905', 2001, 'Nam', 'Hồ Chí Minh', 'anhkhoaxn11@gmail.com','nv08', 'nv08');
 
--- Bảng Nhân Viên Toàn Thời Gian
 INSERT INTO NhanVienToanThoiGian (MaNV, LuongCoDinh) VALUES
 ('NV01', 10000000),
 ('NV02', 8000000),
 ('NV03', 8000000),
 ('NV04', 8000000);
 
--- Bảng Nhân Viên Bán Thời Gian
 INSERT INTO NhanVienBanThoiGian (MaNV, LuongTheoGio, SoGio) VALUES
 ('NV05', 25000, 40),
 ('NV06', 25000, 40),
 ('NV07', 25000, 30),
 ('NV08', 25000, 35);
 
--- Bảng Ca Làm Việc
 INSERT INTO CaLamViec (MaCa, TenCa, Ngay, GioBatDau, GioKetThuc) VALUES
 ('CA01', N'FulltimeAM', '2024-11-10', '06:00', '11:00'),
 ('CA02', N'FulltimePM', '2024-11-11', '13:00', '18:00'),
@@ -45,15 +40,14 @@ INSERT INTO CaLamViec (MaCa, TenCa, Ngay, GioBatDau, GioKetThuc) VALUES
 ('CA04', N'Sáng', '2024-11-13', '06:00', '12:00'),
 ('CA05', N'Chiều', '2024-11-14', '12:00', '18:00');
 
--- Bảng thực hiện
 INSERT INTO ThucHien (MaNV, MaCV, MaCa) VALUES
 
 ('NV01', 'CV01', 'CA01'),
 ('NV02', 'CV02', 'CA02'),
 ('NV03', 'CV03', 'CA03'),
 ('NV04', 'CV04', 'CA04'),
-('NV05', 'CV05', 'CA05')
--- Bảng Khách Hàng
+('NV05', 'CV05', 'CA05');
+
 INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy) VALUES
 ('KH01', N'Nguyễn Phúc Bảo', '0981234567', 400),
 ('KH02', N'Nguyễn Ngọc Doanh Doanh', '0987654321', 250),
@@ -73,15 +67,12 @@ INSERT INTO KhachHang (MaKH, TenKH, SoDienThoai, SoDiemTichLuy) VALUES
 ('KH16', N'Trần Tuấn Kha', '0362482883', 0),
 ('KH17', N'Lê Thị Mỹ Linh', '0808777241', 0),
 ('KH18', N'Nguyễn Tiến Phát', '0965377812', 0),
-('KH19', N'Đỗ Minh Trí', '0901234568', 0)
-
--- Bảng Đơn Hàng 
+('KH19', N'Đỗ Minh Trí', '0901234568', 0);
 
 INSERT INTO DonHang (MaDH, NgayMua, GiaTriDon, TrangThai) VALUES
 ('DH01', '2024-09-30', 40000, N'Đã thanh toán'),
 ('DH02', '2024-10-01', 25000, N'Đã thanh toán');
 
--- Bảng Loại Sản Phẩm
 INSERT INTO LoaiSanPham (MaLoaiSP, TenLoaiSP) VALUES
 ('LSP01', N'Cà phê'),
 ('LSP02', N'Trà'),
@@ -90,7 +81,6 @@ INSERT INTO LoaiSanPham (MaLoaiSP, TenLoaiSP) VALUES
 ('LSP05', N'Bánh kem'),
 ('LSP06', N'Bánh');
 
--- Bảng Sản Phẩm
 INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP) VALUES
 ('SP01', N'Cà phê đen đá', 20000, 'caphedenda.jpg', 'LSP01'),
 ('SP02', N'Cà phê sữa đá', 25000, 'caphesuada.jpg', 'LSP01'),
@@ -121,7 +111,6 @@ INSERT INTO SanPham (MaSP, TenSP, Gia, AnhSP, MaLoaiSP) VALUES
 ('SP27', N'Bánh croissant', 22000, 'croissant.jpg', 'LSP06'),
 ('SP28', N'Bánh chaud', 22000, 'chaud.jpg', 'LSP06');
 
--- Bảng Nguyên liệu
 INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTonKho) VALUES
 ('NL01', N'Đá', 10000),
 ('NL02', N'Đường', 5000),
@@ -146,17 +135,13 @@ INSERT INTO NguyenLieu (MaNL, TenNL, SoLuongTonKho) VALUES
 ('NL21', N'Bột ca cao', 500),
 ('NL22', N'Bột trà xanh', 500);
  
--- Bảng Pha Chế (Liên kết sản phẩm và nguyên liệu)
 INSERT INTO PhaChe (MaSP, MaNL, SoLuong) VALUES
 ('SP01', 'NL01', 1)
 
-
--- Bảng Chi Tiết Hóa Đơn
 INSERT INTO ChiTietHoaDon (MaDH, MaSP, SoLuong, TongTien) VALUES
 ('DH01', 'SP01', 2, 40000),
 ('DH02', 'SP02', 1, 25000);
 
--- Bảng Thanh Toán
 INSERT INTO ThanhToan(MaDH, MaNV, MaKH) VALUES
 ('DH01', 'NV01', 'KH01'),
 ('DH02', 'NV02', 'KH01');
@@ -180,10 +165,10 @@ GRANT SELECT, REFERENCES ON ChiTietHoaDon TO Staff
 GRANT SELECT, REFERENCES ON SanPham TO Staff
 GRANT SELECT, REFERENCES ON ThucHien TO Staff
 GRANT SELECT, REFERENCES ON CongViec TO Staff
-GRANT SELECT, REFERENCES ON CaLamViec TO Staff
--- Gán quyền thực thi trên các procedure, function cho role Staff
-GRANT EXECUTE TO Staff 
-GRANT SELECT TO Staff --Cấp quyền SELECT trên toàn bộ bảng trong CSDL QuanLyQuanCaPhe
+GRANT SELECT, REFERENCES ON CaLamViec TO Staff 
+
+GRANT EXECUTE TO Staff -- Cấp quyền thực thi cho "Staff" trên các func và proc trong CSDL
+GRANT SELECT TO Staff -- Cấp quyền truy vấn dữ liệu cho "Staff" trên các bảng trong CSDL
 
 DENY EXECUTE ON proc_ThemNhanVien to Staff;
 DENY EXECUTE ON proc_XoaNhanVien to Staff;
@@ -200,8 +185,8 @@ DENY EXECUTE ON proc_Sua_NguyenLieu to Staff;
 DENY EXECUTE ON proc_Xoa_NguyenLieu to Staff;
 DENY EXECUTE ON proc_XoaThucHienCongViec to Staff;
 GO
--- trigger tạo tài khoản khi thêm nhân viên
 
+-- Trg tạo tài khoản sau khi thêm nhân viên
 CREATE TRIGGER trg_taoTaiKhoan ON NhanVien
 AFTER INSERT
 AS 
@@ -223,9 +208,10 @@ BEGIN
 	EXEC (@sqlString)
 END
 
--- Procedure xóa nhân viên
+-- Proc xóa nhân viên
 GO
-ALTER PROCEDURE proc_XoaNhanVien
+
+CREATE PROCEDURE proc_XoaNhanVien
 @MaNV nvarchar(50)
 AS
 BEGIN
@@ -252,8 +238,7 @@ BEGIN
     END CATCH
 END
 
--- Tạo Login và User cho nhân viên
-
+-- Tạo Login và User cho nhân viên (tương ứng dữ liệu đã insert phía trên. Trong đó nv03 là admin)
 GO
 CREATE LOGIN [nv01] WITH PASSWORD='nv01', DEFAULT_DATABASE= QuanLyQuanCaPhe, CHECK_EXPIRATION = OFF, CHECK_POLICY = OFF;
 GO
