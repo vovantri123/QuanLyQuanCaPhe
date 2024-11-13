@@ -208,12 +208,6 @@
     <Compile Include="Views\fTrangChu.Designer.cs">
       <DependentUpon>fTrangChu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\nhap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\nhap.Designer.cs">
-      <DependentUpon>nhap.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserControls\ucSanPham.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -271,14 +265,10 @@
     <EmbeddedResource Include="Views\fTrangChu.resx">
       <DependentUpon>fTrangChu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\nhap.resx">
-      <DependentUpon>nhap.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\ReportBill.rdlc" />
     <EmbeddedResource Include="Views\UserControls\ucSanPham.resx">
       <DependentUpon>ucSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="ClassDiagram1.cd" />
     <None Include="MyDataSet.xsc">
       <DependentUpon>MyDataSet.xsd</DependentUpon>
     </None>

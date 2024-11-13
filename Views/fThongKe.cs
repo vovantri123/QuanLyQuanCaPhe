@@ -29,7 +29,7 @@ namespace QuanLyQuanCaPhe.Views
             if (dt == null || dt.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu để hiển thị đồ thị.");
-                return; // Dừng nếu không có dữ liệu
+                return;  
             }
 
             // Lấy dữ liệu từ DataTable và vẽ đồ thị

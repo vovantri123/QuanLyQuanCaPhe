@@ -15,6 +15,7 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.AddParameters("@MaSP", cthd.MaSP);
             DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Them_ChiTietDonHang",DBConnection.parameters);
         }
+
         public static double TinhTongTien()
         {
             DBConnection.ClearParameters();

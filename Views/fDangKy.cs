@@ -42,8 +42,7 @@ namespace QuanLyQuanCaPhe.Views
             {
                 NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, email, tenDangNhap, matKhau);
                 NhanVienDAO.Them(nv, loaiNV);
-            }
-            
+            } 
         }
     }
 }

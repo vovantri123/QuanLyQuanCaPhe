@@ -2,26 +2,17 @@
 
 GO
 
-------------------------------------------------------------------View---------------------------------------------------------------
-
-CREATE VIEW vNguoiThucHienCa AS
-SELECT CLV.MaCa, CLV.TenCa, CLV.Ngay, NV.HoTenNV
-FROM CaLamViec CLV
-JOIN ThucHien TH ON CLV.MaCa = TH.MaCa
-JOIN NhanVien NV ON TH.MaNV = NV.MaNV;
-	
 ----------------------------------------------------------------Proc và Func--------------------------------------------------------------
 
-	
-GO	
- 
-CREATE PROCEDURE Proc_TimNguoiThucHienCa_vNguoiThucHienCa
+CREATE PROCEDURE Proc_TimNguoiThucHienCa 
     @shiftCa NVARCHAR(50),
     @currentDate NVARCHAR(10)  
 AS
 BEGIN
-    SELECT HoTenNV
-    FROM vNguoiThucHienCa
+    SELECT HoTenNV 
+	FROM CaLamViec CLV
+	JOIN ThucHien TH ON CLV.MaCa = TH.MaCa
+	JOIN NhanVien NV ON TH.MaNV = NV.MaNV
     WHERE TenCa = @shiftCa 
       AND CONVERT(NVARCHAR, Ngay, 23) = @currentDate;  
 END

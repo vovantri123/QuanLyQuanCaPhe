@@ -56,7 +56,7 @@ namespace QuanLyQuanCaPhe.Database
             try
             {
                 // Gọi hàm với tham số traVeReader = true để trả về SqlDataReader
-                layTen = DBConnection.ThucThiProc_CoReader("Proc_TimNguoiThucHienCa_vNguoiThucHienCa", DBConnection.parameters, true);
+                layTen = DBConnection.ThucThiProc_CoReader("Proc_TimNguoiThucHienCa", DBConnection.parameters, true);
                 if (layTen != null)
                 {
                     while (layTen.Read()) // Lặp qua từng kết quả

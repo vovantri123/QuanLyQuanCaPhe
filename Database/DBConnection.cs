@@ -265,27 +265,7 @@ namespace QuanLyQuanCaPhe.Database
 
             return reader;
         }
-
-
-        public static void thucThi(string truyVan) //Thực thi câu truy vấn trong c# (cách cũ - không xài trong môn này nữa)
-        {
-            try
-            {
-                moKetNoi();
-                SqlCommand cmd = new SqlCommand(truyVan, conn);
-                if (cmd.ExecuteNonQuery() > 0)
-                    MessageBox.Show("Thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Thất bại\n" + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                dongKetNoi();
-            }
-        }
-
+         
         public static void moKetNoi()
         {
             try

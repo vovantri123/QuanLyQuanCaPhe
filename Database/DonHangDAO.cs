@@ -23,7 +23,7 @@ namespace QuanLyQuanCaPhe.Database
         public static void XoaDonChuaThanhToan()
         {
             DBConnection.ClearParameters(); 
-            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan ", DBConnection.parameters); 
+            DBConnection.ThucThiProc_CoThamSoVaKhongCoThamSo("proc_Xoa_KhachHangChuaNhapTen_DonHangChuaThanhToan", DBConnection.parameters); 
         }
 
 

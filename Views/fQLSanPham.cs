@@ -70,12 +70,12 @@ namespace QuanLyQuanCaPhe.Views
         {
             DataTable tableLoaiSanPham = DBConnection.LoadTableVaView("LoaiSanPham");  
             cboLoaiSP.DataSource = tableLoaiSanPham;
-            cboLoaiSP.DisplayMember = "TenLoaiSP"; // Đây là tên hiển thị
-            cboLoaiSP.ValueMember = "MaLoaiSP";   // Đây là giá trị sử dụng
+            cboLoaiSP.DisplayMember = "TenLoaiSP";  
+            cboLoaiSP.ValueMember = "MaLoaiSP";    
 
             DataTable tableNguyenLieu = DBConnection.LoadTableVaView("NguyenLieu");  
             cboTenNL.DataSource = tableNguyenLieu; 
-            cboTenNL.DisplayMember = "TenNL"; // Đây là tên hiển thị
+            cboTenNL.DisplayMember = "TenNL";  
             cboTenNL.ValueMember = "MaNL";
         }
 
