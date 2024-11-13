@@ -200,6 +200,7 @@ namespace QuanLyQuanCaPhe.Views
                     break;
                 default:
                     // Xử lý trường hợp không hợp lệ (có thể gán giá trị mặc định hoặc ném ngoại lệ )
+
                     throw new ArgumentException("Ca làm không hợp lệ.");
 
             }
