@@ -199,7 +199,7 @@ namespace QuanLyQuanCaPhe.Views
                     gioKetThuc = new TimeSpan(21, 0, 0);
                     break;
                 default:
-                    // Xử lý trường hợp không hợp lệ (có thể gán giá trị mặc định hoặc ném ngoại lệ)
+                    // Xử lý trường hợp không hợp lệ (có thể gán giá trị mặc định hoặc ném ngoại lệ )
                     throw new ArgumentException("Ca làm không hợp lệ.");
 
             }
