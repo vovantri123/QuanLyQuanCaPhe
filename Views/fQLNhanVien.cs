@@ -211,8 +211,29 @@ namespace QuanLyQuanCaPhe.Views
                 string maNV = txtMaNV.Text;
                 int month = selectedDate.Month;
                 int year = selectedDate.Year;
+
+
+                string hoTen = txtHoTen.Text;
+                string sdt = txtSoDienThoai.Text;
+                string namSinh = txtNamSinh.Text;
+                int nam = Convert.ToInt32(namSinh);
+                string gioiTinh = cboGioiTinh.Text;
+                string diaChi = txtDiaChi.Text;
+                string email = txtEmail.Text;
+                string tenDangNhap = txtbTenDangNhap.Text;
+                string matKhau = txtMatKhau.Text;
+                string loaiNV = cboLoaiNV.Text;
+                string luongCoDinh = txtLuong.Text;
+                double luongTruoc = Convert.ToDouble(txtLuong.Text);
+
+
                 double Luong = Convert.ToDouble(NhanVienDAO.tinhLuongNV(maNV, month, year));
                 NhanVienDAO.guiMail(maNV, month, year, Luong);
+                if (cboLoaiNV.Text.Equals("Bán thời gian"))
+                {
+                    NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, nam, gioiTinh, diaChi, email, tenDangNhap, matKhau, luongTruoc, 0);
+                    NhanVienBanThoiGianDAO.Sua(nvBanTG);
+                }
             }
             catch (Exception ex)
             {
@@ -220,7 +241,7 @@ namespace QuanLyQuanCaPhe.Views
             }
             finally
             {
-                MessageBox.Show("Thành công");
+                LoadDGVHienThi();
             }
            
         }
