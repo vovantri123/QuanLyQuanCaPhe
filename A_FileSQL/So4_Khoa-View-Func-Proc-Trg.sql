@@ -47,6 +47,35 @@ BEGIN
 END;
 
 GO
+-- Proc xóa nhân viên
+
+CREATE PROCEDURE proc_XoaNhanVien
+@MaNV nvarchar(50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	DECLARE @username nvarchar(50);
+	SELECT @username = NhanVien.TenDangNhap FROM NhanVien WHERE NhanVien.MaNV = @MaNV;
+	DECLARE @sqlString nvarchar(50);
+
+	BEGIN TRANSACTION
+	BEGIN TRY
+		SET @sqlString = 'DROP USER '+ @username;
+		EXEC(@sqlString)
+		--
+		SET @sqlString = 'DROP LOGIN '+ @username;
+		EXEC(@sqlString)
+		
+		DELETE FROM NhanVien WHERE NhanVien.MaNV = @MaNV;
+		COMMIT TRANSACTION;
+	END TRY
+	BEGIN CATCH
+        ROLLBACK TRANSACTION; 
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+		RAISERROR (@ErrorMessage, 16, 1);
+    END CATCH
+END
+GO
 
 CREATE PROCEDURE proc_XoaNhanVienToanThoiGian
 	@MaNV nvarchar(50)

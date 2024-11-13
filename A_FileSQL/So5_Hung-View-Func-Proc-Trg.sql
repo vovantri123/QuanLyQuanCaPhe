@@ -5,17 +5,13 @@ GO
 ------------------------------------------------------------------View---------------------------------------------------------------
 
 CREATE VIEW vNguoiThucHienCa AS
-SELECT 
-    CLV.MaCa,
-    CLV.TenCa,
-    CLV.Ngay,
-    NV.HoTenNV
-FROM 
-    CaLamViec CLV
-JOIN 
-    ThucHien TH ON CLV.MaCa = TH.MaCa
-JOIN 
-    NhanVien NV ON TH.MaNV = NV.MaNV;
+SELECT CLV.MaCa, CLV.TenCa, CLV.Ngay, NV.HoTenNV
+FROM CaLamViec CLV
+JOIN ThucHien TH ON CLV.MaCa = TH.MaCa
+JOIN NhanVien NV ON TH.MaNV = NV.MaNV;
+	
+----------------------------------------------------------------Proc và Func--------------------------------------------------------------
+
 	
 GO	
  
@@ -148,7 +144,38 @@ BEGIN
 	END CATCH
 END;
 
+GO 
+
+CREATE FUNCTION func_LayMaCaMoiDeDangKy_CaLamViec()
+RETURNS NVARCHAR(50)
+AS
+BEGIN   
+	DECLARE @maxMaCa NVARCHAR(50);
+	DECLARE @newMaCa NVARCHAR(50);
+	DECLARE @numPart INT;
+	 
+    SELECT @maxMaCa = MAX(MaCa) 
+    FROM CaLamViec
+    WHERE MaCa LIKE 'CA%';
+	 
+    IF @maxMaCa IS NOT NULL
+    BEGIN
+        SET @numPart = CAST(SUBSTRING(@maxMaCa, 3, LEN(@maxMaCa) - 2) AS INT) + 1;
+    END
+    ELSE
+    BEGIN 
+        SET @numPart = 1;
+    END
+
+    -- Tạo giá trị mới cho MaCa, với định dạng CAxx (2 số)
+    SET @newMaCa = 'CA' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
+
+    RETURN @newMaCa;  
+END;
+
 GO
+
+---------------------------------------------------------Trigger-----------------------------------------------------------------
 
 CREATE TRIGGER Trg_LuatPhanCa_PhanCa
 ON ThucHien
@@ -256,34 +283,7 @@ BEGIN
 END;
 
 
-GO
 
-CREATE FUNCTION func_LayMaCaMoiDeDangKy_CaLamViec()
-RETURNS NVARCHAR(50)
-AS
-BEGIN   
-	DECLARE @maxMaCa NVARCHAR(50);
-	DECLARE @newMaCa NVARCHAR(50);
-	DECLARE @numPart INT;
-	 
-    SELECT @maxMaCa = MAX(MaCa) 
-    FROM CaLamViec
-    WHERE MaCa LIKE 'CA%';
-	 
-    IF @maxMaCa IS NOT NULL
-    BEGIN
-        SET @numPart = CAST(SUBSTRING(@maxMaCa, 3, LEN(@maxMaCa) - 2) AS INT) + 1;
-    END
-    ELSE
-    BEGIN 
-        SET @numPart = 1;
-    END
-
-    -- Tạo giá trị mới cho MaCa, với định dạng CAxx (2 số)
-    SET @newMaCa = 'CA' + RIGHT('00' + CAST(@numPart AS NVARCHAR), 2);
-
-    RETURN @newMaCa;  
-END;
  
 
 
