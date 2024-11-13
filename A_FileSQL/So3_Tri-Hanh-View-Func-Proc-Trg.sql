@@ -886,7 +886,7 @@ BEGIN
 		OPEN cur;
 		FETCH NEXT FROM cur INTO @tongNL, @soLuongTonKho, @TenNL;
 
-		WHILE @@FETCH_STATUS = 0
+		WHILE @@FETCH_STATUS = 0 -- bằng -1 là không còn dòng để duyệt
 		BEGIN
 			-- Kiểm tra nếu tổng nguyên liệu cần lớn hơn số lượng tồn kho
 			IF @tongNL > @soLuongTonKho
@@ -905,7 +905,7 @@ BEGIN
 	END TRY
 	BEGIN CATCH 
 		DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE(); 
-        RAISERROR (@ErrorMessage, 16, 1);
+		RAISERROR (N'Lỗi phát sinh từ trg_KiemTraSoLuongTruocKhiThem_ChiTietHoaDon: %s', 16, 1, @ErrorMessage);
 	END CATCH
 END;
 

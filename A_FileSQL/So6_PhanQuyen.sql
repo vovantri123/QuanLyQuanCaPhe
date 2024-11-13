@@ -38,6 +38,7 @@ DENY EXECUTE ON proc_Xoa_NguyenLieu to Staff;
 DENY EXECUTE ON proc_XoaThucHienCongViec to Staff;
 DENY EXECUTE ON proc_guiThongBaoLuongThang to Staff;
 DENY EXECUTE ON func_TinhLuong to Staff;
+
 GO
 
 

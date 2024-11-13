@@ -25,7 +25,7 @@ namespace QuanLyQuanCaPhe.Views
             string hoTenNv = txtHoTen.Text;
             string sdt = txtSoDienThoai.Text;
             string namSinh = txtNamSinh.Text;
-            int yearBirth = Convert.ToInt32(namSinh);
+            int yearBirth = string.IsNullOrEmpty(namSinh) ? 2006 : Convert.ToInt32(namSinh);
             string gioiTinh = cboGioiTinh.Text;
             string diaChi = txtDiaChi.Text;
             string email = txtEmail.Text;
@@ -42,6 +42,8 @@ namespace QuanLyQuanCaPhe.Views
             {
                 NhanVien nv = new NhanVien("", hoTenNv, sdt, yearBirth, gioiTinh, diaChi, email, tenDangNhap, matKhau);
                 NhanVienDAO.Them(nv, loaiNV);
+                MessageBox.Show("Đăng ký thành công!");
+                this.Close();
             } 
         }
     }
