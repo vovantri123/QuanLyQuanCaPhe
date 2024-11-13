@@ -192,8 +192,7 @@ BEGIN
 						AND CLV.TenCa = N'FulltimeAM' -- Kiểm tra nếu nhân viên đã làm FulltimeAM trong cùng ngày
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimeAM, không được làm ca Sáng, Chiều và FulltimePM .', 16, 1); 
-				RETURN;
+				RAISERROR (N'Nhân viên đã làm FulltimeAM, không được làm ca Sáng, Chiều và FulltimePM .', 16, 1);  
 			END
 		END
 
@@ -206,8 +205,7 @@ BEGIN
 						AND CLV.TenCa = N'FulltimePM' 
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimePM, không được làm ca Chiều, Tối và FulltimeAM.', 16, 1); 
-				RETURN;
+				RAISERROR (N'Nhân viên đã làm FulltimePM, không được làm ca Chiều, Tối và FulltimeAM.', 16, 1);  
 			END
 		END
 
@@ -220,8 +218,7 @@ BEGIN
 						AND (CLV.TenCa = N'FulltimeAM' OR CLV.TenCa = N'FulltimePM')  
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm FulltimeAM hoặc FulltimePM , không được làm ca Chiều .', 16, 1); 
-				RETURN;
+				RAISERROR (N'Nhân viên đã làm FulltimeAM hoặc FulltimePM , không được làm ca Chiều .', 16, 1);  
 			END
 		END
 		-------------------------------------
@@ -234,8 +231,7 @@ BEGIN
 						AND (CLV.TenCa = N'Sáng' OR CLV.TenCa = N'Chiều')  
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm ca Sáng hoặc Chiều không thể đăng ki ca FulltimeAM .', 16, 1); 
-				RETURN;
+				RAISERROR (N'Nhân viên đã làm ca Sáng hoặc Chiều không thể đăng ki ca FulltimeAM .', 16, 1);  
 			END
 		END
 				
@@ -248,8 +244,7 @@ BEGIN
 						AND (CLV.TenCa = N'Chiều' OR CLV.TenCa = N'Tối')  
 						AND CLV.Ngay = @Ngay))
 			BEGIN
-				RAISERROR (N'Nhân viên đã làm ca Chiều hoặc Tối không thể đăng ki ca FulltimePM .', 16, 1); 
-				RETURN;
+				RAISERROR (N'Nhân viên đã làm ca Chiều hoặc Tối không thể đăng ki ca FulltimePM .', 16, 1);  
 			END
 		END
 		 
