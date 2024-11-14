@@ -227,11 +227,11 @@ CREATE FUNCTION func_TinhLuong(@MaNV nvarchar(50), @Thang int, @Nam int)
 RETURNS FLOAT
 AS
 BEGIN
-    DECLARE @Luong FLOAT;
-    DECLARE @LuongCoDinh FLOAT;
-    DECLARE @LuongTheoGio FLOAT;
-    DECLARE @SoGio INT;
-    DECLARE @TongGiaTriDon FLOAT;
+    DECLARE @Luong FLOAT = 0;
+    DECLARE @LuongCoDinh FLOAT = 0;
+    DECLARE @LuongTheoGio FLOAT = 0;
+    DECLARE @SoGio INT = 0;
+    DECLARE @TongGiaTriDon FLOAT = 0;
     DECLARE @Thuong FLOAT = 0;
 
     -- Kiểm tra xem nhân viên là toàn thời gian hay bán thời gian

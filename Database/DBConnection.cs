@@ -271,7 +271,8 @@ namespace QuanLyQuanCaPhe.Database
         {
             try
             {
-                conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
+                //conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
+                conn = new SqlConnection(@"Data Source=LAPTOP-IR97G8JC;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
