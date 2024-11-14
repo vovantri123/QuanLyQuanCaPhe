@@ -167,8 +167,7 @@ namespace QuanLyQuanCaPhe.Views
                 string matKhau = txtMatKhau.Text;
                 string loaiNV = cboLoaiNV.Text;
                 string luongCoDinh = txtLuong.Text;
-                string gio = txtSoGio.Text;
-                int soGio = Convert.ToInt32(gio);
+                
                 double luong = Convert.ToDouble(luongCoDinh);
                 if (loaiNV.Equals("Toàn thời gian"))
                 {
@@ -180,6 +179,8 @@ namespace QuanLyQuanCaPhe.Views
                 }
                 else
                 {
+                    string gio = txtSoGio.Text;
+                    int soGio = Convert.ToInt32(gio);
                     NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, email,tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);

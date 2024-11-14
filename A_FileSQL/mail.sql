@@ -12,12 +12,12 @@ EXEC msdb.dbo.sysmail_add_profile_sp
 EXEC msdb.dbo.sysmail_add_account_sp
     @account_name = 'GmailAccount1',
     @description = 'Gmail account for sending emails',
-    @email_address = 'anhkhoadevtool21@gmail.com',
+    @email_address = 'anhkhoadevtool21@gmail.com', --- đổi
     @display_name = 'AnhKhoa',
     @mailserver_name = 'smtp.gmail.com',
     @port = 587,
-    @username = 'anhkhoadevtool21@gmail.com',
-    @password = 'igdp hkyt ahrb ozkn',
+    @username = 'anhkhoadevtool21@gmail.com',--- đổi
+    @password = 'igdp hkyt ahrb ozkn',--- đổi
 	@enable_ssl = 1;  -- Đảm bảo bật SSL để sử dụng STARTTLS
 
 EXEC msdb.dbo.sysmail_add_profileaccount_sp
