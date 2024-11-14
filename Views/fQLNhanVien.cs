@@ -9,12 +9,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
 
 namespace QuanLyQuanCaPhe.Views
 {
     public partial class fQLNhanVien : Form
     {
+        private string vaiTro;
         public fQLNhanVien()
         {
             InitializeComponent();
@@ -24,9 +26,6 @@ namespace QuanLyQuanCaPhe.Views
         {
             dgvHienThi.DataSource = DBConnection.LoadTableVaView("v_DanhSachNhanVien");
         }
-
-
-
         private void dgvHienThi_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtLuong.Clear();
@@ -43,17 +42,20 @@ namespace QuanLyQuanCaPhe.Views
                 txtDiaChi.Text = row.Cells["DiaChi"].Value.ToString();
                 txtbTenDangNhap.Text = row.Cells["TenDangNhap"].Value.ToString();
                 txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
-                string luongCoDinh = row.Cells["LuongCoDinh"].Value.ToString();
-                if (String.IsNullOrEmpty(luongCoDinh))
+                string luongCoDinh = row.Cells["LuongCoDinh"].Value?.ToString();
+                
+                if (string.IsNullOrEmpty(luongCoDinh))
                 {
                     cboLoaiNV.Text = "Bán thời gian";
                     txtSoGio.Text = row.Cells["SoGio"].Value.ToString();
                     txtLuong.Text = row.Cells["LuongTheoGio"].Value.ToString();
+                    
                 }
                 else
                 {
                     cboLoaiNV.Text = "Toàn thời gian";
                     txtLuong.Text = luongCoDinh;
+                    
                 }
             }
 
@@ -169,13 +171,14 @@ namespace QuanLyQuanCaPhe.Views
                 string luongCoDinh = txtLuong.Text;
                 
                 double luong = Convert.ToDouble(luongCoDinh);
-                if (loaiNV.Equals("Toàn thời gian"))
+                if (loaiNV=="Toàn thời gian")
                 {
                     NhanVien nv = new NhanVien(maNV, hoTen, sdt, Convert.ToInt32(namSinh), gioiTinh, diaChi, email, tenDangNhap, matKhau);
                     NhanVienToanThoiGian nvToanTG = new NhanVienToanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, email,tenDangNhap, matKhau, luong);
                     NhanVienToanThoiGianDAO.Sua(nvToanTG);
                     NhanVienDAO.Sua(nv);
-                    //co = true;
+                    
+                   
                 }
                 else
                 {
@@ -185,7 +188,6 @@ namespace QuanLyQuanCaPhe.Views
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, year, gioiTinh, diaChi, email,tenDangNhap, matKhau, luong, soGio);
                     NhanVienBanThoiGianDAO.Sua(nvBanTG);
                     NhanVienDAO.Sua(nv);
-                    //co = true;
                 }
 
             }
@@ -245,6 +247,22 @@ namespace QuanLyQuanCaPhe.Views
                 LoadDGVHienThi();
             }
            
+        }
+
+        private void cboLoaiNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string loaiNV = cboLoaiNV.SelectedItem.ToString();
+            if (loaiNV.Equals("Toàn thời gian"))
+            {
+                txtSoGio.Clear();
+                txtSoGio.Enabled = false;
+                txtLuong.Enabled = true;
+            }
+            else
+            {
+                txtSoGio.Enabled = true;
+                txtLuong.Enabled = true;
+            }
         }
     }
 }

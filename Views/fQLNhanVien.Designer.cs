@@ -120,6 +120,7 @@
             this.cboLoaiNV.Name = "cboLoaiNV";
             this.cboLoaiNV.Size = new System.Drawing.Size(272, 36);
             this.cboLoaiNV.TabIndex = 23;
+            this.cboLoaiNV.SelectedIndexChanged += new System.EventHandler(this.cboLoaiNV_SelectedIndexChanged);
             // 
             // btnThem
             // 
@@ -221,7 +222,7 @@
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMatKhau.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMatKhau.Location = new System.Drawing.Point(954, 539);
-            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMatKhau.Margin = new System.Windows.Forms.Padding(4);
             this.txtMatKhau.Name = "txtMatKhau";
             this.txtMatKhau.PasswordChar = '\0';
             this.txtMatKhau.PlaceholderText = "";
@@ -241,7 +242,7 @@
             this.txtbTenDangNhap.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtbTenDangNhap.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtbTenDangNhap.Location = new System.Drawing.Point(952, 495);
-            this.txtbTenDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtbTenDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtbTenDangNhap.Name = "txtbTenDangNhap";
             this.txtbTenDangNhap.PasswordChar = '\0';
             this.txtbTenDangNhap.PlaceholderText = "";
@@ -261,7 +262,7 @@
             this.txtDiaChi.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtDiaChi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtDiaChi.Location = new System.Drawing.Point(949, 321);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.PasswordChar = '\0';
             this.txtDiaChi.PlaceholderText = "";
@@ -281,7 +282,7 @@
             this.txtNamSinh.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtNamSinh.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtNamSinh.Location = new System.Drawing.Point(951, 217);
-            this.txtNamSinh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNamSinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.PasswordChar = '\0';
             this.txtNamSinh.PlaceholderText = "";
@@ -301,7 +302,7 @@
             this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoDienThoai.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoDienThoai.Location = new System.Drawing.Point(952, 168);
-            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.PasswordChar = '\0';
             this.txtSoDienThoai.PlaceholderText = "";
@@ -321,7 +322,7 @@
             this.txtHoTen.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtHoTen.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtHoTen.Location = new System.Drawing.Point(949, 123);
-            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtHoTen.Margin = new System.Windows.Forms.Padding(4);
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.PasswordChar = '\0';
             this.txtHoTen.PlaceholderText = "";
@@ -386,7 +387,7 @@
             this.txtTimTenNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtTimTenNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimTenNV.Location = new System.Drawing.Point(28, 46);
-            this.txtTimTenNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTimTenNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTimTenNV.Name = "txtTimTenNV";
             this.txtTimTenNV.PasswordChar = '\0';
             this.txtTimTenNV.PlaceholderText = "Tìm tên nhân viên";
@@ -407,7 +408,7 @@
             this.txtLuong.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtLuong.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtLuong.Location = new System.Drawing.Point(953, 583);
-            this.txtLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.PasswordChar = '\0';
             this.txtLuong.PlaceholderText = "";
@@ -436,7 +437,7 @@
             this.txtSoGio.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtSoGio.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSoGio.Location = new System.Drawing.Point(954, 451);
-            this.txtSoGio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoGio.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoGio.Name = "txtSoGio";
             this.txtSoGio.PasswordChar = '\0';
             this.txtSoGio.PlaceholderText = "";
@@ -474,7 +475,7 @@
             this.txtMaNV.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtMaNV.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtMaNV.Location = new System.Drawing.Point(949, 77);
-            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.PasswordChar = '\0';
             this.txtMaNV.PlaceholderText = "";
@@ -494,7 +495,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtEmail.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtEmail.Location = new System.Drawing.Point(949, 365);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
             this.txtEmail.PlaceholderText = "";

@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\DBMS\\QuanLyCoffee\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycoffee\\views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycoffee\\database\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:database\\nhanviendao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycoffee\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|c:\\dbms\\quanlycoffee\\views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{14F37675-64CC-4440-A554-AD41C4B0EA62}|QuanLyQuanCaPhe.csproj|solutionrelative:views\\fqlnhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,6 +59,57 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NhanVienDAO.cs",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCoffee\\Database\\NhanVienDAO.cs",
+              "RelativeDocumentMoniker": "Database\\NhanVienDAO.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCoffee\\Database\\NhanVienDAO.cs",
+              "RelativeToolTip": "Database\\NhanVienDAO.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAAAJYAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T13:04:20.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCoffee\\Models\\NhanVien.cs",
+              "RelativeDocumentMoniker": "Models\\NhanVien.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCoffee\\Models\\NhanVien.cs",
+              "RelativeToolTip": "Models\\NhanVien.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAAgwCQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:36:03.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "fQLNhanVien.cs",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCoffee\\Views\\fQLNhanVien.cs",
+              "RelativeDocumentMoniker": "Views\\fQLNhanVien.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCoffee\\Views\\fQLNhanVien.cs",
+              "RelativeToolTip": "Views\\fQLNhanVien.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQBAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:32:50.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "fQLNhanVien.cs [Design]",
+              "DocumentMoniker": "C:\\DBMS\\QuanLyCoffee\\Views\\fQLNhanVien.cs",
+              "RelativeDocumentMoniker": "Views\\fQLNhanVien.cs",
+              "ToolTip": "C:\\DBMS\\QuanLyCoffee\\Views\\fQLNhanVien.cs [Design]",
+              "RelativeToolTip": "Views\\fQLNhanVien.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-14T12:32:48.396Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },

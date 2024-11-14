@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace QuanLyQuanCaPhe.Models
 {
     public class NhanVienBanThoiGian:NhanVien
-    { 
+    {
             private double luongTheoGio;
             private int soGio;
 

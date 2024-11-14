@@ -53,7 +53,6 @@ CREATE PROCEDURE proc_XoaNhanVien
 @MaNV nvarchar(50)
 AS
 BEGIN
-	SET NOCOUNT ON;
 	DECLARE @username nvarchar(50);
 	SELECT @username = NhanVien.TenDangNhap FROM NhanVien WHERE NhanVien.MaNV = @MaNV;
 	DECLARE @sqlString nvarchar(50);
@@ -265,7 +264,6 @@ BEGIN
 		AND YEAR(DonHang.NgayMua) = @Nam;
 
 		-- Nếu không có đơn hàng nào thì tổng giá trị đơn sẽ là 0
-		SET @TongGiaTriDon = ISNULL(@TongGiaTriDon, 0);
 		SET @Thuong = @TongGiaTriDon * 0.01;
 	END
 
@@ -315,13 +313,31 @@ END
 
 GO
 
+CREATE FUNCTION func_KiemTraLoaiNV (@MaNV NVARCHAR(50))
+RETURNS NVARCHAR(20)
+AS
+BEGIN
+    DECLARE @LoaiNV NVARCHAR(20);
+
+    -- Kiểm tra nếu tồn tại trong bảng NhanVienToanThoiGian
+    IF EXISTS (SELECT 1 FROM NhanVienToanThoiGian WHERE MaNV = @MaNV)
+        SET @LoaiNV = N'Toàn thời gian';
+    -- Nếu không, kiểm tra trong bảng NhanVienBanThoiGian
+    ELSE IF EXISTS (SELECT 1 FROM NhanVienBanThoiGian WHERE MaNV = @MaNV)
+        SET @LoaiNV = N'Bán thời gian';
+    ELSE
+        SET @LoaiNV = N'Không xác định'; -- Trường hợp không có trong cả hai bảng
+
+    RETURN @LoaiNV;
+END;
+
 /*
 SELECT * 
 FROM msdb.dbo.sysmail_event_log 
 ORDER BY log_date DESC;
 */
 
-
+GO
 ----------------------------------------------------------------Trigger----------------------------------------------------------------
 CREATE TRIGGER trg_TuDongTaoMaNV_NhanVien
 ON NhanVien

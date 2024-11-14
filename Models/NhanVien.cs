@@ -17,7 +17,7 @@ namespace QuanLyQuanCaPhe.Models
         private string email;
         private string tenDangNhap;
         private string matKhau;
-
+        private string vaiTro;
         public NhanVien()
         {
 
@@ -45,5 +45,6 @@ namespace QuanLyQuanCaPhe.Models
         public string TenDangNhap { get => tenDangNhap; set => tenDangNhap = value; }
         public string MatKhau { get => matKhau; set => matKhau = value; }
         public string Email { get => email; set => email = value; }
+        public string VaiTro { get => vaiTro; set => vaiTro = value; }
     }
 }
