@@ -53,7 +53,6 @@ CREATE PROCEDURE proc_XoaNhanVien
 @MaNV nvarchar(50)
 AS
 BEGIN
-	SET NOCOUNT ON;
 	DECLARE @username nvarchar(50);
 	SELECT @username = NhanVien.TenDangNhap FROM NhanVien WHERE NhanVien.MaNV = @MaNV;
 	DECLARE @sqlString nvarchar(50);
@@ -249,7 +248,7 @@ BEGIN
         WHERE MaNV = @MaNV;
         SET @Luong = @LuongTheoGio * @SoGio;
     END
-	-- Kiểm tra số ca làm việc của nhân viên
+	-- Kiểm tra điều kiện nhận thưởng của nhân viên
 	 IF EXISTS (
         SELECT 1 
         FROM ThanhToan
