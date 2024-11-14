@@ -22,7 +22,7 @@ INNER JOIN LoaiSanPham lsp ON sp.MaLoaiSP = lsp.MaLoaiSP
 GO
 
 CREATE VIEW v_NguyenLieuDungDePhaCheSanPham AS
-SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
+SELECT sp.TenSP, nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
 FROM NguyenLieu nl
 INNER JOIN PhaChe pc ON nl.MaNL = pc.MaNL
 INNER JOIN SanPham sp ON pc.MaSP = sp.MaSP
@@ -199,7 +199,7 @@ RETURNS TABLE
 AS
 RETURN
 (
-    SELECT nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
+    SELECT sp.TenSP, nl.MaNL, nl.TenNL, pc.SoLuong, nl.SoLuongTonKho
 	FROM NguyenLieu nl
 	INNER JOIN PhaChe pc ON nl.MaNL = pc.MaNL
 	INNER JOIN SanPham sp ON pc.MaSP = sp.MaSP
@@ -214,13 +214,14 @@ RETURNS @KetQua TABLE
 	MaSP NVARCHAR(50),
 	TenSP NVARCHAR(50),
 	Gia FLOAT,
+	LoaiSP NVARCHAR(50),
 	AnhSP NVARCHAR(50)
 )
 AS 
 BEGIN
     INSERT INTO @KetQua
-    SELECT MaSP, TenSP, Gia, AnhSP
-    FROM SanPham
+    SELECT *
+    FROM v_DanhSachSanPham
     WHERE TenSP LIKE N'%' + @TenSP + '%'
 
 	RETURN
