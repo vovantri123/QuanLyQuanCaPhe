@@ -114,8 +114,8 @@ namespace QuanLyQuanCaPhe.Views
 
         private void dgvDSNguyenLieuCuaSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            cboTenNL.SelectedValue = thongTinOThu_dgvDSNguyenLieuCuaSanPham(0); 
-            nudSoLuong.Value = Convert.ToInt32(thongTinOThu_dgvDSNguyenLieuCuaSanPham(2));
+            cboTenNL.SelectedValue = thongTinOThu_dgvDSNguyenLieuCuaSanPham(1); 
+            nudSoLuong.Value = Convert.ToInt32(thongTinOThu_dgvDSNguyenLieuCuaSanPham(3));
 
         }
 
@@ -190,7 +190,7 @@ namespace QuanLyQuanCaPhe.Views
             // Kiểm tra nếu người dùng nhấn vào cột có nút "Xóa"
             if (e.ColumnIndex == dgvDSNguyenLieuCuaSanPham.Columns.Count - 1 && e.RowIndex >= 0)
             { 
-                string maNguyenLieu = dgvDSNguyenLieuCuaSanPham.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string maNguyenLieu = dgvDSNguyenLieuCuaSanPham.Rows[e.RowIndex].Cells[1].Value.ToString();
                  
                 string maSanPham = txtMaSP.Text;
 

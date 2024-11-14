@@ -231,7 +231,11 @@ namespace QuanLyQuanCaPhe.Views
 
 
                 double Luong = Convert.ToDouble(NhanVienDAO.tinhLuongNV(maNV, month, year));
-                NhanVienDAO.guiMail(maNV, month, year, Luong);
+                if(Luong!=0)
+                {
+                    NhanVienDAO.guiMail(maNV, month, year, Luong);
+                }    
+                 
                 if (cboLoaiNV.Text.Equals("Bán thời gian"))
                 {
                     NhanVienBanThoiGian nvBanTG = new NhanVienBanThoiGian(maNV, hoTen, sdt, nam, gioiTinh, diaChi, email, tenDangNhap, matKhau, luongTruoc, 0);

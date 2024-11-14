@@ -132,10 +132,11 @@ namespace QuanLyQuanCaPhe.Database
             DBConnection.AddParameters("@MaNV", maNV);
             DBConnection.AddParameters("@Thang", thang);
             DBConnection.AddParameters("@Nam", nam);
-            string luong = DBConnection.ThucThiFunction_Scalar("func_TinhLuong", DBConnection.parameters).ToString();
-            if (luong != null)
-                return luong;
-            return "0";
+            object luong = DBConnection.ThucThiFunction_Scalar("func_TinhLuong", DBConnection.parameters);
+            if (luong == null || luong is DBNull)
+                return "0";
+            return luong.ToString();
+           
         }
 
 
