@@ -16,9 +16,9 @@ namespace QuanLyQuanCaPhe.Database
     {
         // Tạo một đối tượng kết nối Database 
 
-        //public static SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau+ ";");
+        public static SqlConnection conn = null;
         //public static SqlConnection conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;");
-        public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-IR97G8JC;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau+ ";");
+        //public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-IR97G8JC;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau+ ";");
         // public static SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-KN9ENH3A\SQLEXPRESS01;Initial Catalog=QuanLyQuanCaPhe;Persist Security Info=True;" + "User ID=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
         
         
@@ -271,6 +271,7 @@ namespace QuanLyQuanCaPhe.Database
         {
             try
             {
+                conn = new SqlConnection(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=QuanLyQuanCaPhe;User Id=" + GLOBAL.tenDangNhap + ";Password=" + GLOBAL.matKhau + ";");
                 if (conn.State == ConnectionState.Closed)
                 {
                     conn.Open();
@@ -279,8 +280,7 @@ namespace QuanLyQuanCaPhe.Database
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
+            } 
         }
 
         public static void dongKetNoi()

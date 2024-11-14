@@ -21,6 +21,8 @@ namespace QuanLyQuanCaPhe.Views
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            GLOBAL.tenDangNhap = "nv03";
+            GLOBAL.matKhau = "nv03";
             //Dung funct hoặc proc trả về số lượng dòng, rồi dùng nó làm id (hoặc dùng cách khác tự tạo ID)
             string hoTenNv = txtHoTen.Text;
             string sdt = txtSoDienThoai.Text;
