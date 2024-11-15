@@ -39,10 +39,8 @@ GO
 
 CREATE VIEW v_DanhSachHoaDon AS
 SELECT dh.MaDH, dh.NgayMua, kh.SoDienThoai, kh.TenKH, dh.GiaTriDon
-FROM DonHang dh 
-INNER JOIN ChiTietHoaDon cthd ON dh.MaDH = cthd.MaDH
-INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH
-INNER JOIN NhanVien nv ON tt.MaNV = nv.MaNV
+FROM DonHang dh  
+INNER JOIN ThanhToan tt ON dh.MaDH = tt.MaDH 
 INNER JOIN KhachHang kh ON tt.MaKH = kh.MaKH
 WHERE dh.TrangThai = N'Đã thanh toán'
 

@@ -117,7 +117,7 @@
             this.txtTimKiemSDT.Name = "txtTimKiemSDT";
             this.txtTimKiemSDT.PasswordChar = '\0';
             this.txtTimKiemSDT.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.txtTimKiemSDT.PlaceholderText = "Tìm kiếm";
+            this.txtTimKiemSDT.PlaceholderText = "Tìm kiếm theo SĐT";
             this.txtTimKiemSDT.SelectedText = "";
             this.txtTimKiemSDT.Size = new System.Drawing.Size(276, 62);
             this.txtTimKiemSDT.TabIndex = 4;
